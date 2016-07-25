@@ -5,11 +5,17 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Right now the main package to work with is @{@link org.junit.jupiter.api}
+ * Right now the main package to work with is {@link org.junit.jupiter.api}
  *
  * Created by drandard on 21.07.2016.
  */
 public class JUnit5_NameChanges {
+
+    /*
+    ##################################################################################################################
+                                                      Annotations
+    ##################################################################################################################
+    */
 
     /**
      * Annotation @BeforeClass was replaced by @{@link BeforeAll}. Needs to be static.
@@ -33,13 +39,20 @@ public class JUnit5_NameChanges {
     @Test
     void disabled() {}
 
+
+    /*
+    ##################################################################################################################
+                                                      Assertions
+    ##################################################################################################################
+    */
+
     /**
-     * Assertion Methods are now in class {@link Assertions}.
+     * Assertion Methods are now in class {@link Assertions}. Method names stayed mostly the same as far as I can tell.
      */
     @Test
     void assertions() {
-        Assertions.assertTrue(true);  //Without static import
-        assertTrue(true);             //With static import on org.junit.jupiter.api.Assertions.assertTrue()
+        assertTrue(true);            // With static import on org.junit.jupiter.api.Assertions.assertTrue()
+        Assertions.assertTrue(true); // Without static import
     }
 
 }

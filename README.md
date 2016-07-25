@@ -51,5 +51,6 @@ Gradle
     - Contains a collection of <u>bigger, more advanced new features</u>
 
 ### TODO
+- [x] Dependency Copy-Paste Resource
 - [x] Links to Java-Files
-- [ ] Images
+- [ ] Proper Presentation

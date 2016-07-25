@@ -1,6 +1,6 @@
 package com.drandard.changes;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 /**
  * Created by drandard on 21.07.2016.
@@ -14,10 +14,5 @@ public class JUnit5_GeneralChanges {
      */
     @Test
     void test() {}
-
-    @Test
-    void testWithParameter(String test) {
-
-    }
 
 }
