@@ -8,19 +8,19 @@
     - <b>group:</b> 'org.junit.platform' - <b>name:</b> 'junit-platform-runner' - <b>version:</b> '1.0.0-M1'
 
 ### Index
-1. [<b>JUnit5_NameChanges</b>.java] (/src/test/java/com/drandard/changes/JUnit5_NameChanges.java)
+1. [JUnit5_NameChanges.java] (/src/test/java/com/drandard/changes/JUnit5_NameChanges.java)
     - Contains a list of <u>changed names</u> of Annotations, Classes, etc.
-2. [<b>JUnit5_GeneralChanges</b>.java] (/src/test/java/com/drandard/changes/JUnit5_GeneralChanges.java)
+2. [JUnit5_GeneralChanges.java] (/src/test/java/com/drandard/changes/JUnit5_GeneralChanges.java)
     - Contains a collection of <u>small or general</u> changes made to the API
-3. [<b>JUnit5_AdvancedChanges</b>.java] (/src/test/java/com/drandard/changes/JUnit5_AdvancedChanges.java)
+3. [JUnit5_AdvancedChanges.java] (/src/test/java/com/drandard/changes/JUnit5_AdvancedChanges.java)
     - Contains several <u>advanced changes</u> made to the API
-4. [<b>JUnit5_NewGeneralFeatures</b>.java] (/src/test/java/com/drandard/features/JUnit5_NewGeneralFeatures.java)
+4. [JUnit5_NewGeneralFeatures.java] (/src/test/java/com/drandard/features/JUnit5_NewGeneralFeatures.java)
     - Contains a collection of <u>small, general new features</u>
-4. [<b>JUnit5_NewAdvancedFeatures</b>.java] (/src/test/java/com/drandard/features/JUnit5_NewAdvancedFeatures.java)
+4. [JUnit5_NewAdvancedFeatures.java] (/src/test/java/com/drandard/features/JUnit5_NewAdvancedFeatures.java)
     - Contains a collection of <u>bigger, more advanced new features</u>
-5. <b>JUnit5_xxx</b>.java
+5. JUnit5_xxx.java
     - TextX Stuff
-6. <b>JUnit5_yyy</b>.java
+6. JUnit5_yyy.java
     - TextY Stuff
     
 ### TODO
