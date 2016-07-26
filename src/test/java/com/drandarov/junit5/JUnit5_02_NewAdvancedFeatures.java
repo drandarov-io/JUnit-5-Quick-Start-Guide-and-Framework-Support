@@ -11,6 +11,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -86,10 +88,10 @@ public class JUnit5_02_NewAdvancedFeatures {
      */
     @TestFactory
     Stream<DynamicTest> testStreamFactoryTest() {
-        Iterator<String> iterator = Arrays.asList(new String[]{"1", "2", "3"}).iterator();
+        Iterator<String> testData = Arrays.asList(new String[]{"1", "2", "3"}).iterator();
 
         Stream<DynamicTest> dynamicTests = DynamicTest.stream(
-                iterator,                              // Input-Data for the Factory
+                testData,                              // Input-Data for the Factory
                 s -> "Displayname: S" + s,             // Creating DisplayNames for the test
                 Assertions::assertNotNull);            // Providing an Executable on which the test is based
 
@@ -103,15 +105,10 @@ public class JUnit5_02_NewAdvancedFeatures {
      */
     @TestFactory
     List<DynamicTest> testListFactoryTest() {
-        List<DynamicTest> dynamicTests = new ArrayList<>();
-
-        for (int i = 0; i < 10; i++)
-            dynamicTests.add(DynamicTest.dynamicTest(           //Factory-Method for DynamicTests
-                    "DisplayName: L" + i,                       //DisplayName here
-                    () -> assertTrue(this.getClass() != null)   //Executable here
-            ));
-
-        return dynamicTests;
+        //For each number in the range a DynamicTest will be created and collected into a list.
+        return IntStream.range(1, 4)
+                .mapToObj(i -> DynamicTest.dynamicTest("DisplayName: L" + i, () -> assertTrue(this.getClass() != null)))
+                .collect(Collectors.toList());
     }
 
 }
