@@ -35,22 +35,18 @@ Gradle
 ```
 
 ### Index
-1. [JUnit5_NameChanges.java] (/src/test/java/com/drandard/changes/JUnit5_NameChanges.java)<br>
-    - Contains a list of <u>changed names</u> of Annotations, Classes, etc.
-
-2. [JUnit5_GeneralChanges.java] (/src/test/java/com/drandard/changes/JUnit5_GeneralChanges.java)
+1. [JUnit5_00_GeneralChanges.java] (/src/test/java/com/drandard/JUnit5_00_GeneralChanges.java)
     - Contains a collection of <u>small or general changes</u> made to the API
-    
-3. [JUnit5_AdvancedChanges.java] (/src/test/java/com/drandard/changes/JUnit5_AdvancedChanges.java)
-    - Contains several <u>advanced changes</u> made to the API
-    
-4. [JUnit5_NewGeneralFeatures.java] (/src/test/java/com/drandard/features/JUnit5_NewGeneralFeatures.java)
+
+3. [JUnit5_01_NewFeatures.java] (/src/test/java/com/drandard/JUnit5_01_NewFeatures.java)
     - Contains a collection of <u>small, general new features</u>
     
-4. [JUnit5_NewAdvancedFeatures.java] (/src/test/java/com/drandard/features/JUnit5_NewAdvancedFeatures.java)
-    - Contains a collection of <u>bigger, more advanced new features</u>
+4. [JUnit5_02_NewAdvancedFeatures.java] (/src/test/java/com/drandard/JUnit5_02_NewAdvancedFeatures.java)
+    - Contains a collection of <u>more advanced and complicated new features</u>
 
 ### TODO
-- [x] Dependency Copy-Paste Resource
-- [x] Links to Java-Files
+- [x] Dependency Copy-Paste Resource - 24.07.2016
+- [x] Links to Java-Files - 24.07.2016
+- [ ] Test-Extensions
+- [ ] @TestFactory + DynamicTests
 - [ ] Proper Presentation

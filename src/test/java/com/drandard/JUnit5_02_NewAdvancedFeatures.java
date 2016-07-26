@@ -1,4 +1,4 @@
-package com.drandard.features;
+package com.drandard;
 
 import com.drandard.util.StringParameterResolver;
 import com.drandard.util.LongParameterResolver;
@@ -12,11 +12,18 @@ import org.junit.jupiter.api.extension.*;
  *
  * Created by drandard on 22.07.2016.
  */
-public class JUnit5_NewAdvancedFeatures {
+public class JUnit5_02_NewAdvancedFeatures {
 
     /*
     ##################################################################################################################
-                                                   Test-Parameters
+                                                    Test-Extensions
+    ##################################################################################################################
+    */
+
+
+    /*
+    ##################################################################################################################
+                                                    Test-Parameters
     ##################################################################################################################
     */
 
@@ -55,11 +62,5 @@ public class JUnit5_NewAdvancedFeatures {
         System.out.println(parameterString);
         System.out.println(parameterLong);
     }
-
-    /*
-    ##################################################################################################################
-                                                    Test-Extensions
-    ##################################################################################################################
-    */
 
 }

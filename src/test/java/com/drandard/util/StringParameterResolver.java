@@ -26,7 +26,7 @@ public class StringParameterResolver implements ParameterResolver {
      */
     @Override
     public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-        return parameterContext.getParameter().getName();
+        return parameterContext.getIndex();
     }
 
 }

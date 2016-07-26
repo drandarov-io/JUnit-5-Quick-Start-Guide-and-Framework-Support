@@ -1,15 +1,28 @@
-package com.drandard.changes;
+package com.drandard;
 
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Right now the main package to work with is {@link org.junit.jupiter.api}
- *
  * Created by drandard on 21.07.2016.
  */
-public class JUnit5_NameChanges {
+public class JUnit5_00_GeneralChanges {
+
+    /*
+    ##################################################################################################################
+                                                      Test-Methods
+    ##################################################################################################################
+    */
+
+    /**
+     * Tests are now only not allowed to be static / private. Same goes for @Before.../@After...
+     *
+     * timeout=? and expected=? functionality has now moved elsewhere. See in {@link JUnit5_01_NewFeatures}
+     */
+    @Test
+    void test() {}
+
 
     /*
     ##################################################################################################################
@@ -39,6 +52,13 @@ public class JUnit5_NameChanges {
     @Test
     void disabled() {}
 
+    /**
+     * JUnit 4's experimental @Category is now called {@link Tag}/{@link Tags}.
+     */
+    @Tag("abc")
+    @Test
+    void tagTest() {}
+
 
     /*
     ##################################################################################################################
@@ -47,12 +67,13 @@ public class JUnit5_NameChanges {
     */
 
     /**
-     * Assertion Methods are now in class {@link Assertions}. Method names stayed mostly the same as far as I can tell.
+     * Assertion Methods are now in class {@link Assertions}. Method names stayed mostly the same otherwise.
      */
     @Test
     void assertions() {
         assertTrue(true);            // With static import on org.junit.jupiter.api.Assertions.assertTrue()
         Assertions.assertTrue(true); // Without static import
     }
+
 
 }
