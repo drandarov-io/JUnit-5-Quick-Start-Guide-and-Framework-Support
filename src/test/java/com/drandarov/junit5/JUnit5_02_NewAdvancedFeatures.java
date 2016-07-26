@@ -1,7 +1,7 @@
-package com.drandard;
+package com.drandarov.junit5;
 
-import com.drandard.util.StringParameterResolver;
-import com.drandard.util.LongParameterResolver;
+import com.drandarov.junit5.util.LongParameterResolver;
+import com.drandarov.junit5.util.StringParameterResolver;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.TestReporter;
@@ -53,11 +53,10 @@ public class JUnit5_02_NewAdvancedFeatures {
      * used {@link ParameterResolver}
      *
      * @param parameterString String-Parameter that will be injected by {@link StringParameterResolver}
-     * @param parameterLong Integer-Parameter that will be injected by {@link LongParameterResolver}
+     * @param parameterLong Long-Parameter that will be injected by {@link LongParameterResolver}
      */
     @Test
-    @ExtendWith(StringParameterResolver.class)
-    @ExtendWith(LongParameterResolver.class)
+    @ExtendWith({StringParameterResolver.class, LongParameterResolver.class})
     void customParameterTest(String parameterString, Long parameterLong) {
         System.out.println(parameterString);
         System.out.println(parameterLong);

@@ -1,4 +1,4 @@
-package com.drandard.util;
+package com.drandarov.junit5.util;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
@@ -26,7 +26,7 @@ public class StringParameterResolver implements ParameterResolver {
      */
     @Override
     public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-        return parameterContext.getIndex();
+        return parameterContext.getParameter().getName();
     }
 
 }

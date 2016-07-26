@@ -1,4 +1,4 @@
-package com.drandard;
+package com.drandarov.junit5;
 
 import org.junit.jupiter.api.*;
 
