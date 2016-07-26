@@ -38,7 +38,7 @@ public class JUnit5_01_NewFeatures {
      * {@link Assertions#assertThrows(Class, Executable)}
      */
     @Test
-    void executables() {
+    void executablesTest() {
         Executable ex = () -> assertTrue(true);
         assertAll(ex);
     }

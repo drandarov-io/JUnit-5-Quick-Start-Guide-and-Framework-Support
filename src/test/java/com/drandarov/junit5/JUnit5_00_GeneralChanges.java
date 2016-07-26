@@ -21,7 +21,7 @@ public class JUnit5_00_GeneralChanges {
      * timeout=? and expected=? functionality has now moved elsewhere. See in {@link JUnit5_01_NewFeatures}
      */
     @Test
-    void test() {}
+    void testTest() {}
 
 
     /*
@@ -50,14 +50,14 @@ public class JUnit5_00_GeneralChanges {
      */
     @Disabled
     @Test
-    void disabled() {}
+    void disabledTest() {}
 
     /**
      * JUnit 4's experimental @Category is now called {@link Tag}/{@link Tags}.
      */
     @Tag("abc")
     @Test
-    void tagTest() {}
+    void taggedTest() {}
 
 
     /*
@@ -70,9 +70,9 @@ public class JUnit5_00_GeneralChanges {
      * Assertion Methods are now in class {@link Assertions}. Method names stayed mostly the same otherwise.
      */
     @Test
-    void assertions() {
-        assertTrue(true);            // With static import on org.junit.jupiter.api.Assertions.assertTrue()
+    void assertionsTest() {
         Assertions.assertTrue(true); // Without static import
+        assertTrue(true);            // With static import on org.junit.jupiter.api.Assertions.assertTrue()
     }
 
 

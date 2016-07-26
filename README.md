@@ -44,10 +44,10 @@ Gradle
 4. [JUnit5_02_NewAdvancedFeatures.java] (/src/test/java/com/drandarov/junit5/JUnit5_02_NewAdvancedFeatures.java)
     - Contains a collection of <u>more advanced and complicated new features</u>
 
-### TODO
-- [x] Dependency Copy-Paste Resource - 7/24/2016
-- [x] Links to Java-Files - 7/24/2016
-- [x] Reordered packages and classes - 7/26/2016
-- [ ] Test-Extensions
-- [ ] @TestFactory + DynamicTests
-- [ ] Proper Presentation
+### TO-DOs
+- [x] Dependency Copy-Paste Resource    -    7/24/2016
+- [x] Links to Java-Files               -    7/24/2016
+- [x] Reordered packages and classes    -    7/26/2016
+- [ ] Test-Extensions                   -
+- [x] @TestFactory + DynamicTests       -    7/26/2016
+- [ ] Proper Presentation               -
