@@ -39,15 +39,16 @@ Gradle
     - Contains a collection of <u>small or general changes</u> made to the API
 
 3. [JUnit5_01_NewFeatures.java] (/src/test/java/com/drandarov/junit5/JUnit5_01_NewFeatures.java)
-    - Contains a collection of <u>small, general new features</u>
+    - Contains a collection of <u>smaller, general new features</u> like <b>lambda support</b> or <b>small annotations</b>
     
 4. [JUnit5_02_NewAdvancedFeatures.java] (/src/test/java/com/drandarov/junit5/JUnit5_02_NewAdvancedFeatures.java)
-    - Contains a collection of <u>more advanced and complicated new features</u>
+    - Contains a collection of <u>more advanced, complicated or experimental new features</u> like the new <b>Extensions-API</b> and <b>Test-Parameters</b>
 
-### TO-DOs
-- [x] Dependency Copy-Paste Resource    -    7/24/2016
-- [x] Links to Java-Files               -    7/24/2016
-- [x] Reordered packages and classes    -    7/26/2016
-- [ ] Test-Extensions                   -
-- [x] @TestFactory + DynamicTests       -    7/26/2016
-- [ ] Proper Presentation               -
+### Tasks
+
+- [x] Dependency Copy-Paste Resource          -   7/24/2016
+- [x] Links to Java-Files                     -   7/24/2016
+- [x] Reordered packages and classes          -   7/26/2016
+- [x] @TestFactory + DynamicTests             -   7/26/2016
+- [x] Test-Extensions (o\j\j\api\extension)   -   7/28/2016
+- [ ] Proper Presentation                     -

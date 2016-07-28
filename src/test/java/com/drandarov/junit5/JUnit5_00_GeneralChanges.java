@@ -3,9 +3,12 @@ package com.drandarov.junit5;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 /**
- * Created by drandard on 21.07.2016.
+ * Contains a collection of small or general changes made to the API
+ *
+ * Created by dmitrij-drandarov on 21.07.2016.
  */
 public class JUnit5_00_GeneralChanges {
 
@@ -45,8 +48,8 @@ public class JUnit5_00_GeneralChanges {
     void beforeEach() {}
 
     /**
-     * Annotation @Ignore was replaced by @{@link Disabled}.
-     * Sounds less negative.
+     * Annotation @Ignore was replaced by @{@link Disabled}. Sounds less negative.
+     * However a reason for the deactivation  will be printed.
      */
     @Disabled
     @Test
@@ -62,7 +65,7 @@ public class JUnit5_00_GeneralChanges {
 
     /*
     ##################################################################################################################
-                                                      Assertions
+                                             Assertions / Assumptions
     ##################################################################################################################
     */
 
@@ -75,5 +78,13 @@ public class JUnit5_00_GeneralChanges {
         assertTrue(true);            // With static import on org.junit.jupiter.api.Assertions.assertTrue()
     }
 
+    /**
+     * Assumption Methods are now in class {@link Assumptions}. Method names stayed mostly the same otherwise.
+     */
+    @Test
+    void assumptionsTest() {
+        Assumptions.assumeTrue(true); // Without static import
+        assumeTrue(true);             // With static import on org.junit.jupiter.api.Assumptions.assumeTrue()
+    }
 
 }

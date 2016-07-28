@@ -1,12 +1,16 @@
 package com.drandarov.junit5;
 
-import com.drandarov.junit5.util.LongParameterResolver;
-import com.drandarov.junit5.util.StringParameterResolver;
+import com.drandarov.junit5.util.extension.BeforeAllExtensionImpl;
+import com.drandarov.junit5.util.extension.DisabledOnMonday;
+import com.drandarov.junit5.util.extension.DisabledOnWeekday;
+import com.drandarov.junit5.util.extension.DisabledWeekdays;
+import com.drandarov.junit5.util.extension.parameterresolver.LongParameterResolver;
+import com.drandarov.junit5.util.extension.parameterresolver.StringParameterResolver;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
@@ -15,21 +19,54 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-/**
- * A collection of new, advanced features introduced in JUnit 5.
- *
- * Created by drandard on 22.07.2016.
- */
-public class JUnit5_02_NewAdvancedFeatures {
 
     /*
     ##################################################################################################################
                                                     Test-Extensions
     ##################################################################################################################
     */
+
+/**
+ * A collection of new, advanced or experimental features introduced in JUnit 5.
+ *
+ * Created by dmitrij-drandarov on 22.07.2016.
+ */
+@ExtendWith(BeforeAllExtensionImpl.class) // This example is basically an alternative to @BeforeAll
+public class JUnit5_02_NewAdvancedFeatures {
+
+    /**
+     * All possible extensions are implementations of {@link Extension} or its
+     * extensions since those are requiered for {@link ExtendWith} or {@link Extensions}.
+     *
+     * The default implementations are currently inside {@link org.junit.jupiter.api.extension} and a list of them
+     * inside the JavaDoc of {@link ExtendWith}.
+     */
+    @Test
+    void extensionInfoTest() {}
+
+    /**
+     * In this example I use an implementation of {@link TestExecutionCondition} called {@link DisabledOnMonday} to
+     * tell JUnit to disable this test on mondays, because who likes those, right?
+     *
+     * This annotation might just as well be placed on class level. To see how I implemented this look at
+     * {@link DisabledOnMonday}.
+     */
+    @Test
+    @ExtendWith(DisabledOnMonday.class)
+    void disabledOnMondayTest() {}
+
+    /**
+     * Here I go a step further and annotate my days dynamically, by specifying the days I don't want the test to run
+     * on with another custom annotation called {@link DisabledWeekdays}.
+     *
+     * My extension {@link DisabledOnWeekday} later searches for that annoation and determines whether the test should
+     * run or not.
+     */
+    @Test
+    @DisabledWeekdays({Calendar.THURSDAY, Calendar.SATURDAY})
+    @ExtendWith(DisabledOnWeekday.class)
+    void disabledOnWeekdaysTest() {}
 
 
     /*
@@ -39,11 +76,13 @@ public class JUnit5_02_NewAdvancedFeatures {
     */
 
     /**
-     * Tests can now be provided with parameters. Those are resolved by {@link ParameterResolver}-Implementations.
+     * Tests can now be provided with parameters. Those are resolved by {@link ParameterResolver}-Implementations which
+     * in turn are extensions of the above mentioned {@link Extension}.
      * This enables dependency injection at method level.
      *
      * Resolvers for {@link TestInfo} and {@link TestReporter} are already provided. Other parameters require your own
-     * {@link ParameterResolver}-Implementations to be added with the @{@link ExtendWith}-Annotation.
+     * {@link ParameterResolver}-Implementations to be added with the @{@link ExtendWith}-Annotation to either the
+     * class or method.
      *
      * @param testInfo Information about the current test
      * @param testReporter TODO: ?!
@@ -60,8 +99,9 @@ public class JUnit5_02_NewAdvancedFeatures {
     }
 
     /**
-     * A simple example of a custom parameter. @{@link ExtendWith} is used to mark {@link StringParameterResolver} as
-     * used {@link ParameterResolver}
+     * A simple example of a custom parameter. @{@link ExtendWith} is used to mark {@link StringParameterResolver} and
+     * {@link LongParameterResolver} as used {@link ParameterResolver}.
+     * These could alternatively be placed at class level.
      *
      * @param parameterString String-Parameter that will be injected by {@link StringParameterResolver}
      * @param parameterLong Long-Parameter that will be injected by {@link LongParameterResolver}
@@ -90,12 +130,10 @@ public class JUnit5_02_NewAdvancedFeatures {
     Stream<DynamicTest> testStreamFactoryTest() {
         Iterator<String> testData = Arrays.asList(new String[]{"1", "2", "3"}).iterator();
 
-        Stream<DynamicTest> dynamicTests = DynamicTest.stream(
+        return DynamicTest.stream(
                 testData,                              // Input-Data for the Factory
                 s -> "Displayname: S" + s,             // Creating DisplayNames for the test
                 Assertions::assertNotNull);            // Providing an Executable on which the test is based
-
-        return dynamicTests;
     }
 
     /**
@@ -105,9 +143,9 @@ public class JUnit5_02_NewAdvancedFeatures {
      */
     @TestFactory
     List<DynamicTest> testListFactoryTest() {
-        //For each number in the range a DynamicTest will be created and collected into a list.
-        return IntStream.range(1, 4)
-                .mapToObj(i -> DynamicTest.dynamicTest("DisplayName: L" + i, () -> assertTrue(this.getClass() != null)))
+        // For each number in the range a DynamicTest will be created and collected into a list to be later executed.
+        return IntStream.rangeClosed(1, 3) // Input-Data
+                .mapToObj(i -> DynamicTest.dynamicTest("DisplayName: L" + i, () -> assertTrue(i > 0)))
                 .collect(Collectors.toList());
     }
 

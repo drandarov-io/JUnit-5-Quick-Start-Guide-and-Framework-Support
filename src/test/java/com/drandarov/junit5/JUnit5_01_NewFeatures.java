@@ -7,7 +7,9 @@ import java.math.BigInteger;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Created by drandard on 22.07.2016.
+ * Contains a collection of smaller, general new features like lambda support or small annotations.
+ *
+ * Created by dmitrij-drandarov on 22.07.2016.
  */
 public class JUnit5_01_NewFeatures {
 
@@ -28,7 +30,7 @@ public class JUnit5_01_NewFeatures {
 
     /*
     ##################################################################################################################
-                                                      Assertions
+                                             Assertions / Assumptions
     ##################################################################################################################
     */
 
@@ -79,17 +81,10 @@ public class JUnit5_01_NewFeatures {
 
         Assertions.assertAll("Random Tests", executables);
 
-        i.add(BigInteger.ONE);
+        i.add(BigInteger.ONE); //TODO: What did I think here...
 
         Assertions.assertAll("Random Tests Again", executables);
     }
-
-
-    /*
-    ##################################################################################################################
-                                                      Assumptions
-    ##################################################################################################################
-    */
 
     /**
      * {@link Assumptions} now support Suppliers as well.
