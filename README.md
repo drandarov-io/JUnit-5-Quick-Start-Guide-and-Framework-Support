@@ -1,4 +1,4 @@
-# JUnit 5 QuickStart-Guide
+# JUnit 5 Quickstart Guide and Samples
 
 ### Set-Up
 - IDE: I recommend using IntelliJ IDEA 2016.2+ since it brings native support to JUnit 5
@@ -36,13 +36,14 @@ Gradle
 
 ### Index
 1. [JUnit5_00_GeneralChanges.java] (/src/test/java/com/drandarov/junit5/JUnit5_00_GeneralChanges.java)
-    - Contains a collection of <u>small or general changes</u> made to the API
+    - Contains a collection of *small or* **general changes** made to the API
 
 3. [JUnit5_01_NewFeatures.java] (/src/test/java/com/drandarov/junit5/JUnit5_01_NewFeatures.java)
-    - Contains a collection of <u>smaller, general new features</u> like <b>lambda support</b> or <b>small annotations</b>
+    - Contains a collection of *smaller, general new features* like **lambda support** or **small annotations**
     
 4. [JUnit5_02_NewAdvancedFeatures.java] (/src/test/java/com/drandarov/junit5/JUnit5_02_NewAdvancedFeatures.java)
-    - Contains a collection of <u>more advanced, complicated or experimental new features</u> like the new <b>Extensions-API</b> and <b>Test-Parameters</b>
+    - Contains a collection of *more advanced, complicated or experimental new features* like the new **Extensions-API**
+    and **Test-Parameters**. Also includes some **use-cases**.
 
 ### Tasks
 
@@ -51,4 +52,5 @@ Gradle
 - [x] Reordered packages and classes          -   7/26/2016
 - [x] @TestFactory + DynamicTests             -   7/26/2016
 - [x] Test-Extensions (o\j\j\api\extension)   -   7/28/2016
+- [x] Test-Extensions extended                -   7/29/2016
 - [ ] Proper Presentation                     -

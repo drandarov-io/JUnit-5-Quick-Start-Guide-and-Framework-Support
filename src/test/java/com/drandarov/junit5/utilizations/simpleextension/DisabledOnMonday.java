@@ -1,15 +1,13 @@
-package com.drandarov.junit5.util.extension;
+package com.drandarov.junit5.utilizations.simpleextension;
 
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
 import org.junit.jupiter.api.extension.TestExecutionCondition;
 import org.junit.jupiter.api.extension.TestExtensionContext;
 
-import java.time.Instant;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
- * An extension that disables this test class on Mondays, because nobody likes those, right?
+ * An extension that disables a test class on Mondays, because nobody likes those, right?
  *
  * Created by dmitrij-drandarov on 28.07.2016.
  */
