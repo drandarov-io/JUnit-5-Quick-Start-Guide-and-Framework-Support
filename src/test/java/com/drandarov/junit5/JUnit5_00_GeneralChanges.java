@@ -20,8 +20,7 @@ public class JUnit5_00_GeneralChanges {
 
     /**
      * Tests are now only not allowed to be static / private. Same goes for @Before.../@After...
-     *
-     * timeout=? and expected=? functionality has now moved elsewhere. See in {@link JUnit5_01_NewFeatures}
+     * timeout=? and expected=? functionality has now moved elsewhere. See in {@link JUnit5_01_NewFeaturesBasics}
      */
     @Test
     void testTest() {}
@@ -65,7 +64,7 @@ public class JUnit5_00_GeneralChanges {
 
     /*
     ##################################################################################################################
-                                             Assertions / Assumptions
+                                                  Assertions / Assumptions
     ##################################################################################################################
     */
 

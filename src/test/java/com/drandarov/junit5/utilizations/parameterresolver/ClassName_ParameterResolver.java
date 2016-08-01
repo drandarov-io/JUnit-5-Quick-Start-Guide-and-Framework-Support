@@ -10,23 +10,23 @@ import org.junit.jupiter.api.extension.ParameterResolver;
  *
  * Created by dmitrij-drandarov on 25.07.2016.
  */
-public class LongParameterResolver implements ParameterResolver {
+public class ClassName_ParameterResolver implements ParameterResolver {
 
     /**
-     * Simple example that only checks if the Paramter-Type is a Long based on the Parameter-Context to determine
-     * whether the Parameter is supported by this ParameterResolver.
+     * Simple example that only checks if the Parameter-Type is a {@link String} based on the Parameter-Context to
+     * determine whether the Parameter is supported by this {@link ParameterResolver}.
      */
     @Override
     public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-        return parameterContext.getParameter().getType().equals(Long.class);
+        return parameterContext.getParameter().getType().equals(String.class);
     }
 
     /**
-     * Simple example that simply resolves the Parameter by returning the current millis based on the Parameter-Context.
+     * Simple example that simply resolves the Parameter by returning the Class-Name based on the Parameter-Context.
      */
     @Override
     public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-        return System.currentTimeMillis();
+        return extensionContext.getTestClass().get().getSimpleName();
     }
 
 }
