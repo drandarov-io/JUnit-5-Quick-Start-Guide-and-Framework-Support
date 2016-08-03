@@ -13,3 +13,7 @@
 - [x] Adjusted packages and classes for presentation    -   08/01/2016
 - [ ] Proper Presentation                               -   
 - [ ] Setup block text                                  -   
+- [ ] Change to code from images                        -   
+- [x] Add @Nested                                       -   08/03/2016
+- [x] Add expectThrows()                                -   08/03/2016
+- [x] Add reference                                     -   08/03/2016

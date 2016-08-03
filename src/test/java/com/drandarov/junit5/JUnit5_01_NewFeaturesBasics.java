@@ -1,6 +1,7 @@
 package com.drandarov.junit5;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.Extension;
 import org.junit.jupiter.api.extension.ParameterResolver;
@@ -31,6 +32,17 @@ public class JUnit5_01_NewFeaturesBasics {
     @DisplayName("Choose a display name")
     void displayNameTest() {}
 
+    @Nested
+    @DisplayName("Tests grouped by something")
+    class groupedTests {
+
+        @Test
+        void groupedTest1() {}
+
+        @Test
+        void groupedTest2() {}
+
+    }
 
     /*
     ##################################################################################################################
@@ -45,7 +57,7 @@ public class JUnit5_01_NewFeaturesBasics {
      */
     @Test
     void executablesTest() {
-        Executable ex = () -> assertTrue(() -> 5 >= 10);
+        Executable ex = () -> assertTrue(() -> 5 <= 10);
         Executable ex2 = () -> assertFalse(Boolean.FALSE);
         assertAll(ex, ex2);
     }
@@ -70,6 +82,18 @@ public class JUnit5_01_NewFeaturesBasics {
         assertThrows(
                 ArrayIndexOutOfBoundsException.class,
                 () -> (new String[1])[2] = "I will throw an Exception :)");
+    }
+
+    /**
+     * You can also use {@link Assertions#expectThrows(Class, Executable)} to get the {@link Exception}-Instance if you
+     * need it.
+     */
+    @Test
+    void expectThrowsTest() {
+        ArrayIndexOutOfBoundsException exc = expectThrows(ArrayIndexOutOfBoundsException.class,
+                () -> (new String[1])[2] = "I will throw an Exception :)");
+
+        assertEquals(exc.getMessage(), "2");
     }
 
     /**

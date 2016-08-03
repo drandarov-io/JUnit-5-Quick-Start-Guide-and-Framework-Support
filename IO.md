@@ -10,7 +10,7 @@ Table of contents
 - [General changes] (#general-changes-code)
 - [New features: Basics] (#new-features-basics-code)
     - [General] (#general)
-    - [Lambda-Support] (#lambda-support)
+    - [Assertions and Lambda-Support] (#assertions-and-lambda-support)
     - [Parameter Resolver] (#parameter-resolver)
 - [New features: Advanced] (#new-features-advanced)
     - [Test-Factories] (#test-factories)
@@ -39,7 +39,7 @@ As for dependencies:
   <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>5.0.0-M1</version>
+        <version>5.0.0-M2</version>
         <scope>compile</scope>
   </dependency>
 ```
@@ -47,7 +47,7 @@ As for dependencies:
   <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-runner</artifactId>
-        <version>1.0.0-M1</version>
+        <version>1.0.0-M2</version>
         <scope>compile</scope>
   </dependency>
 ```
@@ -55,20 +55,20 @@ As for dependencies:
   <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.0.0-M1</version>
+        <version>5.0.0-M2</version>
         <scope>runtime</scope>
   </dependency>
 ```
 
 *Gradle*
 ```gradle
-  testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.0-M1'´
+  testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.0-M2'
 ```
 ```gradle
-  testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.0.0-M1'
+  testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.0.0-M2'
 ```
 ```gradle
-  testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.0.0-M1'
+  testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.0.0-M2'
 ```
 
 
@@ -85,7 +85,7 @@ parameter functionality has moved elsewhere.
 
 Other annotations have received slight changes as well, including the common `@BeforeClass`, `@BeforeEach`, their
 `@After...` aequivalents, `@Ignored` and the lesser known `@Category`. All of these have been renamed and given the
-same treatment regarding public as `@Test`.
+same treatment regarding `public` as `@Test`.
 
 ![img/01_other_annotations.png](img/01_other_annotations.png)
 
@@ -107,7 +107,13 @@ you don't need 40-character test-names to make clear what the test is about at a
 
 ![img/04_displayname_result.png](img/04_displayname_result.png)
 
-### Labda-Support
+You can now also group tests with inner classes annotated with `@Nested`.
+
+![img/05_nestedTests.png](img/05_nestedTests.png)
+
+![img/06_nestedTests_result.png](img/06_nestedTests_result.png)
+
+### Assertions and Lambda-Support
 Now for the probably most known and anticipated feature in JUnit 5: Lambda-Support...  
 JUnit 5 `Assertions` and `Assumptions` classes and its methods now provide Lambda support. This is achieved by providing
 methods with functional interfaces as parameters.
@@ -117,16 +123,23 @@ one to provide a result-message. Those are however just alternatives to the olde
 Assertion methods like `assertTrue(...)` are now just overloaded with combinations of those four parameters:  
 `boolean` OR `BooleanSupplier` X `String` OR `Supplier<String>` resulting in four different methods.
 
-![img/05_assertSupplier.png](img/05_assertSupplier.png)
+![img/05_assertSupplier.png](img/07_assertSupplier.png)
 
 A new important functional interface is `Executable`. It is very similar to a `Runnable`, however it throws a
 `Throwable` meaning you can execute assertions like `assertTrue()` and an `AssertionError` may be thrown affecting your
 test-result. It is used in several assertions like the new `assertAll(Executable... executables)` which can be also used
 to prevent repitition.
 
-![img/06_assertThrows.png](img/06_assertThrows.png)
+![img/07_assertAll.png](img/08_assertAll.png)
 
-![img/07_assertAll.png](img/07_assertAll.png)
+This new functional interface is also used in the new replacement of the old `@Test`-parameter `expected` which is
+called `assertThrows()`. It asserts whether an exception was thrown.
+If you need the exception-instance itself to e.g. assert the message, you can instead use `expectThrows()` which also
+has the exception as return type.
+
+![img/06_assertThrows.png](img/09_assertThrows.png)
+
+![img/07_assertAll.png](img/10_expectThrows.png)
 
 ### Parameter Resolver
 
@@ -137,7 +150,7 @@ JUnit 5 provides two implementations by itself: `TestInfo` which contains some m
 Test-`Method` and Test-`Class` instances and `TestReporter` which can be used to publish test entries.  
 A lot more on the Extension-Api is following further below.
 
-![img/08_parameterResolver.png](img/08_parameterResolver.png)
+![img/08_parameterResolver.png](img/11_parameterResolver.png)
 
 
 New features: Advanced [(code)](/src/test/java/com/drandarov/junit5/JUnit5_02_NewFeaturesAdvanced.java)
@@ -148,19 +161,19 @@ Building upon the `ParameterResolver` paragraph of the last chapter let's look a
 `ParameterResolver`. You can also see the first visual sign of the Extension-API in the form of the
 `@ExtendWith`-Annotation. The final result is:
 
-![img/09_parameterResolverExt.png](img/09_parameterResolverExt.png)
+![img/09_parameterResolverExt.png](img/12_parameterResolverExt.png)
 
 This is achieved by the following implementations:
 
 The first implementation processes the `String` parameter `className`. It checks whether the parameter class is a
 `String` and throws an exception otherwise. To resolve and inject the parameter it just returns the test classes name.
 
-![img/10_parameterClassName.png](img/10_parameterClassName.png)
+![img/10_parameterClassName.png](img/13_parameterClassName.png)
 
 The seconds implementation processes the `Long` parameter `parameterIndex`. It does basically the same but resolves the
 parameter by getting the index from the `parameterContext`.
 
-![img/11_parameterIndex.png](img/11_parameterIndex.png)
+![img/11_parameterIndex.png](img/14_parameterIndex.png)
 
 ### Test-Factories
 TODO
@@ -179,4 +192,6 @@ Feel free to express critique and contribute to the
 [repository](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples) :)
 
 ### Reference
-TODO
+[Official JUnit 5 User Guide](http://junit.org/junit5/docs/current/user-guide)  
+[JUnit 5 GitHub](https://github.com/junit-team/junit5)  
+[JUnit 5 Milestone plan](https://github.com/junit-team/junit5/milestones/)  
