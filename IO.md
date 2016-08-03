@@ -24,6 +24,8 @@ Introduction
 ------------
 
 ### Intentions
+TODO
+
 For source code see my GitHub-Repository:  
 [**dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples**
 ](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples)
@@ -161,15 +163,20 @@ parameter by getting the index from the `parameterContext`.
 ![img/11_parameterIndex.png](img/11_parameterIndex.png)
 
 ### Test-Factories
+TODO
 
 ### Test-Extensions
-
+TODO
 
 Advanced Test-Samples [(code)](/src/test/java/com/drandarov/junit5/JUnit5_00_GeneralChanges.java)
 ------------------------------
-
+TODO
 
 Closing words
 -------------
+### Contribution
 Feel free to express critique and contribute to the 
 [repository](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples) :)
+
+### Reference
+TODO
