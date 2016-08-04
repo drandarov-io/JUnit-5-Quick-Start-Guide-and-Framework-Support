@@ -1,6 +1,12 @@
 # JUnit 5 Quickstart Guide and Samples
 
-[insert big fading image of IO page here]
+<br>
+
+## <p align="center">[Visit the projects GitHub-IO page for a blog-like presentation](https://dmitrij-drandarov.github.io/JUnit-5-QuickStart-Guide-and-Samples)</p>
+ 
+## <p align="center">[![ioPage](/../master/img/-01_README_Redirection.png?raw=true)](https://dmitrij-drandarov.github.io/JUnit-5-QuickStart-Guide-and-Samples)</p>
+
+<br>
 
 ### To-Do
 
@@ -15,4 +21,3 @@
 - [x] Add expectThrows()                                -   08/03/2016
 - [x] Add reference                                     -   08/03/2016
 - [ ] Proper Presentation                               -   
-- [ ] Setup block text                                  -   
