@@ -19,6 +19,9 @@ Table of contents
     - [Test-Extensions](#test-extensions)
     - [Test-Parameters](#test-parameters)
 - [Advanced Test-Samples](#advanced-test-samples-code)
+    - [Extended disabled weekdays](#extended-disabled-weekdays)
+    - [Extend @Test](#extend-test)
+    - [Benchmarking Example](#benchmarking-example)
 - [Closing words](#closing-words)
     - [Contribution](#contribution)
     - [Further Reference](#further-reference)
@@ -27,10 +30,11 @@ Table of contents
 Introduction
 ------------
 
-### Intentions
-TODO
+### Information
+Some headers related to code will have a code-link behind their name directing to the corresponding class in the
+GitHub-Reposiory.
 
-For source code see my GitHub-Repository:  
+For the whole source code see my GitHub-Repository:  
 [**dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples**
 ](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples)
 
@@ -129,7 +133,7 @@ methods with functional interfaces as parameters.
 The most used ones are the `BooleanSupplier` and `Supplier<String>`. The first one is used for assertions and the latter
 one to provide a result-message. Those are however just alternatives to the older plain `boolean` and `String`.  
 Assertion methods like `assertTrue(...)` are now just overloaded with combinations of those four parameters:  
-(`boolean` | `BooleanSupplier`) & (`String` | `Supplier<String>`) resulting in four different methods. This is what most
+(`boolean` | `BooleanSupplier`) & (`String` | `Supplier<String>`) resulting in 4 different methods. This is what most
 lambda-supporting methods are designed like.
 
 ![img/05_assertSupplier.png](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/07_assertSupplier.png?raw=true)
@@ -211,7 +215,21 @@ Again this could without problem be placed on class level.
 
 Advanced Test-Samples [(code)](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/src/test/java/com/drandarov/junit5/JUnit5_00_GeneralChanges.java)
 ------------------------------
-TODO
+
+### Extended disabled weekdays
+Let's extend that `@DisabledOnMonday` annotation a bit. What if you want to choose the weekday? Creating 7 annotations
+is kind of overkill. A way to achieve this could be to add another annotation that contains the weekdays:
+
+
+
+
+
+### Extend @Test
+So what if you want to save some that space occupied by all those annotations. Let's make all-in-one in this example:
+
+
+
+### Benchmarking Example
 
 Closing words
 -------------

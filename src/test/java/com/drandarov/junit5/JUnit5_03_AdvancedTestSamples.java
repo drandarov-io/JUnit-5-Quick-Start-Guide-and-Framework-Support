@@ -32,8 +32,8 @@ public class JUnit5_03_AdvancedTestSamples {
      * Here I go a step further and annotate my days dynamically, by specifying the days I don't want the test to run
      * on with another custom annotation called @{@link DisabledWeekdays}.
      *
-     * My extension {@link DisabledOnWeekday} later searches for @{@link DisabledWeekdays} and determines whether the test should
-     * run or not.
+     * My extension {@link DisabledOnWeekday} later searches for @{@link DisabledWeekdays} and determines whether the
+     * test should run or not.
      */
     @Test
     @DisabledWeekdays({Calendar.THURSDAY, Calendar.SATURDAY})
