@@ -4,7 +4,7 @@
 
 ## <p align="center">[Visit the projects GitHub-IO page for a blog-like format](https://dmitrij-drandarov.github.io/JUnit-5-QuickStart-Guide-and-Samples)</p>
  
-## <p align="center">[![ioPage](/../master/img/-01_README_Redirection.png?raw=true)](https://dmitrij-drandarov.github.io/JUnit-5-QuickStart-Guide-and-Samples)</p>
+## <p align="center">[![ioPage](/../master/img/000_README_LINK.png?raw=true)](https://dmitrij-drandarov.github.io/JUnit-5-QuickStart-Guide-and-Samples)</p>
 
 <br>
 
