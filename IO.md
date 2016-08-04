@@ -21,7 +21,7 @@ Table of contents
         - [Test-Parameters](#test-parameters)
     - [Advanced Test-Samples](#advanced-test-samples-code)
         - [Extended disabled weekdays](#extended-disabled-weekdays)
-        - [Extend @Test](#extend-test)
+        - [Extend Test-Annotation](#extend-test-annotation)
         - [Benchmarking Example](#benchmarking-example)
     - [Closing words](#closing-words)
         - [Contribution](#contribution)
@@ -255,7 +255,7 @@ The extension looks slightly different now, since it needs to determine the week
 ![img/21_disabledOnWeekday_annotation.png
 ](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/21_disabledOnWeekday_annotation.png?raw=true)
 
-### Extend @Test
+### Extend Test-Annotation
 So what if you want to save some that space occupied by all those annotations. Let's make it all-in-one in this example:
 
 ![img/22_uiTest.png
