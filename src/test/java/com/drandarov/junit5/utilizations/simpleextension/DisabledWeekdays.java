@@ -11,7 +11,5 @@ import java.lang.annotation.RetentionPolicy;
  */
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DisabledWeekdays {
-
     int[] value();
-
 }
