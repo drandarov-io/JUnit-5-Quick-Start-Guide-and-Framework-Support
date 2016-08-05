@@ -21,4 +21,5 @@
 - [x] Add expectThrows()                                -   08/03/2016
 - [x] Add reference                                     -   08/03/2016
 - [x] Proper Presentation                               -   08/04/2016
-- [ ] Finish TODOs                                      -   
+- [x] Finish Stream TODOs                               -   08/05/2016
+- [x] Changed name                                      -   08/05/2016

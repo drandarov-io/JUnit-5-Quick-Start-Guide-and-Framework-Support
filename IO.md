@@ -37,7 +37,7 @@ GitHub-Reposiory.
 
 For the whole source code see my GitHub-Repository:  
 [**dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples**
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced)
 
 ### Set-Up
 For an IDE I recommend *IntelliJ IDEA 2016.2(+)* right now since it brings native support for JUnit 5.  
@@ -81,7 +81,7 @@ As for dependencies:
 ```
 
 
-General changes [(code)](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/src/test/java/com/drandarov/junit5/JUnit5_00_GeneralChanges.java)
+General changes [(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/junit5/JUnit5_00_GeneralChanges.java)
 ------------------------
 
 ### Syntax
@@ -93,7 +93,7 @@ need to make the test `public`, however you can still not make it `static` or `p
 parameter functionality has moved elsewhere.
 
 ![img/00_simple_test.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/00_simple_test.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/00_simple_test.png?raw=true)
 
 ### Naming
 
@@ -102,16 +102,16 @@ Other annotations have received slight changes as well, including the common `@B
 same treatment regarding `public` as `@Test`.
 
 ![img/01_other_annotations.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/01_other_annotations.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/01_other_annotations.png?raw=true)
 
 `Assert` and `Assume` classes have been renamed as well and are now called `Assertions` and `Assumptions`. Not much has
 changed for the naming of the methods of both classes.
 
 ![img/02_assertions_assumptions.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/02_assertions_assumptions.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/02_assertions_assumptions.png?raw=true)
 
 
-New features: Basics [(code)](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/src/test/java/com/drandarov/junit5/JUnit5_01_NewFeaturesBasics.java)
+New features: Basics [(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/junit5/JUnit5_01_NewFeaturesBasics.java)
 -----------------------------
 
 ### General
@@ -120,18 +120,18 @@ There is a new pretty annotation called `@DisplayName` which is supposed to impr
 you don't need 40-character test-names to make clear what the test is about at a glance.
 
 ![img/03_displayname.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/03_displayname.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/03_displayname.png?raw=true)
 
 ![img/04_displayname_result.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/04_displayname_result.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/04_displayname_result.png?raw=true)
 
 You can now also group tests with inner classes annotated with `@Nested`.
 
 ![img/05_nestedTests.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/05_nestedTests.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/05_nestedTests.png?raw=true)
 
 ![img/06_nestedTests_result.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/06_nestedTests_result.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/06_nestedTests_result.png?raw=true)
 
 ### Assertions and Lambda-Support
 Now for the probably most known and anticipated feature in JUnit 5: Lambda-Support...  
@@ -145,7 +145,7 @@ Assertion methods like `assertTrue(...)` are now just overloaded with combinatio
 lambda-supporting methods are designed like.
 
 ![img/05_assertSupplier.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/07_assertSupplier.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/07_assertSupplier.png?raw=true)
 
 A new important functional interface is `Executable`. It is very similar to a `Runnable`, however it throws a
 `Throwable` meaning you can execute assertions like `assertTrue()` and an `AssertionError` may be thrown affecting your
@@ -153,7 +153,7 @@ test-result. It is used in several assertions like the new `assertAll(Executable
 to prevent repitition.
 
 ![img/07_assertAll.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/08_assertAll.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/08_assertAll.png?raw=true)
 
 This new functional interface is also used in the new replacement of the old `@Test`-parameter `expected` which is
 called `assertThrows()`. It asserts whether an exception was thrown.
@@ -161,10 +161,10 @@ If you need the exception-instance itself to e.g. assert the message, you can in
 has the exception as return type.
 
 ![img/06_assertThrows.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/09_assertThrows.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/09_assertThrows.png?raw=true)
 
 ![img/07_assertAll.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/10_expectThrows.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/10_expectThrows.png?raw=true)
 
 ### Parameter Resolver
 
@@ -176,10 +176,10 @@ Test-`Method` and Test-`Class` instances and `TestReporter` which can be used to
 A lot more on the Extension-Api is following further below.
 
 ![img/08_parameterResolver.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/11_parameterResolver.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/11_parameterResolver.png?raw=true)
 
 
-New features: Advanced [(code)](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/src/test/java/com/drandarov/junit5/JUnit5_02_NewFeaturesAdvanced.java)
+New features: Advanced [(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/junit5/JUnit5_02_NewFeaturesAdvanced.java)
 -------------------------------
 
 ### Test-Parameters
@@ -188,7 +188,7 @@ Building upon the `ParameterResolver` paragraph of the last chapter let's look a
 `@ExtendWith`-Annotation. The final result is:
 
 ![img/12_parameterResolverExt.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/12_parameterResolverExt.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/12_parameterResolverExt.png?raw=true)
 
 This is achieved by the following implementations:
 
@@ -196,13 +196,13 @@ The first implementation processes the `String` parameter `className`. It checks
 `String` and throws an exception otherwise. To resolve and inject the parameter it just returns the test classes name.
 
 ![img/13_parameterClassName.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/13_parameterClassName.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/13_parameterClassName.png?raw=true)
 
 The seconds implementation processes the `Long` parameter `parameterIndex`. It does basically the same but resolves the
 parameter by getting the index from the `parameterContext`.
 
 ![img/14_parameterIndex.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/14_parameterIndex.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/14_parameterIndex.png?raw=true)
 
 ### Test-Factories
 Another big feature are the new Test-Factories. These are annotated with `@TestFactory` instead of `@Test`. Their return
@@ -211,10 +211,10 @@ those. You basically have to provide test data and based on it a display name as
 In my example you can see me using the `stream()`-method of said class.
 
 ![img/15_testFactory.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/15_testFactory.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/15_testFactory.png?raw=true)
 
 ![img/16_testFactory_result.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/16_testFactory_result.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/16_testFactory_result.png?raw=true)
 
 ### Test-Extensions
 Here I will show you an `Extension` that is not based on the `ParameterResolver` but instead implements the
@@ -226,15 +226,15 @@ implementation only checks for the weekday and returns an appropriate `Condition
 being ignored when the weekday matches.
 
 ![img/17_disabledConditions.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/17_disabledConditions.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/17_disabledConditions.png?raw=true)
 
 ![img/18_disabledConditions_usage.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/18_disabledConditions_usage.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/18_disabledConditions_usage.png?raw=true)
 
 Again this could without problem be placed on class level.
 
 
-Advanced Test-Samples [(code)](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/src/test/java/com/drandarov/junit5/JUnit5_00_GeneralChanges.java)
+Advanced Test-Samples [(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/junit5/JUnit5_00_GeneralChanges.java)
 ------------------------------
 
 ### Extended disabled weekdays
@@ -242,31 +242,31 @@ Let's extend that `@DisabledOnMonday` annotation a bit. What if you want to choo
 is kind of overkill. A way to achieve this could be to add another annotation that contains the weekdays:
 
 ![img/19_disabledOnWeekday.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/19_disabledOnWeekday.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/19_disabledOnWeekday.png?raw=true)
 
 The `@DisabledWeekdays` annotation doesn't do much more than hold an int array corresponding to the weekdays.
 
 ![img/20_disabledOnWeekday_data.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/20_disabledOnWeekday_data.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/20_disabledOnWeekday_data.png?raw=true)
 
 The extension looks slightly different now, since it needs to determine the weekdays from the annotation. Luckily the
 `evaluate()`-method provides the `TestExtensionContext` so it's fairly easy to get those.
 
 ![img/21_disabledOnWeekday_annotation.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/21_disabledOnWeekday_annotation.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/21_disabledOnWeekday_annotation.png?raw=true)
 
 ### Extend Test-Annotation
 So what if you want to save some that space occupied by all those annotations. Let's make it all-in-one in this example:
 
 ![img/22_uiTest.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/22_uiTest.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/22_uiTest.png?raw=true)
 
 What you basically do here is to create a new annotation and annotate that with `@Test`. Then you pack all you need in
 there like your extensions, parameter resolvers, targets, parameters, etc. The annotation `@UITest` above looks like
 this:
 
 ![img/23_uiTest_code.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/23_uiTest_code.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/23_uiTest_code.png?raw=true)
 
 The extensions used do not really matter here. One extension resolves the `Pane` from the fxml path and the other one 
 just prints some data. This is rather a showcase of an `@Test`-Extension and including utilizing the extension features
@@ -283,17 +283,17 @@ annotate an annotation `@Benchmarked` with that extension and then place that on
 The final benchmarked test-method will look something like this:
 
 ![img/24_benchmarked.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/24_benchmarked.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/24_benchmarked.png?raw=true)
 
 The corresponding test-output:
 
 ![img/25_benchmarked_output.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/25_benchmarked_output.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/25_benchmarked_output.png?raw=true)
 
 The extension couldn't be simpler:
 
 ![img/26_benchmarked_extension.png
-](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples/blob/master/img/26_benchmarked_extension.png?raw=true)
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/26_benchmarked_extension.png?raw=true)
 
 Of course I could have also included `@Benchmarked` in a separate `@BenchmarkedTest` annotation that would have extended
 `@Test` as well saving that one line.
@@ -303,7 +303,7 @@ Closing words
 -------------
 ### Contribution
 Feel free to express critique and contribute to the 
-[repository](https://github.com/dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples) :)
+[repository](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced) :)
 
 ### Further Reference
 [Official JUnit 5 User Guide](http://junit.org/junit5/docs/current/user-guide)  

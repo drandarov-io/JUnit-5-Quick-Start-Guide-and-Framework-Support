@@ -9,11 +9,7 @@ import org.junit.jupiter.api.extension.*;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * A collection of new, advanced or experimental features introduced in JUnit 5.
@@ -53,6 +49,8 @@ public class JUnit5_02_NewFeaturesAdvanced {
     /**
      * An example for a {@link TestFactory} with JUnit 5. {@link DynamicTest#stream(Iterator, Function, Consumer)}
      * provides an easy way to factorize multiple tests, which will be executed automatically.
+     * It's basically similar to a for-loop that reads data and asserts, but these test will be grouped and displayed
+     * seperately in the test results.
      *
      * @return A stream of dynamic tests
      */
@@ -64,19 +62,6 @@ public class JUnit5_02_NewFeaturesAdvanced {
                 testData,                              // Input-Data for the Factory
                 s -> "Displayname: S" + s,             // Creating DisplayNames for the test
                 Assertions::assertNotNull);            // Providing an Executable on which the test is based
-    }
-
-    /**
-     * Another {@link TestFactory}, but this time returns a List with {@link DynamicTest}s.
-     *
-     * @return A list of dynamic tests
-     */
-    @TestFactory
-    List<DynamicTest> testListFactoryTest() {
-        // For each number in the range a DynamicTest will be created and collected into a list to be later executed.
-        return IntStream.rangeClosed(1, 3) // Input-Data
-                .mapToObj(i -> DynamicTest.dynamicTest("DisplayName: L" + i, () -> assertTrue(i > 0)))
-                .collect(Collectors.toList());
     }
 
 
