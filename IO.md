@@ -1,10 +1,10 @@
-JUnit 5 Quickstart Guide and Samples
-====================================
+JUnit 5 Quick Start Guide and Advanced
+======================================
 
 Table of contents
 -----------------
 
-- [JUnit 5 Quickstart Guide and Samples](#)
+- [JUnit 5 Quick Start Guide and Advanced](#)
     - [Introduction](#introduction)
         - [Information](#Information)
         - [Set-Up](#set-up)
@@ -36,7 +36,7 @@ Some headers related to code will have a code-link behind their name directing t
 GitHub-Reposiory.
 
 For the whole source code see my GitHub-Repository:  
-[**dmitrij-drandarov/JUnit-5-QuickStart-Guide-and-Samples**
+[**dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced**
 ](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced)
 
 ### Set-Up
