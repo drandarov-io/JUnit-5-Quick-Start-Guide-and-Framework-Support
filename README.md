@@ -4,7 +4,7 @@
 
 ## <p align="center">[Visit the projects GitHub-IO page for a blog-like format](https://dmitrij-drandarov.github.io/JUnit5-Quick-Start-Guide-and-Advanced/)</p>
  
-## <p align="center">[![ioPage](/../master/img/000_README_LINK.png?raw=true)](https://dmitrij-drandarov.github.io/JUnit5-Quick-Start-Guide-and-Advanced/)</p>
+### <p align="center">[![ioPage](/../master/img/00_README_link.png?raw=true)](https://dmitrij-drandarov.github.io/JUnit5-Quick-Start-Guide-and-Advanced/)</p>
 
 <br>
 
