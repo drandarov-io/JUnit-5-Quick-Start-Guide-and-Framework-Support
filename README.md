@@ -1,10 +1,10 @@
-# JUnit 5 Quickstart Guide and Samples
+# JUnit 5 Quick Start Guide and Advanced
 
 <br>
 
-## <p align="center">[Visit the projects GitHub-IO page for a blog-like format](https://dmitrij-drandarov.github.io/JUnit-5-QuickStart-Guide-and-Samples)</p>
+## <p align="center">[Visit the projects GitHub-IO page for a blog-like format](https://dmitrij-drandarov.github.io/JUnit5-Quick-Start-Guide-and-Advanced/)</p>
  
-## <p align="center">[![ioPage](/../master/img/000_README_LINK.png?raw=true)](https://dmitrij-drandarov.github.io/JUnit-5-QuickStart-Guide-and-Samples)</p>
+## <p align="center">[![ioPage](/../master/img/000_README_LINK.png?raw=true)](https://dmitrij-drandarov.github.io/JUnit5-Quick-Start-Guide-and-Advanced/)</p>
 
 <br>
 
@@ -21,4 +21,4 @@
 - [x] Add expectThrows()                                -   08/03/2016
 - [x] Add reference                                     -   08/03/2016
 - [x] Proper Presentation                               -   08/04/2016
- 
+- [ ] Finish TODOs                                      -   
