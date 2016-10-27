@@ -10,8 +10,16 @@
 
 ### Schedule
 - [ ] 5.0 M3 Update - 10/31/2016
+ - JUnit 4 interoperability
+ - Additional discovery selectors
 - [ ] 5.0 M4 Update - 11/30/2016
+ - Parameterized tests
+ - Enhanced dynamic tests
+ - Documentation
 - [ ] 5.0 M5 Update - 12/30/2016
+ - Scenario tests
+ - Repeated tests
+ - Test execution in user-defined thread
 
 [Milestones](https://github.com/junit-team/junit5/milestones/)
 
