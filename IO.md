@@ -25,6 +25,7 @@ Table of contents
         - [Benchmarking Example](#benchmarking-example)
     - [Closing words](#closing-words)
         - [Contribution](#contribution)
+        - [Schedule](#schedule)
         - [Further Reference](#further-reference)
 
 
@@ -317,6 +318,13 @@ Closing words
 Feel free to express critique and contribute to the 
 [repository](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced) :)
 
+### Schedule
+- [ ] 5.0 M3 Update - 31.10.2016
+- [ ] 5.0 M4 Update - 30.11.2016
+- [ ] 5.0 M5 Update - 30.12.2016
+
+[Milestones](https://github.com/junit-team/junit5/milestones/)
+ 
 ### Further Reference
 [Official JUnit 5 User Guide](http://junit.org/junit5/docs/current/user-guide)  
 [JUnit 5 GitHub](https://github.com/junit-team/junit5)  
