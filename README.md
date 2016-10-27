@@ -9,9 +9,9 @@
 <br>
 
 ### Schedule
-- [ ] 5.0 M3 Update - 31.10.2016
-- [ ] 5.0 M4 Update - 30.11.2016
-- [ ] 5.0 M5 Update - 30.12.2016
+- [ ] 5.0 M3 Update - 10/31/2016
+- [ ] 5.0 M4 Update - 11/30/2016
+- [ ] 5.0 M5 Update - 12/30/2016
 
 [Milestones](https://github.com/junit-team/junit5/milestones/)
 
