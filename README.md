@@ -8,6 +8,13 @@
 
 <br>
 
+### Schedule
+- [ ] 5.0 M3 Update - 31.10.2016
+- [ ] 5.0 M4 Update - 30.11.2016
+- [ ] 5.0 M5 Update - 30.12.2016
+
+https://github.com/junit-team/junit5/milestones/
+
 ### To-Do
 
 - [x] Dependency Copy-Paste Resource                    -   07/24/2016
