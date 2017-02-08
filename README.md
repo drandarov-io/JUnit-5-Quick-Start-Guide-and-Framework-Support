@@ -9,17 +9,25 @@
 <br>
 
 ### Schedule
-- [ ] 5.0 M3 Update - 10/31/2016
+- [ ] 5.0 M3 Update - TODO: Update guide
  - JUnit 4 interoperability
  - Additional discovery selectors
-- [ ] 5.0 M4 Update - 11/30/2016
+
+- [ ] 5.0 M4 Update - Due by March 5, 2017
  - Parameterized tests
  - Enhanced dynamic tests
  - Documentation
-- [ ] 5.0 M5 Update - 12/30/2016
+ 
+- [ ] 5.0 M5 Update - Due by June 25, 2017
  - Scenario tests
  - Repeated tests
  - Test execution in user-defined thread
+
+- [ ] 5.0 RC1 (Release Candidate 1) Update - Due by July 23, 2017
+ - Last fixes before GA
+
+- [ ] 5.0 GA (General Availability Release) Update - Due by August 24, 2017
+ - First General Availability Release
 
 [Milestones](https://github.com/junit-team/junit5/milestones/)
 
