@@ -33,6 +33,7 @@
 
 ### To-Do
 
+- [ ] Update for Milestone 3                            -   --/--/2017
 - [x] Dependency Copy-Paste Resource                    -   07/24/2016
 - [x] Links to Java-Files                               -   07/24/2016
 - [x] Reordered packages and classes                    -   07/26/2016
