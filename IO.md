@@ -68,7 +68,7 @@ As for dependencies:
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
         <version>5.0.0-M3</version>
-        <scope>test</scope>
+        <scope>compile</scope>
   </dependency>
 ```
 ```xml
@@ -76,7 +76,7 @@ As for dependencies:
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-runner</artifactId>
         <version>1.0.0-M3</version>
-        <scope>test</scope>
+        <scope>compile</scope>
   </dependency>
 ```
 ```xml
