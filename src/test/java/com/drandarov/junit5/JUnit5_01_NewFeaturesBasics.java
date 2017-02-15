@@ -1,10 +1,11 @@
 package com.drandarov.junit5;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.Extension;
 import org.junit.jupiter.api.extension.ParameterResolver;
+import org.junit.jupiter.api.function.Executable;
 
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
@@ -14,7 +15,8 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Contains a collection of smaller, general new features like lambda support or small annotations.
  *
- * Created by dmitrij-drandarov on 22.07.2016.
+ * @author dmitrij-drandarov
+ * @since 22 Jul 2016
  */
 public class JUnit5_01_NewFeaturesBasics {
 
@@ -26,7 +28,7 @@ public class JUnit5_01_NewFeaturesBasics {
 
     /**
      * Tests can now receive Display-Names via @{@link DisplayName}. These are e.g. used by the IDE, Console or the
-     * {@link TestInfo}-Parameter (adressed in {@link #parameterTest(TestInfo, TestReporter)}).
+     * {@link TestInfo}-Parameter (addressed in {@link #parameterTest(TestInfo, TestReporter)}).
      */
     @Test
     @DisplayName("Choose a display name")
@@ -85,12 +87,12 @@ public class JUnit5_01_NewFeaturesBasics {
     }
 
     /**
-     * You can also use {@link Assertions#expectThrows(Class, Executable)} to get the {@link Exception}-Instance if you
+     * You can also use {@link Assertions#assertThrows(Class, Executable)} to get the {@link Exception}-Instance if you
      * need it.
      */
     @Test
     void expectThrowsTest() {
-        ArrayIndexOutOfBoundsException exc = expectThrows(ArrayIndexOutOfBoundsException.class,
+        ArrayIndexOutOfBoundsException exc = assertThrows(ArrayIndexOutOfBoundsException.class,
                 () -> (new String[1])[2] = "I will throw an Exception :)");
 
         assertEquals(exc.getMessage(), "2");
@@ -111,9 +113,9 @@ public class JUnit5_01_NewFeaturesBasics {
         Assertions.assertAll("Random Tests Again", executables);
     }
 
-    int i = 10;
-    void dataChanges() { i++; }
-    int getData() { return i; }
+    private int i = 10;
+    private void dataChanges() { i++; }
+    private int getData() { return i; }
 
     /**
      * {@link Assumptions} of course support Suppliers as well.

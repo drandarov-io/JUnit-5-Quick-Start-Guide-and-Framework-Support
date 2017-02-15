@@ -1,4 +1,4 @@
-package com.drandarov.junit5.utilizations.benchmarked;
+package com.drandarov.junit5.utils.benchmarked;
 
 import org.junit.jupiter.api.extension.*;
 
@@ -12,7 +12,8 @@ import static java.lang.System.currentTimeMillis;
 /**
  * Extension, that does the logging for the benchmarks.
  *
- * Created by dmitrij-drandarov on 29.07.2016.
+ * @author dmitrij-drandarov
+ * @since 29 Jul 2016
  */
 public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutionCallback,
         AfterTestExecutionCallback, AfterAllCallback {

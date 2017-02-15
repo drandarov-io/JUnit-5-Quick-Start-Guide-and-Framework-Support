@@ -1,4 +1,4 @@
-package com.drandarov.junit5.utilizations.parameterresolver;
+package com.drandarov.junit5.utils.parameterresolver;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
@@ -8,7 +8,8 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 /**
  * See {@link ParameterResolver}-JavaDoc.
  *
- * Created by dmitrij-drandarov on 25.07.2016.
+ * @author dmitrij-drandarov
+ * @since 25 Jul 2016
  */
 public class ParameterIndex_ParameterResolver implements ParameterResolver {
 
@@ -22,7 +23,7 @@ public class ParameterIndex_ParameterResolver implements ParameterResolver {
     }
 
     /**
-     * Simple example that simply resolves the Parameter by returning the parameterindex based on the Parameter-Context.
+     * Simple example that simply resolves the Parameter by returning the parameterIndex based on the Parameter-Context.
      */
     @Override
     public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {

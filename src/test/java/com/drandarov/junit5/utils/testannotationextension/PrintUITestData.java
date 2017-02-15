@@ -1,4 +1,4 @@
-package com.drandarov.junit5.utilizations.testannotationextension;
+package com.drandarov.junit5.utils.testannotationextension;
 
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.TestExtensionContext;
@@ -11,14 +11,18 @@ import java.util.Optional;
  *
  * Created by dmitrij-drandarov on 29.07.2016.
  */
-public class PrintUITestData implements BeforeEachCallback {
+class PrintUITestData implements BeforeEachCallback {
 
     @Override
     public void beforeEach(TestExtensionContext context) throws Exception {
         Optional<AnnotatedElement> contextElement = context.getElement();
-        UITest uiTest  = contextElement.get().getAnnotation(UITest.class);
+        AnnotatedElement annotatedElement = contextElement.orElse(null);
 
-        System.out.println("Doing some setup for " + uiTest.value());
+        if (annotatedElement != null) {
+            UITest uiTest = annotatedElement.getAnnotation(UITest.class);
+            System.out.println("Doing some setup for " + uiTest.value());
+        }
+
     }
 
 }

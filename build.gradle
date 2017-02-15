@@ -8,7 +8,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.0-M2'
-    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.0.0-M2'
-    testCompile 'org.junit.platform:junit-platform-runner:1.0.0-M2'
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.0-M3'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.0.0-M3'
+    testCompile 'org.junit.platform:junit-platform-runner:1.0.0-M3'
 }

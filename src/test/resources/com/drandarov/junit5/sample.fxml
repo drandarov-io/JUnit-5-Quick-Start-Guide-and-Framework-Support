@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.scene.layout.Pane?>
-
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="555.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="555.0" xmlns="http://javafx.com/javafx/8.0.60" />

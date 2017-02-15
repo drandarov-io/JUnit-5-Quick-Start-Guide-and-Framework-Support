@@ -1,4 +1,4 @@
-package com.drandarov.junit5.utilizations.simpleextension;
+package com.drandarov.junit5.utils.simpleextension;
 
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
 import org.junit.jupiter.api.extension.TestExecutionCondition;

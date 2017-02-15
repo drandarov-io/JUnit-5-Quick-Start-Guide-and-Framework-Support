@@ -1,0 +1,15 @@
+package com.drandarov.bestPractice.utils;
+
+/**
+ * Dummy-Class to demonstrate calculation of doubles.
+ *
+ * @author dmitrij-drandarov
+ * @since 14 Feb 17
+ */
+public class DummyUtil {
+
+    public static double calculateTimesThree(double value) {
+        return value + value + value;
+    }
+
+}

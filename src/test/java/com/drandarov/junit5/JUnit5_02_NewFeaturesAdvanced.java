@@ -1,20 +1,25 @@
 package com.drandarov.junit5;
 
-import com.drandarov.junit5.utilizations.parameterresolver.ClassName_ParameterResolver;
-import com.drandarov.junit5.utilizations.simpleextension.*;
-import com.drandarov.junit5.utilizations.parameterresolver.ParameterIndex_ParameterResolver;
-import org.junit.jupiter.api.*;
+import com.drandarov.junit5.utils.parameterresolver.ClassName_ParameterResolver;
+import com.drandarov.junit5.utils.parameterresolver.ParameterIndex_ParameterResolver;
+import com.drandarov.junit5.utils.simpleextension.DisabledOnMonday;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.extension.*;
+import org.junit.jupiter.api.function.ThrowingConsumer;
 
-import java.util.*;
-import java.util.function.Consumer;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
 /**
  * A collection of new, advanced or experimental features introduced in JUnit 5.
  *
- * Created by dmitrij-drandarov on 22.07.2016.
+ * @author dmitrij-drandarov
+ * @since 22 Jul 2016
  */
 public class JUnit5_02_NewFeaturesAdvanced {
 
@@ -47,10 +52,11 @@ public class JUnit5_02_NewFeaturesAdvanced {
     */
 
     /**
-     * An example for a {@link TestFactory} with JUnit 5. {@link DynamicTest#stream(Iterator, Function, Consumer)}
-     * provides an easy way to factorize multiple tests, which will be executed automatically.
+     * An example for a {@link TestFactory} with JUnit 5.
+     * {@link DynamicTest#stream(Iterator, Function, ThrowingConsumer)} provides an easy way to factorize multiple
+     * tests, which will be executed automatically.
      * It's basically similar to a for-loop that reads data and asserts, but these test will be grouped and displayed
-     * seperately in the test results.
+     * separately in the test results.
      *
      * @return A stream of dynamic tests
      */
@@ -73,7 +79,7 @@ public class JUnit5_02_NewFeaturesAdvanced {
 
     /**
      * All possible extensions are implementations of {@link Extension} or its
-     * extensions since those are requiered for {@link ExtendWith} or {@link Extensions}.
+     * extensions since those are required for {@link ExtendWith} or {@link Extensions}.
      *
      * The default implementations are currently inside {@link org.junit.jupiter.api.extension} and a list of them
      * inside the JavaDoc of {@link ExtendWith}.

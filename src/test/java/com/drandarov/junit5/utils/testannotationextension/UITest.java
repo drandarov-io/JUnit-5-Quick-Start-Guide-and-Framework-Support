@@ -1,4 +1,4 @@
-package com.drandarov.junit5.utilizations.testannotationextension;
+package com.drandarov.junit5.utils.testannotationextension;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

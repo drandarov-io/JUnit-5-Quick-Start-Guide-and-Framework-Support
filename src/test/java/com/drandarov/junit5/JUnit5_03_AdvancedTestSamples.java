@@ -1,10 +1,10 @@
 package com.drandarov.junit5;
 
-import com.drandarov.junit5.utilizations.benchmarked.BenchmarkExtension;
-import com.drandarov.junit5.utilizations.benchmarked.Benchmarked;
-import com.drandarov.junit5.utilizations.simpleextension.DisabledOnWeekday;
-import com.drandarov.junit5.utilizations.simpleextension.DisabledWeekdays;
-import com.drandarov.junit5.utilizations.testannotationextension.UITest;
+import com.drandarov.junit5.utils.benchmarked.BenchmarkExtension;
+import com.drandarov.junit5.utils.benchmarked.Benchmarked;
+import com.drandarov.junit5.utils.simpleextension.DisabledOnWeekday;
+import com.drandarov.junit5.utils.simpleextension.DisabledWeekdays;
+import com.drandarov.junit5.utils.testannotationextension.UITest;
 import javafx.scene.layout.Pane;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,9 +16,10 @@ import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
 /**
- * A class containing advanced test samples and utilizations of features introduced and explained before.
+ * A class containing advanced test samples and utils of features introduced and explained before.
  *
- * Created by dmitrij-drandarov on 01.08.2016.
+ * @author dmitrij-drandarov
+ * @since 01 Aug 2016
  */
 public class JUnit5_03_AdvancedTestSamples {
 

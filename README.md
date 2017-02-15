@@ -1,5 +1,9 @@
 # JUnit 5 Quick Start Guide and Advanced
 
+You can also check out the best-practice-part included in this repository. It was created by request of a colleague:  
+[**Checkout JUnit best-practices included in this repository**
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/bestPractice/JUnitX_XX_BestPractice.java)
+
 <br>
 
 ## <p align="center">[Visit the projects GitHub-IO page for a blog-like format](https://dmitrij-drandarov.github.io/JUnit5-Quick-Start-Guide-and-Advanced/)</p>
@@ -31,19 +35,19 @@
 
 [Milestones](https://github.com/junit-team/junit5/milestones/)
 
-### To-Do
-
-- [ ] Update for Milestone 3                            -   --/--/2017
-- [x] Dependency Copy-Paste Resource                    -   07/24/2016
-- [x] Links to Java-Files                               -   07/24/2016
-- [x] Reordered packages and classes                    -   07/26/2016
-- [x] @TestFactory + DynamicTests                       -   07/26/2016
-- [x] Test-Extensions (o\j\j\api\extension)             -   07/28/2016
-- [x] Test-Extensions extended                          -   07/29/2016
-- [x] Adjusted packages and classes for presentation    -   08/01/2016
-- [x] Add @Nested                                       -   08/03/2016
-- [x] Add expectThrows()                                -   08/03/2016
-- [x] Add reference                                     -   08/03/2016
-- [x] Proper Presentation                               -   08/04/2016
-- [x] Finish Stream TODOs                               -   08/05/2016
-- [x] Changed name                                      -   08/05/2016
+### To-Dos
+- [ ] Update for Milestone 3                            -   XX XXX 2017
+- [X] Incorporate JUnit Best-Practice on request        -   15 Feb 2017
+- [x] Change name                                       -   05 Aug 2016
+- [x] Finish Stream TODOs                               -   05 Aug 2016
+- [x] Proper Presentation                               -   04 Aug 2016
+- [x] Add reference                                     -   03 Aug 2016
+- [x] Add expectThrows()                                -   03 Aug 2016
+- [x] Add @Nested                                       -   03 Aug 2016
+- [x] Adjust packages and classes for presentation      -   01 Aug 2016
+- [x] Extend Test-Extensions                            -   29 Jul 2016
+- [x] Test-Extensions (o\j\j\api\extension)             -   28 Jul 2016
+- [x] @TestFactory + DynamicTests                       -   26 Jul 2016
+- [x] Reorder packages and classes                      -   26 Jul 2016
+- [x] Links to Java-Files                               -   24 Jul 2016
+- [x] Dependency Copy-Paste Resource                    -   24 Jul 2016

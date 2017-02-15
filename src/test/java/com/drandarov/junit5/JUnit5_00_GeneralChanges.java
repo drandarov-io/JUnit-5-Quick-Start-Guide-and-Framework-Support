@@ -8,7 +8,8 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 /**
  * Contains a collection of small or general changes made to the API
  *
- * Created by dmitrij-drandarov on 21.07.2016.
+ * @author dmitrij-drandarov
+ * @since 21 Jul 2016
  */
 public class JUnit5_00_GeneralChanges {
 

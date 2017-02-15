@@ -23,8 +23,11 @@ Table of contents
         - [Extended disabled weekdays](#extended-disabled-weekdays)
         - [Extend Test-Annotation](#extend-test-annotation)
         - [Benchmarking Example](#benchmarking-example)
+    - [Milestone 3 Changes](#milestone-3-changes)
+        - [Discovery Selectors](#discovery-selectors)
     - [Closing words](#closing-words)
         - [Contribution](#contribution)
+        - [Usage](#usage)
         - [Schedule](#schedule)
         - [Further Reference](#further-reference)
 
@@ -42,12 +45,15 @@ That problem is something JUnit 5 can help you with. It introduced a lot of inte
 it Test-Factories, Test-Extensions (that only have to be written once), Lambda-Support etc. It pushed the D.R.Y.
 principle a lot!
 
-To understand this guide you should know the basics of testing and JUnit 4, but otherwise you wouldn't be here I guess.
+To understand this guide you should know the basics of testing and JUnit (4), but otherwise you wouldn't be here I guess.
+You can also check out the best-practice-part included in this repository. It was created by request of a colleague:  
+[**Checkout JUnit best-practices included in this repository**
+](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/bestPractice/JUnitX_XX_BestPractice.java)
 
 Also JUnit 5 supports running parallel to JUnit 4 if that's something you need.
 
 Some headers related to code will have a code-link behind their name directing to the corresponding class in the
-GitHub-Reposiory.  
+GitHub-Repository.  
 For the whole source code see my GitHub-Repository:  
 [**dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced**
 ](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced)
@@ -61,7 +67,7 @@ As for dependencies:
   <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>5.0.0-M2</version>
+        <version>5.0.0-M3</version>
         <scope>test</scope>
   </dependency>
 ```
@@ -69,7 +75,7 @@ As for dependencies:
   <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-runner</artifactId>
-        <version>1.0.0-M2</version>
+        <version>1.0.0-M3</version>
         <scope>test</scope>
   </dependency>
 ```
@@ -77,20 +83,20 @@ As for dependencies:
   <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.0.0-M2</version>
+        <version>5.0.0-M3</version>
         <scope>runtime</scope>
   </dependency>
 ```
 
 *Gradle*
 ```gradle
-  testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.0-M2'
+  testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.0-M3'
 ```
 ```gradle
-  testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.0.0-M2'
+  testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.0.0-M3'
 ```
 ```gradle
-  testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.0.0-M2'
+  testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.0.0-M3'
 ```
 
 
@@ -111,7 +117,7 @@ parameter functionality has moved elsewhere.
 ### Naming
 
 Other annotations have received slight changes as well, including the common `@BeforeClass`, `@BeforeEach`, their
-`@After...` aequivalents, `@Ignored` and the lesser known `@Category`. All of these have been renamed and given the
+`@After...` equivalents, `@Ignored` and the lesser known `@Category`. All of these have been renamed and given the
 same treatment regarding `public` as `@Test`.
 
 ![img/01_other_annotations.png
@@ -163,7 +169,7 @@ lambda-supporting methods are designed like.
 A new important functional interface is `Executable`. It is very similar to a `Runnable`, however it throws a
 `Throwable` meaning you can execute assertions like `assertTrue()` and an `AssertionError` may be thrown affecting your
 test-result. It is used in several assertions like the new `assertAll(Executable... executables)` which can be also used
-to prevent repitition.
+to prevent repetition.
 
 ![img/07_assertAll.png
 ](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/08_assertAll.png?raw=true)
@@ -289,7 +295,7 @@ of JUnit 5. If you want to see code nevertheless look into the repository.
 
 As for the last example right now I will showcase some benchmarking possibilities and it isn't even that complicated.
 There are several extensions that can be used for that. `BeforeAllCallback`, `BeforeTestExecutionCallback` and their
-`After...`-aequivalents. Each of these interfaces has a method that will be executed at some point during the tests.
+`After...`-equivalents. Each of these interfaces has a method that will be executed at some point during the tests.
 E.g. before each test or after etc. So by implementing those 4 interfaces in one extension we can create a class that
 timestamps each time a method is called and after it finished including calculating the difference. Then we just need to
 annotate an annotation `@Benchmarked` with that extension and then place that on top of a test-method or -class. Done.
@@ -311,6 +317,11 @@ The extension couldn't be simpler:
 Of course I could have also included `@Benchmarked` in a separate `@BenchmarkedTest` annotation that would have extended
 `@Test` as well saving that one line.
 
+Milestone 3 Changes[(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/junit5/JUnit5_04_M3_DiscoverySelectors.java)
+------------------------------
+### DiscoverySelectors
+TODO :c
+
 
 Closing words
 -------------
@@ -318,18 +329,28 @@ Closing words
 Feel free to express critique and contribute to the 
 [repository](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced) :)
 
+### Usage
+You can use this repository in any way you want. May it be for workshops or presentations. Just give credits. ;)
+
 ### Schedule
-- [ ] 5.0 M3 Update - 10/31/2016
+- [ ] 5.0 M3 Update - TODO: Update guide
  - JUnit 4 interoperability
  - Additional discovery selectors
-- [ ] 5.0 M4 Update - 11/30/2016
+
+- [ ] 5.0 M4 Update - Due by March 5, 2017
  - Parameterized tests
  - Enhanced dynamic tests
  - Documentation
-- [ ] 5.0 M5 Update - 12/30/2016
+ 
+- [ ] 5.0 M5 Update - Due by June 25, 2017
  - Scenario tests
  - Repeated tests
  - Test execution in user-defined thread
+
+- [ ] 5.0 RC1 (Release Candidate 1) Update - Due by July 23, 2017
+ - Last fixes before GA
+
+- [ ] 5.0 GA (General Availability Release) Update - Due by August 24, 2017
  
 ### Further Reference
 [Official JUnit 5 User Guide](http://junit.org/junit5/docs/current/user-guide)  

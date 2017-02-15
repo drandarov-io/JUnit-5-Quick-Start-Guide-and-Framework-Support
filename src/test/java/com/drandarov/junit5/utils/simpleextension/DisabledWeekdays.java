@@ -1,4 +1,4 @@
-package com.drandarov.junit5.utilizations.simpleextension;
+package com.drandarov.junit5.utils.simpleextension;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
