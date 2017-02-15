@@ -1,4 +1,4 @@
-Index.md-Test: JUnit 5 Quick Start Guide and Advanced
+JUnit 5 Quick Start Guide and Advanced
 ======================================
 
 Table of contents
