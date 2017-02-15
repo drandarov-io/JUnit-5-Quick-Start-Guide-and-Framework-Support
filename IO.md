@@ -63,6 +63,7 @@ For an IDE I recommend *IntelliJ IDEA 2016.2(+)* right now since it brings nativ
 As for dependencies:
 
 *Maven*
+
 ```xml
   <dependency>
         <groupId>org.junit.jupiter</groupId>
@@ -89,6 +90,7 @@ As for dependencies:
 ```
 
 *Gradle*
+
 ```gradle
   testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.0-M3'
 ```
@@ -318,13 +320,14 @@ Of course I could have also included `@Benchmarked` in a separate `@BenchmarkedT
 `@Test` as well saving that one line.
 
 Milestone 3 Changes [(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/junit5/JUnit5_04_M3_DiscoverySelectors.java)
-------------------------------
+----------------------------
+
 ### DiscoverySelectors
 TODO :c
 
-
 Closing words
 -------------
+
 ### Contribution
 Feel free to express critique and contribute to the 
 [repository](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced) :)
