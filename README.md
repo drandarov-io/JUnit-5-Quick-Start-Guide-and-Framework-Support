@@ -1,5 +1,7 @@
 # JUnit 5 Quick Start Guide and Advanced
 
+GITHUB PAGES IS BROKEN RIGHT NOW. I ALREADY CONTACTED GITHUB SUPPORT...
+
 You can also check out the best-practice-part included in this repository. It was created by request of a colleague:  
 [**Checkout JUnit best-practices included in this repository**
 ](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/bestPractice/JUnitX_XX_BestPractice.java)
