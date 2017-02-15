@@ -24,7 +24,7 @@ Table of contents
         - [Extend Test-Annotation](#extend-test-annotation)
         - [Benchmarking Example](#benchmarking-example)
     - [Milestone 3 Changes](#milestone-3-changes)
-        - [Discovery Selectors](#discovery-selectors)
+        - [DiscoverySelectors](#discoveryselectors)
     - [Closing words](#closing-words)
         - [Contribution](#contribution)
         - [Usage](#usage)
@@ -317,7 +317,7 @@ The extension couldn't be simpler:
 Of course I could have also included `@Benchmarked` in a separate `@BenchmarkedTest` annotation that would have extended
 `@Test` as well saving that one line.
 
-Milestone 3 Changes[(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/junit5/JUnit5_04_M3_DiscoverySelectors.java)
+Milestone 3 Changes [(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/junit5/JUnit5_04_M3_DiscoverySelectors.java)
 ------------------------------
 ### DiscoverySelectors
 TODO :c
