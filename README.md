@@ -10,6 +10,8 @@ You can also check out the best-practice-part included in this repository. It wa
  
 ### <p align="center">[![ioPage](/../master/img/00_README_link.png?raw=true)](https://dmitrij-drandarov.github.io/JUnit5-Quick-Start-Guide-and-Advanced/)</p>
 
+## <p align="center">[Alternatively use the GitHub-Wiki](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/wiki)</p>
+ 
 <br>
 
 ### Schedule
@@ -36,8 +38,12 @@ You can also check out the best-practice-part included in this repository. It wa
 [Milestones](https://github.com/junit-team/junit5/milestones/)
 
 ### To-Dos
+- From here on out TODOs are tracked in "Issues"
+-----------------------------------------------------------------------
 - [ ] Update for Milestone 3                            -   XX XXX 2017
-- [X] Incorporate JUnit Best-Practice on request        -   15 Feb 2017
+- [x] Create wiki article with githup-pages-content     -   04 Mar 2017
+- [x] Convert code fragments from images to text        -   04 Mar 2017
+- [x] Incorporate JUnit Best-Practice on request        -   15 Feb 2017
 - [x] Change name                                       -   05 Aug 2016
 - [x] Finish Stream TODOs                               -   05 Aug 2016
 - [x] Proper Presentation                               -   04 Aug 2016
