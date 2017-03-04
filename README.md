@@ -38,7 +38,7 @@ You can also check out the best-practice-part included in this repository. It wa
 [Milestones](https://github.com/junit-team/junit5/milestones/)
 
 ### To-Dos
-#### ###From here on out TODOs are tracked in "Issues"###
+#### From here on out TODOs are tracked in "Issues"
 - [ ] Update for Milestone 3                            -   XX XXX 2017
 - [x] Create wiki article with githup-pages-content     -   04 Mar 2017
 - [x] Convert code fragments from images to text        -   04 Mar 2017
