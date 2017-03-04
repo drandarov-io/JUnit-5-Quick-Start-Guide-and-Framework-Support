@@ -116,7 +116,8 @@ parameter functionality has moved elsewhere.
 ```java
 /**
  * Tests are now only not allowed to be static / private. Latter also goes for @Before.../@After...
- * timeout = ? and expected = ? functionality has now moved elsewhere. See in {@link JUnit5_01_NewFeaturesBasics}
+ * timeout = ? and expected = ? functionality has now moved elsewhere. See in 
+ * {@link JUnit5_01_NewFeaturesBasics}
  */
 @Test
 void testTest() {}
@@ -164,7 +165,8 @@ changed for the naming of the methods of both classes.
 
 ```java
 /**
- * Assertion Methods are now in class {@link Assertions}. Method names stayed mostly the same otherwise.
+ * Assertion Methods are now in class {@link Assertions}. Method names stayed mostly the same 
+ * otherwise.
  */
 @Test
 void assertionsTest() {
@@ -173,7 +175,8 @@ void assertionsTest() {
 }
 
 /**
- * Assumption Methods are now in class {@link Assumptions}. Method names stayed mostly the same otherwise.
+ * Assumption Methods are now in class {@link Assumptions}. Method names stayed mostly the same 
+ * otherwise.
  */
 @Test
 void assumptionsTest() {
@@ -193,8 +196,9 @@ you don't need 40-character test-names to make clear what the test is about at a
 
 ```java
 /**
- * Tests can now receive Display-Names via @{@link DisplayName}. These are e.g. used by the IDE, Console or the
- * {@link TestInfo}-Parameter (addressed in {@link #parameterTest(TestInfo, TestReporter)}).
+ * Tests can now receive Display-Names via @{@link DisplayName}. These are e.g. used by the IDE,
+ * Console or the {@link TestInfo}-Parameter (addressed in
+ * {@link #parameterTest(TestInfo, TestReporter)}).
  */
 @Test
 @DisplayName("Choose a display name")
@@ -236,10 +240,10 @@ lambda-supporting methods are designed like.
 
 ```java
 /**
- * The new assertion-methods now support supplier-interfaces, meaning you can now enter lambda expressions on the
- * fly to a lot of the assert-methods.
- * E.g. by giving a {@link BooleanSupplier} for the assertion and a ({@link Supplier<String>} for the
- * result-message to the {@link Assertions#assertTrue(BooleanSupplier, Supplier)} method.
+ * The new assertion-methods now support supplier-interfaces, meaning you can now enter lambda
+ * expressions on the fly to a lot of the assert-methods. E.g. by giving a {@link BooleanSupplier}
+ * for the assertion and a ({@link Supplier<String>} for the result-message to the
+ * {@link Assertions#assertTrue(BooleanSupplier, Supplier)} method.
  */
 @Test
 void assertLambdaTest() {
@@ -255,8 +259,8 @@ to prevent repetition.
 
 ```java
 /**
- * {@link Assertions} has a method called {@link Assertions#assertAll(Executable...)} that enables us to group
- * assertions, as well as reuse them.
+ * {@link Assertions} has a method called {@link Assertions#assertAll(Executable...)} that enables
+ * us to group assertions, as well as reuse them.
  */
 @Test
 void assertAllTest() {
@@ -277,7 +281,8 @@ has the exception as return type.
 
 ```java
 /**
- * The expected parameter of {@link Test} has moved to {@link Assertions#assertThrows(Class, Executable)}.
+ * The expected parameter of {@link Test} has moved to
+ * {@link Assertions#assertThrows(Class, Executable)}.
  */
 @Test
 void assertThrowsTest() {
@@ -288,8 +293,8 @@ void assertThrowsTest() {
 
 ```java
 /**
- * You can also use {@link Assertions#assertThrows(Class, Executable)} to get the {@link Exception}-Instance if you
- * need it.
+ * You can also use {@link Assertions#assertThrows(Class, Executable)} to get the
+ * {@link Exception}-Instance if you need it.
  */
 @Test
 void expectThrowsTest() {
@@ -311,13 +316,13 @@ A lot more on the Extension-Api is following further below.
 
 ```java
 /**
- * Tests can now be provided with parameters. Those are resolved by {@link ParameterResolver}-Implementations which
- * in turn are extensions of the above mentioned {@link Extension}.
- * This enables dependency injection at method level.
+ * Tests can now be provided with parameters. Those are resolved by
+ * {@link ParameterResolver}-Implementations which in turn are extensions of the above mentioned
+ * {@link Extension}. This enables dependency injection at method level.
  *
- * Resolvers for {@link TestInfo} and {@link TestReporter} are already provided. Other parameters require your own
- * {@link ParameterResolver}-Implementations to be added with the @{@link ExtendWith}-Annotation to either the
- * class or method.
+ * Resolvers for {@link TestInfo} and {@link TestReporter} are already provided. Other parameters
+ * require your own {@link ParameterResolver}-Implementations to be added with the
+ * @{@link ExtendWith}-Annotation to either the class or method.
  *
  * @param testInfo Information about the current test
  * @param testReporter Used to publish test entries
@@ -344,12 +349,13 @@ Building upon the `ParameterResolver` paragraph of the last chapter let's look a
 
 ```java
 /**
- * A simple example of a {@link ParameterResolver}-Implementation. @{@link ExtendWith} is used to mark
- * {@link ClassName_ParameterResolver} and {@link ParameterIndex_ParameterResolver} as used
+ * A simple example of a {@link ParameterResolver}-Implementation. @{@link ExtendWith} is used to
+ * mark {@link ClassName_ParameterResolver} and {@link ParameterIndex_ParameterResolver} as used
  * {@link ParameterResolver}. These could alternatively be placed at class level.
  *
  * @param className String-Parameter that will be injected by {@link ClassName_ParameterResolver}
- * @param parameterIndex Long-Parameter that will be injected by {@link ParameterIndex_ParameterResolver}
+ * @param parameterIndex Long-Parameter that will be injected by
+ *                       {@link ParameterIndex_ParameterResolver}
  */
 @Test
 @ExtendWith({ClassName_ParameterResolver.class, ParameterIndex_ParameterResolver.class})
@@ -368,8 +374,9 @@ The first implementation processes the `String` parameter `className`. It checks
 public class ClassName_ParameterResolver implements ParameterResolver {
 
     /**
-     * Simple example that only checks if the Parameter-Type is a {@link String} based on the Parameter-Context to
-     * determine whether the Parameter is supported by this {@link ParameterResolver}.
+     * Simple example that only checks if the Parameter-Type is a {@link String} based on the
+     * Parameter-Context to determine whether the Parameter is supported by this
+     * {@link ParameterResolver}.
      */
     @Override
     public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
@@ -377,7 +384,8 @@ public class ClassName_ParameterResolver implements ParameterResolver {
     }
 
     /**
-     * Simple example that simply resolves the Parameter by returning the Class-Name based on the Parameter-Context.
+     * Simple example that simply resolves the Parameter by returning the Class-Name based on
+     * the Parameter-Context.
      */
     @Override
     public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
@@ -398,8 +406,9 @@ parameter by getting the index from the `parameterContext`.
 public class ParameterIndex_ParameterResolver implements ParameterResolver {
 
     /**
-     * Simple example that only checks if the Parameter-Type is a {@link Long} based on the Parameter-Context to
-     * determine whether the Parameter is supported by this {@link ParameterResolver}.
+     * Simple example that only checks if the Parameter-Type is a {@link Long} based on the
+     * Parameter-Context to determine whether the Parameter is supported by this
+     * {@link ParameterResolver}.
      */
     @Override
     public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
@@ -407,7 +416,8 @@ public class ParameterIndex_ParameterResolver implements ParameterResolver {
     }
 
     /**
-     * Simple example that simply resolves the Parameter by returning the parameterIndex based on the Parameter-Context.
+     * Simple example that simply resolves the Parameter by returning the parameterIndex based
+     * on the Parameter-Context.
      */
     @Override
     public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
@@ -426,10 +436,10 @@ In my example you can see me using the `stream()`-method of said class.
 ```java
 /**
  * An example for a {@link TestFactory} with JUnit 5.
- * {@link DynamicTest#stream(Iterator, Function, ThrowingConsumer)} provides an easy way to factorize multiple
- * tests, which will be executed automatically.
- * It's basically similar to a for-loop that reads data and asserts, but these test will be grouped and displayed
- * separately in the test results.
+ * {@link DynamicTest#stream(Iterator, Function, ThrowingConsumer)} provides an easy way to
+ * factorize multiple tests, which will be executed automatically.
+ * It's basically similar to a for-loop that reads data and asserts, but these test will be
+ * grouped and displayed separately in the test results.
  *
  * @return A stream of dynamic tests
  */
@@ -480,8 +490,9 @@ public class DisabledOnMonday implements TestExecutionCondition {
 
 ```java
 /**
- * For this example I use my implementation of {@link TestExecutionCondition} called {@link DisabledOnMonday} to
- * tell JUnit to disable this test on mondays, because who likes those, right?
+ * For this example I use my implementation of {@link TestExecutionCondition} called
+ * {@link DisabledOnMonday} to tell JUnit to disable this test on mondays, because who likes
+ * those, right?
  *
  * This annotation might just as well be placed on class level. To see how I implemented this look at
  * {@link DisabledOnMonday}.
@@ -503,11 +514,11 @@ is kind of overkill. A way to achieve this could be to add another annotation th
 
 ```java
 /**
- * Here I go a step further and annotate my days dynamically, by specifying the days I don't want the test to run
- * on with another custom annotation called @{@link DisabledWeekdays}.
+ * Here I go a step further and annotate my days dynamically, by specifying the days I don't want
+ * the test to run on with another custom annotation called @{@link DisabledWeekdays}.
  *
- * My extension {@link DisabledOnWeekday} later searches for @{@link DisabledWeekdays} and determines whether the
- * test should run or not.
+ * My extension {@link DisabledOnWeekday} later searches for @{@link DisabledWeekdays} and determines
+ * whether the test should run or not.
  */
 @Test
 @DisabledWeekdays({Calendar.THURSDAY, Calendar.SATURDAY})
@@ -574,9 +585,9 @@ So what if you want to save some that space occupied by all those annotations. L
 
 ```java
 /**
- * Here I use an annotation @{@link UITest} that is annotated by @{@link Test} itself, so it will be executed
- * properly. @{@link UITest} contains grouped information and annotations about this test like predefined
- * extensions. Further information in @{@link UITest}s JavaDoc.
+ * Here I use an annotation @{@link UITest} that is annotated by @{@link Test} itself, so it will be
+ * executed properly. @{@link UITest} contains grouped information and annotations about this test
+ * like predefined extensions. Further information in @{@link UITest}s JavaDoc.
  *
  * This of course could be also possible for the examples above.
  */
@@ -593,9 +604,10 @@ this:
 
 ```java
 /**
- * Test annotated by this will be executed by the test runner without problems due to @{@link Test} being included.
- * You can basically group annotations by doing this and save some space, by not having to add all those
- * {@link ExtendWith}s etc. to each method.
+ * Test annotated by this will be executed by the test runner without problems due to @{@link Test}
+ * being included.
+ * You can basically group annotations by doing this and save some space, by not having to add all
+ * those {@link ExtendWith}s etc. to each method.
  * Readability inside the test classes is the key here. And it looks cooler ;)
  *
  * @author dmitrij-drandarov
@@ -637,9 +649,10 @@ this:
 
 ```java
 /**
- * For this example I wrote an annotation @{@link Benchmarked} that doesn't include @{@link Test} - which it could -
- * but instead only contains an self-written extension called {@link BenchmarkExtension}. Annotating your class
- * with this will basically provide you with automatic benchmarking.
+ * For this example I wrote an annotation @{@link Benchmarked} that doesn't include @{@link Test} -
+ * which it could - but instead only contains an self-written extension called
+ * {@link BenchmarkExtension}. Annotating your class with this will basically provide you with
+ * automatic benchmarking.
  *
  * This could of course be also placed on top of the class.
  */
