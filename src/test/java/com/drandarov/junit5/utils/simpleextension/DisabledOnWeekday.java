@@ -12,7 +12,8 @@ import java.util.stream.IntStream;
 /**
  * An extension that disables this test class on the weekday specified by {@link DisabledWeekdays}.
  *
- * Created by dmitrij-drandarov on 28.07.2016.
+ * @author dmitrij-drandarov
+ * @since 28 Jul 2016
  */
 public class DisabledOnWeekday implements TestExecutionCondition {
 

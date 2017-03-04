@@ -7,7 +7,7 @@ import org.junit.platform.engine.DiscoverySelector;
  * TODO.
  *
  * @author dmitrij-drandarov
- * @since XX XXX 2016
+ * @since XX XXX 2017
  */
 public class JUnit5_04_M3_DiscoverySelectors {
 

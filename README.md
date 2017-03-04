@@ -17,7 +17,7 @@ You can also check out the best-practice-part included in this repository. It wa
  - JUnit 4 interoperability
  - Additional discovery selectors
 
-- [ ] 5.0 M4 Update - Due by March 5, 2017
+- [ ] 5.0 M4 Update - Due by March 18, 2017
  - Parameterized tests
  - Enhanced dynamic tests
  - Documentation

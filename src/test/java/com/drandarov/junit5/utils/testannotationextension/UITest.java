@@ -15,7 +15,8 @@ import java.lang.annotation.Target;
  * {@link ExtendWith}s etc. to each method.
  * Readability inside the test classes is the key here. And it looks cooler ;)
  *
- * Created by dmitrij-drandarov on 29.07.2016.
+ * @author dmitrij-drandarov
+ * @since 29 Jul 2016
  */
 @Test
 @Tag("userInterface")                      // For simple identification by ParameterResolvers

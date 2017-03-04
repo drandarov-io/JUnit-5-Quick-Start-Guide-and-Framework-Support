@@ -55,7 +55,7 @@ public class JUnit5_03_AdvancedTestSamples {
     }
 
     /**
-     * In this example I wrote an annotation @{@link Benchmarked} that doesn't include @{@link Test} - which it could -
+     * For this example I wrote an annotation @{@link Benchmarked} that doesn't include @{@link Test} - which it could -
      * but instead only contains an self-written extension called {@link BenchmarkExtension}. Annotating your class
      * with this will basically provide you with automatic benchmarking.
      *

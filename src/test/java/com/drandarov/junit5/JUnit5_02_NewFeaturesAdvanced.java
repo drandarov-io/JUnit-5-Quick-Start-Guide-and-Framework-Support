@@ -88,7 +88,7 @@ public class JUnit5_02_NewFeaturesAdvanced {
     void extensionInfoTest() {}
 
     /**
-     * In this example I use my implementation of {@link TestExecutionCondition} called {@link DisabledOnMonday} to
+     * For this example I use my implementation of {@link TestExecutionCondition} called {@link DisabledOnMonday} to
      * tell JUnit to disable this test on mondays, because who likes those, right?
      *
      * This annotation might just as well be placed on class level. To see how I implemented this look at

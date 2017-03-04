@@ -13,7 +13,8 @@ import java.lang.reflect.AnnotatedElement;
 /**
  * Resolves a Pane Parameter by loading it from the fxml-path in {@link UITest#value()}
  *
- * Created by dmitrij-drandarov on 29.07.2016.
+ * @author dmitrij-drandarov
+ * @since 29 Jul 2016
  */
 class RootElementResolver implements ParameterResolver {
 

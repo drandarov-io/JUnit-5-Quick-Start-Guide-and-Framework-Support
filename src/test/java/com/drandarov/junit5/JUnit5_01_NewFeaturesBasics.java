@@ -77,12 +77,26 @@ public class JUnit5_01_NewFeaturesBasics {
     }
 
     /**
+     * {@link Assertions} has a method called {@link Assertions#assertAll(Executable...)} that enables us to group
+     * assertions, as well as reuse them.
+     */
+    @Test
+    void assertAllTest() {
+        Executable[] executables = {
+                () -> assertTrue(getData() >= -10),
+                () -> assertTrue(getData() <= +15)};
+
+        Assertions.assertAll("Random Tests", executables);
+        dataChanges();
+        Assertions.assertAll("Random Tests Again", executables);
+    }
+
+    /**
      * The expected parameter of {@link Test} has moved to {@link Assertions#assertThrows(Class, Executable)}.
      */
     @Test
     void assertThrowsTest() {
-        assertThrows(
-                ArrayIndexOutOfBoundsException.class,
+        assertThrows(ArrayIndexOutOfBoundsException.class,
                 () -> (new String[1])[2] = "I will throw an Exception :)");
     }
 
@@ -96,21 +110,6 @@ public class JUnit5_01_NewFeaturesBasics {
                 () -> (new String[1])[2] = "I will throw an Exception :)");
 
         assertEquals(exc.getMessage(), "2");
-    }
-
-    /**
-     * {@link Assertions} has a method called {@link Assertions#assertAll(Executable...)} that enables us to group
-     * assertions, as well as reuse them.
-     */
-    @Test
-    void assertAllTest() {
-        Executable[] executables = {
-            () -> assertTrue(getData() >= -10),
-            () -> assertTrue(getData() <= +15)};
-
-        Assertions.assertAll("Random Tests", executables);
-        dataChanges();
-        Assertions.assertAll("Random Tests Again", executables);
     }
 
     private int i = 10;

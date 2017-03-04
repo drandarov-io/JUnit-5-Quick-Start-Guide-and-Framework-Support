@@ -9,7 +9,8 @@ import java.util.Calendar;
 /**
  * An extension that disables a test class on Mondays, because nobody likes those, right?
  *
- * Created by dmitrij-drandarov on 28.07.2016.
+ * @author dmitrij-drandarov
+ * @since 28 Jul 2016
  */
 public class DisabledOnMonday implements TestExecutionCondition {
 
