@@ -354,8 +354,7 @@ Building upon the `ParameterResolver` paragraph of the last chapter let's look a
  * {@link ParameterResolver}. These could alternatively be placed at class level.
  *
  * @param className String-Parameter that will be injected by {@link ClassName_ParameterResolver}
- * @param parameterIndex Long-Parameter that will be injected by
- *                       {@link ParameterIndex_ParameterResolver}
+ * @param parameterIndex Long-Parameter that will be injected by {@link ParameterIndex_ParameterResolver}
  */
 @Test
 @ExtendWith({ClassName_ParameterResolver.class, ParameterIndex_ParameterResolver.class})
@@ -379,7 +378,8 @@ public class ClassName_ParameterResolver implements ParameterResolver {
      * {@link ParameterResolver}.
      */
     @Override
-    public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+    public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) 
+                                                                throws ParameterResolutionException {
         return parameterContext.getParameter().getType().equals(String.class);
     }
 
@@ -388,12 +388,10 @@ public class ClassName_ParameterResolver implements ParameterResolver {
      * the Parameter-Context.
      */
     @Override
-    public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-        String resolve = null;
+    public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) 
+                                                                throws ParameterResolutionException {
         Class<?> contextClass = extensionContext.getTestClass().orElse(null);
-        if (contextClass != null) resolve = contextClass.getSimpleName();
-
-        return resolve;
+        return contextClass == null ? null : contextClass.getSimpleName();
     }
 
 }
@@ -411,7 +409,8 @@ public class ParameterIndex_ParameterResolver implements ParameterResolver {
      * {@link ParameterResolver}.
      */
     @Override
-    public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+    public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext)
+                                                                throws ParameterResolutionException {
         return parameterContext.getParameter().getType().equals(Long.class);
     }
 
@@ -420,7 +419,8 @@ public class ParameterIndex_ParameterResolver implements ParameterResolver {
      * on the Parameter-Context.
      */
     @Override
-    public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+    public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext)
+                                                                throws ParameterResolutionException {
         return (long) parameterContext.getIndex();
     }
 
