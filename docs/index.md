@@ -42,7 +42,7 @@ remind you that you shouldn't have done something long after you forgot that you
 The problem is often that developers see testing as some overhead for developing that should be done after the code is
 finished. That's wrong: Testing should be a vital part of development!  
 That problem is something JUnit 5 can help you with. It introduced a lot of interesting, fast ways to create tests. Be
-it Test-Factories, Test-Extensions (that only have to be written once), Lambda-Support etc. It pushed the D.R.Y.
+it Test-Factories, Test-Extensions (that only have to be implemented once), Lambda-Support etc. It pushed the D.R.Y.
 principle a lot!
 
 To understand this guide you should know the basics of testing and JUnit (4), but otherwise you wouldn't be here I guess.
