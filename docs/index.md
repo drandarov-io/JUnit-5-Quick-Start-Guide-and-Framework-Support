@@ -757,7 +757,7 @@ You can use this repository in any way you want. May it be for workshops or pres
  - JUnit 4 interoperability
  - Additional discovery selectors
 
-- [ ] 5.0 M4 Update - Due by March 18, 2017
+- [ ] 5.0 M4 Update - Due by April 1 18, 2017
  - Parameterized tests
  - Enhanced dynamic tests
  - Documentation
