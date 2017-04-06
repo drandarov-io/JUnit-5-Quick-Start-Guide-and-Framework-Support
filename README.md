@@ -15,11 +15,7 @@ You can also check out the best-practice-part included in this repository. It wa
 <br>
 
 ### Schedule
-- [ ] 5.0 M3 Update - TODO: Update guide
- - JUnit 4 interoperability
- - Additional discovery selectors
-
-- [ ] 5.0 M4 Update - Due by April 1, 2017
+- [ ] 5.0 M4 Update - Work in Progress
  - Parameterized tests
  - Enhanced dynamic tests
  - Documentation
@@ -39,7 +35,7 @@ You can also check out the best-practice-part included in this repository. It wa
 
 ### To-Dos
 #### From here on out TODOs are tracked in "Issues"
-- [ ] Update for Milestone 3                            -   XX XXX 2017
+- [ ] Update for Milestone 4                            -   XX XXX 2017
 - [x] Create wiki article with githup-pages-content     -   04 Mar 2017
 - [x] Convert code fragments from images to text        -   04 Mar 2017
 - [x] Incorporate JUnit Best-Practice on request        -   15 Feb 2017
