@@ -12,5 +12,5 @@ dependencies {
     testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.0-M4'
 
     // Lagacy support for JUnit 4 and JUnit 3
-    testCompile 'org.junit.platform:junit-platform-runner:1.0.0-M4'
+    // testCompile 'org.junit.platform:junit-platform-runner:1.0.0-M4'
 }
