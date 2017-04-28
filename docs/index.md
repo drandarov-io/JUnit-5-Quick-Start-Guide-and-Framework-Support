@@ -736,9 +736,6 @@ Milestone 4 Changes [(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-S
 ### Enhanced dynamic tests
 .
 
-### DiscoverySelectors
-.
-
 Closing words
 -------------
 
