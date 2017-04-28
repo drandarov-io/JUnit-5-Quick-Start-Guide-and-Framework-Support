@@ -23,8 +23,9 @@ Table of contents
         - [Extended disabled weekdays](#extended-disabled-weekdays)
         - [Extend Test-Annotation](#extend-test-annotation)
         - [Benchmarking Example](#benchmarking-example)
-    - [Milestone 3 Changes](#milestone-3-changes)
-        - [DiscoverySelectors](#discoveryselectors)
+    - [Milestone 4 Changes](#milestone-4-changes)
+        - [Parameterized tests](#parameterized-tests)
+        - [Enhanced dynamic tests](#enhanced-dynamic-tests)
     - [Closing words](#closing-words)
         - [Contribution](#contribution)
         - [Usage](#usage)
@@ -68,37 +69,27 @@ As for dependencies:
   <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>5.0.0-M3</version>
-        <scope>compile</scope>
+        <version>5.0.0-M4</version>
+        <scope>test</scope>
   </dependency>
 ```
+If you need lagacy support for JUnit 4 or even JUnit 3, you can add the following dependency to your project
 ```xml
   <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-runner</artifactId>
-        <version>1.0.0-M3</version>
-        <scope>compile</scope>
-  </dependency>
-```
-```xml
-  <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.0.0-M3</version>
-        <scope>runtime</scope>
+        <version>1.0.0-M4</version>
+        <scope>test</scope>
   </dependency>
 ```
 
-*Gradle*
+*Equivalents for Gradle*
 
 ```gradle
-  testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.0-M3'
+  testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.0-M4'
 ```
 ```gradle
-  testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.0.0-M3'
-```
-```gradle
-  testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.0.0-M3'
+  testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.0.0-M4'
 ```
 
 
@@ -593,8 +584,8 @@ So what if you want to save some that space occupied by all those annotations. L
  */
 @UITest("../../sample.fxml")
 void userInterfaceTest(Pane root) {
-    System.out.println(root.getPrefWidth());    //555.0 (defined in FXML-File)
-    System.out.println(root.getPrefHeight());   //333.0 (defined in FXML-File)
+    System.out.println(root.getPrefWidth());    // 555.0 (defined in FXML-File)
+    System.out.println(root.getPrefHeight());   // 333.0 (defined in FXML-File)
 }
 ```
 
@@ -736,11 +727,17 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
 Of course I could have also included `@Benchmarked` in a separate `@BenchmarkedTest` annotation that would have extended
 `@Test` as well saving that one line.
 
-Milestone 3 changes [(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/junit5/JUnit5_04_M3_DiscoverySelectors.java)
+Milestone 4 Changes [(code)](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/src/test/java/com/drandarov/junit5/JUnit5_04_Milestone_4.java)
 ----------------------------
 
+### Parameterized tests
+.
+
+### Enhanced dynamic tests
+.
+
 ### DiscoverySelectors
-TODO :c
+.
 
 Closing words
 -------------
@@ -753,22 +750,18 @@ Feel free to express critique and contribute to the
 You can use this repository in any way you want. May it be for workshops or presentations. Just give credits. ;)
 
 ### Schedule
-- [ ] 5.0 M3 Update - TODO: Update guide
- - JUnit 4 interoperability
- - Additional discovery selectors
-
-- [ ] 5.0 M4 Update - Due by April 1 18, 2017
- - Parameterized tests
- - Enhanced dynamic tests
- - Documentation
+- [ ] 5.0 M4 Update - Work in Progress
+    - Parameterized tests
+    - Enhanced dynamic tests
+    - Documentation
  
 - [ ] 5.0 M5 Update - Due by June 25, 2017
- - Scenario tests
- - Repeated tests
- - Test execution in user-defined thread
+    - Scenario tests
+    - Repeated tests
+    - Test execution in user-defined thread
 
 - [ ] 5.0 RC1 (Release Candidate 1) Update - Due by July 23, 2017
- - Last fixes before GA
+    - Last fixes before GA
 
 - [ ] 5.0 GA (General Availability Release) Update - Due by August 24, 2017
  

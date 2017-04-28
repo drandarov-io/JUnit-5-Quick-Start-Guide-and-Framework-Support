@@ -8,7 +8,7 @@ You can also check out the best-practice-part included in this repository. It wa
 
 ## <p align="center">[Visit the projects GitHub-IO page for a blog-like format](https://dmitrij-drandarov.github.io/JUnit5-Quick-Start-Guide-and-Advanced/)</p>
  
-### <p align="center">[![ioPage](/../master/img/00_README_link.png?raw=true)](https://dmitrij-drandarov.github.io/JUnit5-Quick-Start-Guide-and-Advanced/)</p>
+### <p align="center">[![ioPage](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/blob/master/img/00_README_link.png?raw=true)](https://dmitrij-drandarov.github.io/JUnit5-Quick-Start-Guide-and-Advanced/)</p>
 
 ## <p align="center">[Alternatively use the GitHub-Wiki](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced/wiki)</p>
  
@@ -16,25 +16,26 @@ You can also check out the best-practice-part included in this repository. It wa
 
 ### Schedule
 - [ ] 5.0 M4 Update - Work in Progress
- - Parameterized tests
- - Enhanced dynamic tests
- - Documentation
+    - Parameterized tests
+    - Enhanced dynamic tests
+    - Documentation
  
 - [ ] 5.0 M5 Update - Due by June 25, 2017
- - Scenario tests
- - Repeated tests
- - Test execution in user-defined thread
+    - Scenario tests
+    - Repeated tests
+    - Test execution in user-defined thread
 
 - [ ] 5.0 RC1 (Release Candidate 1) Update - Due by July 23, 2017
- - Last fixes before GA
+    - Last fixes before GA
 
 - [ ] 5.0 GA (General Availability Release) Update - Due by August 24, 2017
- - First General Availability Release
+    - First General Availability Release
 
 [Milestones](https://github.com/junit-team/junit5/milestones/)
 
 ### To-Dos
 #### From here on out TODOs are tracked in "Issues"
+- [ ] Fix userInterfaceTest                             -   XX XXX 2017
 - [ ] Update for Milestone 4                            -   XX XXX 2017
 - [x] Create wiki article with githup-pages-content     -   04 Mar 2017
 - [x] Convert code fragments from images to text        -   04 Mar 2017
