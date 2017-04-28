@@ -4,7 +4,7 @@ package com.drandarov.bestPractice.utils;
  * Dummy-Class to demonstrate calculation of doubles.
  *
  * @author dmitrij-drandarov
- * @since 14 Feb 17
+ * @since 14 Feb 2017
  */
 public class DummyUtil {
 

@@ -48,18 +48,18 @@ class JUnitX_XX_BestPractice {
     @Test
     @Disabled
     void assertTrueNotNullTest() {
-        //Unclear, useless error-message when tests fail
+        // Unclear, useless error-message when tests fail
         assertTrue(dummyFruits.get(4) != null);
 
         /*
-        org.opentest4j.AssertionFailedError: //It couldn't be more useless...
+        org.opentest4j.AssertionFailedError: // It couldn't be more useless...
         */
     }
 
     @Test
     @Disabled
     void assertNotNullTest() {
-        //Better error-message you can actually use and understand
+        // Better error-message you can actually use and understand
         assertNotNull(dummyFruits.get(4));
 
         /*
@@ -73,18 +73,18 @@ class JUnitX_XX_BestPractice {
     @Test
     @Disabled
     void assertTrueEqualsTest() {
-        //Unclear, useless error-message when tests fail
+        // Unclear, useless error-message when tests fail
         assertTrue(TYPE.BANANA.equals(dummyFruits.get(2).getType()));
 
         /*
-        org.opentest4j.AssertionFailedError: //It - again - couldn't be more useless...
+        org.opentest4j.AssertionFailedError: // It - again - couldn't be more useless...
         */
     }
 
     @Test
     @Disabled
     void assertEqualsTest() {
-        //Really useful error-message you can actually use and understand
+        // Really useful error-message you can actually use and understand
         assertEquals(TYPE.BANANA, dummyFruits.get(2).getType());
 
         /*
@@ -105,12 +105,12 @@ class JUnitX_XX_BestPractice {
      */
     @Test
     void wrongDelta() {
-        assertNotEquals(0.9, DummyUtil.calculateTimesThree(0.3)); //--> That's why the delta is important
+        assertNotEquals(0.9, DummyUtil.calculateTimesThree(0.3)); // --> That's why the delta is important
 
         /*Using a 0.0 delta doesn't make much sense and JUnit 5 actively prevents it (therefore the comment)
         assertEquals(20.9, DummyUtil.calculateTimesThree(19), 0.0); */
 
-        //With such a delta the correctness of the calculation is no longer assured
+        // With such a delta the correctness of the calculation is no longer assured
         assertEquals(15.5, DummyUtil.calculateTimesThree(5.0), 0.5);
     }
 
@@ -145,7 +145,7 @@ class JUnitX_XX_BestPractice {
     @Disabled
     void wrongOrderTest() {
         assertEquals(dummyFruits.get(2).getName(), "Grapefruit"); //Gives you unclear, actually wrong fail-reports!
-                    // ^expected                        //^actual
+                    // ^expected                        // ^actual
 
         /*
         org.opentest4j.AssertionFailedError: expected: <Granny Smith Apple> but was: <Baby Banana>
@@ -160,7 +160,7 @@ class JUnitX_XX_BestPractice {
     @Test
     @Disabled
     void correctOrderTest() {
-        assertEquals("Grapefruit", dummyFruits.get(2).getName()); //Clear and useful fail-report ;)
+        assertEquals("Grapefruit", dummyFruits.get(2).getName()); // Clear and useful fail-report ;)
 
         /*
         org.opentest4j.AssertionFailedError: expected: <Grapefruit> but was: <Granny Smith Apple>

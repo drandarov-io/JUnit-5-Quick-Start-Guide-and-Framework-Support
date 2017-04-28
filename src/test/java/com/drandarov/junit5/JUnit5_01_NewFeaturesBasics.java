@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author dmitrij-drandarov
  * @since 22 Jul 2016
  */
-public class JUnit5_01_NewFeaturesBasics {
+class JUnit5_01_NewFeaturesBasics {
 
     /*
     ##################################################################################################################

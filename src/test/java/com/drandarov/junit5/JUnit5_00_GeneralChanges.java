@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
  * @author dmitrij-drandarov
  * @since 21 Jul 2016
  */
-public class JUnit5_00_GeneralChanges {
+class JUnit5_00_GeneralChanges {
 
     /*
     ##################################################################################################################

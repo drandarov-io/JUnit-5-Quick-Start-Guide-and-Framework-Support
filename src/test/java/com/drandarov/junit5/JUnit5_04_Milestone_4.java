@@ -1,7 +1,6 @@
 package com.drandarov.junit5;
 
 import org.junit.jupiter.api.Test;
-import org.junit.platform.engine.DiscoverySelector;
 
 /**
  * TODO.
@@ -9,11 +8,11 @@ import org.junit.platform.engine.DiscoverySelector;
  * @author dmitrij-drandarov
  * @since XX XXX 2017
  */
-public class JUnit5_04_M3_DiscoverySelectors {
+class JUnit5_04_Milestone_4 {
 
     /*
     ##################################################################################################################
-                                                 Discovery Selectors
+                                                 xxxxxxxxxxxxxxxxxxxxxx
     ##################################################################################################################
     */
 
@@ -21,8 +20,7 @@ public class JUnit5_04_M3_DiscoverySelectors {
      * TODO.
      */
     @Test
-    void discoverySelector() {
-        DiscoverySelector discoverySelector;
+    void x() {
     }
 
 }

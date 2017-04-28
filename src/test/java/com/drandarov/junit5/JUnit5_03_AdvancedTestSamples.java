@@ -21,7 +21,7 @@ import java.util.stream.LongStream;
  * @author dmitrij-drandarov
  * @since 01 Aug 2016
  */
-public class JUnit5_03_AdvancedTestSamples {
+class JUnit5_03_AdvancedTestSamples {
 
     /*
     ##################################################################################################################
@@ -50,8 +50,8 @@ public class JUnit5_03_AdvancedTestSamples {
      */
     @UITest("../../sample.fxml")
     void userInterfaceTest(Pane root) {
-        System.out.println(root.getPrefWidth());    //555.0 (defined in FXML-File)
-        System.out.println(root.getPrefHeight());   //333.0 (defined in FXML-File)
+        System.out.println(root.getPrefWidth());    // 555.0 (defined in FXML-File)
+        System.out.println(root.getPrefHeight());   // 333.0 (defined in FXML-File)
     }
 
     /**

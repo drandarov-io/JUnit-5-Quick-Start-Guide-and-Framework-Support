@@ -21,7 +21,7 @@ import java.util.stream.Stream;
  * @author dmitrij-drandarov
  * @since 22 Jul 2016
  */
-public class JUnit5_02_NewFeaturesAdvanced {
+class JUnit5_02_NewFeaturesAdvanced {
 
     /*
     ##################################################################################################################
