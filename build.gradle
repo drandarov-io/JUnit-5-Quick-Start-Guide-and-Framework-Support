@@ -8,7 +8,9 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.0-M3'
-    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.0.0-M3'
-    testCompile 'org.junit.platform:junit-platform-runner:1.0.0-M3'
+    // Main-dependency needed for JUnit 5
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.0-M4'
+
+    // Lagacy support for JUnit 4 and JUnit 3
+    testCompile 'org.junit.platform:junit-platform-runner:1.0.0-M4'
 }
