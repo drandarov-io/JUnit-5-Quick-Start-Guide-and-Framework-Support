@@ -1,9 +1,8 @@
 = JUnit 5 QuickStart Guide and Advanced
 Dmitrij Drandarov <https://github.com/dmitrij-drandarov>
 :imagesdir: images
-:sectnums:
-:sectanchors:
 :sectlinks:
+:sectnums:
 :toc:
 
 == Introduction
@@ -713,7 +712,17 @@ Of course I could have also included `@Benchmarked` in a separate `@BenchmarkedT
 == Changes from M4-RC2 link:src/test/java/com/drandarov/junit5/xxxxxxxxxxx.java[(code)]
 
 === TODO
-.
+x
+
+== Assertion-Frameworks link:src/test/java/com/drandarov/junit5/xxxxxxxxxxx.java[(code)]
+
+=== TODO
+x
+
+== Testing with Spring 5 link:src/test/java/com/drandarov/junit5/xxxxxxxxxxx.java[(code)]
+
+=== TODO
+x
 
 == Closing words
 
