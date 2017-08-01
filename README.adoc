@@ -22,16 +22,12 @@ It introduced a lot of interesting, fast ways to create tests.
 Be it Test-Factories, Test-Extensions (that only have to be implemented once), Lambda-Support etc.
 It pushes the D.R.Y. principle a lot!
 
-To understand this guide you should know the basics of testing and JUnit (4), but otherwise you wouldn't be here I guess.
+To follow this guide you should know the basics of testing and JUnit (4), but otherwise you wouldn't be here I guess.
 You can also check out the best-practice-part included in this repository.
 It was created by request of a colleague:
 link:src/test/java/com/drandarov/bestPractice/JUnit_BestPractice.java[**Checkout JUnit best-practices included in this repository**]
 
-JUnit 5 also supports running parallel to JUnit 4 if that's something you need.
-
 Some headers related to code will have a code-link behind their name directing to the corresponding class in the GitHub-Repository.
-For the whole source code see my GitHub-Repository:
-https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced[**dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced**]
 
 === Setup
 For an IDE I recommend *IntelliJ IDEA 2016.2(+)* right now since it brings native support for JUnit 5.
@@ -152,7 +148,7 @@ void assumptionsTest() {
 
 == New features: Basics link:src/test/java/com/drandarov/junit5/JUnit5_01_NewFeaturesBasics.java[(code)]
 
-### General
+=== General
 Here I want to introduce some basics for the new features available in the new version.
 There is a new pretty annotation called `@DisplayName` which is supposed to improve the readability of test reports, so you don't need 40-character test-names to make clear what the test is about at a glance.
 
@@ -187,7 +183,7 @@ class groupedTests {
 
 image::02_nestedTests_result.png[]
 
-### Assertions and Lambda-Support
+=== Assertions and Lambda-Support
 Now for the probably most known and anticipated feature in JUnit 5: Lambda-Support...
 JUnit 5 `Assertions` and `Assumptions` classes and its methods now provide Lambda support.
 This is achieved by providing methods with functional interfaces as parameters.
@@ -264,7 +260,7 @@ void expectThrowsTest() {
 }
 ```
 
-### Parameter Resolver
+=== Parameter Resolver
 
 The biggest new feature in JUnit 5 is the new Extension-API.
 A part of it is the `ParameterResolver`-Interface which is an extension of the `Extension`-Interface itself.
@@ -299,7 +295,7 @@ void parameterTest(TestInfo testInfo, TestReporter testReporter) {
 
 == New features: Advanced link:src/test/java/com/drandarov/junit5/JUnit5_02_NewFeaturesAdvanced.java[(code)]
 
-### Test-Parameters
+=== Test-Parameters
 Building upon the `ParameterResolver` paragraph of the last chapter let's look at implementing your own `ParameterResolver`.
 You can also see the first visual sign of the Extension-API in the form of the `@ExtendWith`-Annotation. The final result is:
 
@@ -384,7 +380,7 @@ public class ParameterIndex_ParameterResolver implements ParameterResolver {
 }
 ```
 
-### Test-Factories
+=== Test-Factories
 Another nice feature are the new Test-Factories.
 These are annotated with `@TestFactory` instead of `@Test`.
 Their return type is some kind of collection of ``DynamicTest``s.
@@ -415,7 +411,7 @@ Stream<DynamicTest> testStreamFactoryTest() {
 
 image::03_testFactory_result.png[]
 
-### Test-Extensions
+=== Test-Extensions
 Here I will show you an `Extension` that is not based on the `ParameterResolver` but instead implements the `TestExecutionCondition`.
 The same thing that powers the `@Disabled` annotation.
 If we want to customize it we need out own implementation.
@@ -465,9 +461,9 @@ void disabledOnMondayTest() {}
 Again: This could without problem be placed on class-level.
 
 
-== Advanced Test-Samples link:src/test/java/com/drandarov/junit5/JUnit5_00_GeneralChanges.java[(code)]
+== Advanced Test-Samples link:src/test/java/com/drandarov/junit5/JUnit5_03_AdvancedTestSamples.java[(code)]
 
-### Extended disabled weekdays
+=== Extended disabled weekdays
 Let's extend that `@DisabledOnMonday` annotation a bit.
 What if you want to choose the weekday?
 Creating 7 annotations is kind of overkill.
@@ -541,7 +537,7 @@ public class DisabledOnWeekday implements TestExecutionCondition {
 }
 ```
 
-### Extend Test-Annotation
+=== Extend Test-Annotation
 So what if you want to save some that space occupied by all those annotations.
 Let's make it all-in-one for this example:
 
@@ -598,7 +594,7 @@ One extension resolves the `Pane` from the fxml path and the other one just prin
 This is rather a showcase of an `@Test`-Extension and including utilizing the extension features of JUnit 5.
 If you want to see code nevertheless look into the repository.
 
-### Benchmarking Example
+=== Benchmarking Example
 
 As for the last example right now I will showcase some benchmarking possibilities and it isn't even that complicated.
 There are several extensions that can be used for that.
@@ -699,44 +695,44 @@ Of course I could have also included `@Benchmarked` in a separate `@BenchmarkedT
 
 == Changes from M4-RC2 link:src/test/java/com/drandarov/junit5/xxxxxxxxxxx.java[(code)]
 
-### TODO
+=== TODO
 .
 
 == Closing words
 
-### Contribution
+=== Contribution
 Feel free to express critique and contribute to the [repository](https://github.com/dmitrij-drandarov/JUnit5-Quick-Start-Guide-and-Advanced) :)
 
-### Usage
+=== Usage
 You can use this repository in any way you want.
 May it be for workshops or presentations. Just give credits. ;)
 
-### Schedule
-- [ ] 5.0 GA (General Availability Release) Update - Due by August 24, 2017
+=== Schedule
+* [ ] 5.0 GA (General Availability Release) Update - Due by August 24, 2017
 
-### Further Reference
-[Official JUnit 5 User Guide](http://junit.org/junit5/docs/current/user-guide)
-[JUnit 5 GitHub](https://github.com/junit-team/junit5)
-[JUnit 5 Milestone plan](https://github.com/junit-team/junit5/milestones/)
+=== Further Reference
+[%hardbreaks]
+* http://junit.org/junit5/docs/current/user-guide[Official JUnit 5 User Guide]
+* https://github.com/junit-team/junit5[JUnit 5 GitHub]
+* https://github.com/junit-team/junit5/milestones/[JUnit 5 Milestone plan]
 
 == Repository Timeline
 
-[%interactive]
-- [ ] Update for M4-RC2                                 -   XX Aug 2017
-- [x] Fix userInterfaceTest                             -   01 Aug 2017
-- [x] Create wiki article with githup-pages-content     -   04 Mar 2017
-- [x] Convert code fragments from images to text        -   04 Mar 2017
-- [x] Incorporate JUnit Best-Practice on request        -   15 Feb 2017
-- [x] Change name                                       -   05 Aug 2016
-- [x] Finish Stream TODOs                               -   05 Aug 2016
-- [x] Proper Presentation                               -   04 Aug 2016
-- [x] Add reference                                     -   03 Aug 2016
-- [x] Add expectThrows()                                -   03 Aug 2016
-- [x] Add @Nested                                       -   03 Aug 2016
-- [x] Adjust packages and classes for presentation      -   01 Aug 2016
-- [x] Extend Test-Extensions                            -   29 Jul 2016
-- [x] Test-Extensions (o\j\j\api\extension)             -   28 Jul 2016
-- [x] @TestFactory + DynamicTests                       -   26 Jul 2016
-- [x] Reorder packages and classes                      -   26 Jul 2016
-- [x] Links to Java-Files                               -   24 Jul 2016
-- [x] Dependency Copy-Paste Resource                    -   24 Jul 2016
+* [ ] Update for M4-RC2                                 -   XX Aug 2017
+* [x] Fix userInterfaceTest                             -   01 Aug 2017
+* [x] Create wiki article with githup-pages-content     -   04 Mar 2017
+* [x] Convert code fragments from images to text        -   04 Mar 2017
+* [x] Incorporate JUnit Best-Practice on request        -   15 Feb 2017
+* [x] Change name                                       -   05 Aug 2016
+* [x] Finish Stream TODOs                               -   05 Aug 2016
+* [x] Proper Presentation                               -   04 Aug 2016
+* [x] Add reference                                     -   03 Aug 2016
+* [x] Add expectThrows()                                -   03 Aug 2016
+* [x] Add @Nested                                       -   03 Aug 2016
+* [x] Adjust packages and classes for presentation      -   01 Aug 2016
+* [x] Extend Test-Extensions                            -   29 Jul 2016
+* [x] Test-Extensions (o\j\j\api\extension)             -   28 Jul 2016
+* [x] @TestFactory + DynamicTests                       -   26 Jul 2016
+* [x] Reorder packages and classes                      -   26 Jul 2016
+* [x] Links to Java-Files                               -   24 Jul 2016
+* [x] Dependency Copy-Paste Resource                    -   24 Jul 2016

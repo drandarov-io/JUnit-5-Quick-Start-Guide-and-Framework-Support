@@ -13,7 +13,6 @@ import org.junit.jupiter.api.function.ThrowingConsumer;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.function.Function;
-import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 /**
@@ -23,8 +22,6 @@ import java.util.stream.Stream;
  * @since 22 Jul 2016
  */
 class JUnit5_02_NewFeaturesAdvanced {
-
-    private static final Logger LOG = Logger.getGlobal();
 
     /*##############################################
     #           Test-Parameters
@@ -41,8 +38,8 @@ class JUnit5_02_NewFeaturesAdvanced {
     @Test
     @ExtendWith({ClassName_ParameterResolver.class, ParameterIndex_ParameterResolver.class})
     void customParameterTest(String className, Long parameterIndex) {
-        LOG.info(className);                    // Surrounding class name injected by ClassName_ParameterResolver
-        LOG.info(parameterIndex.toString());    // Parameter-Index injected by ParameterIndex_ParameterResolver
+        System.out.println(className);                    // Surrounding class name injected by ClassName_ParameterResolver
+        System.out.println(parameterIndex.toString());    // Parameter-Index injected by ParameterIndex_ParameterResolver
     }
 
 

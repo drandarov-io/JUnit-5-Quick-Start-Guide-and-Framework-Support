@@ -12,7 +12,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
@@ -23,8 +22,6 @@ import java.util.stream.LongStream;
  * @since 01 Aug 2016
  */
 class JUnit5_03_AdvancedTestSamples {
-
-    private static final Logger LOG = Logger.getGlobal();
 
     /*##############################################
     #           Advanced Test-Samples
@@ -51,8 +48,8 @@ class JUnit5_03_AdvancedTestSamples {
      */
     @UITest("../../sample.fxml")
     void userInterfaceTest(Pane root) {
-        LOG.info(String.valueOf(root.getPrefWidth()));    // 555.0 (defined in FXML-File)
-        LOG.info(String.valueOf(root.getPrefHeight()));   // 333.0 (defined in FXML-File)
+        System.out.println(String.valueOf(root.getPrefWidth()));    // 555.0 (defined in FXML-File)
+        System.out.println(String.valueOf(root.getPrefHeight()));   // 333.0 (defined in FXML-File)
     }
 
     /**
@@ -66,7 +63,7 @@ class JUnit5_03_AdvancedTestSamples {
     @Benchmarked
     void benchmarkedTest() {
         List<Integer> primes = new ArrayList<>();
-        LOG.info("Calculating some primes...");
+        System.out.println("Calculating some primes...");
         IntStream.iterate(2, i -> i + 1)
                 .filter(i -> LongStream.rangeClosed(2, (long)(Math.sqrt(i))).allMatch(n -> i % n != 0))
                 .limit(55555)

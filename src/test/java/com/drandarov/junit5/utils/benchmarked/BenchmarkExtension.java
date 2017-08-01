@@ -6,7 +6,6 @@ import java.sql.Date;
 import java.text.DateFormat;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import static java.lang.System.currentTimeMillis;
 
@@ -24,15 +23,13 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
     private static final Map<String, Long> startTime = new HashMap<>();
     private static final DateFormat dtForm = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM);
 
-    private static final Logger LOG = Logger.getGlobal();
-
     @Override
     public void beforeAll(ExtensionContext context) throws Exception {
         String disp = context.getDisplayName();
         long start = currentTimeMillis();
 
-        LOG.info("#### Summary           \t" + APD + disp + " ####");
-        LOG.info("#### Start of Benchmark\t" + APD + disp + APD + dtForm.format(new Date(start)) + " ####");
+        System.out.println("#### Summary           \t" + APD + disp + " ####");
+        System.out.println("#### Start of Benchmark\t" + APD + disp + APD + dtForm.format(new Date(start)) + " ####");
         startTime.put(disp, start);
     }
 
@@ -41,7 +38,7 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         String disp = context.getDisplayName();
         long start = currentTimeMillis();
 
-        LOG.info("#### Method-Benchm. ####" + APD + disp + APD + dtForm.format(new Date(start)));
+        System.out.println("#### Method-Benchm. ####" + APD + disp + APD + dtForm.format(new Date(start)));
         startTime.put(context.getDisplayName(), start);
     }
 
@@ -50,10 +47,10 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         String disp = context.getDisplayName();
         long end = currentTimeMillis();
 
-        LOG.info("#### Summary        ####" + APD + disp);
-        LOG.info("#### Start          ####" + APD + dtForm.format(new Date(startTime.get(disp))));
-        LOG.info("#### End            ####" + APD + dtForm.format(new Date(end)));
-        LOG.info("#### Duration       ####" + APD + (end - startTime.get(disp)) + " ms\n");
+        System.out.println("#### Summary        ####" + APD + disp);
+        System.out.println("#### Start          ####" + APD + dtForm.format(new Date(startTime.get(disp))));
+        System.out.println("#### End            ####" + APD + dtForm.format(new Date(end)));
+        System.out.println("#### Duration       ####" + APD + (end - startTime.get(disp)) + " ms\n");
     }
 
     @Override
@@ -61,8 +58,8 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         String disp = context.getDisplayName();
         long end = currentTimeMillis();
 
-        LOG.info("#### End of Benchmark  \t" + APD + disp + APD + dtForm.format(new Date(end)) + " ####");
-        LOG.info("#### Duration for class\t" + APD + disp + APD + (end - startTime.get(disp)) + " ms ####");
+        System.out.println("#### End of Benchmark  \t" + APD + disp + APD + dtForm.format(new Date(end)) + " ####");
+        System.out.println("#### Duration for class\t" + APD + disp + APD + (end - startTime.get(disp)) + " ms ####");
     }
 
 }

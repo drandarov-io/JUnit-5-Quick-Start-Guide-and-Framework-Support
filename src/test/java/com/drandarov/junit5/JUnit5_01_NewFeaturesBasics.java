@@ -8,7 +8,6 @@ import org.junit.jupiter.api.function.Executable;
 
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
-import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,8 +18,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * @since 22 Jul 2016
  */
 class JUnit5_01_NewFeaturesBasics {
-
-    private static final Logger LOG = Logger.getGlobal();
 
     /*##############################################
     #           Test-Methods
@@ -140,10 +137,10 @@ class JUnit5_01_NewFeaturesBasics {
      */
     @Test
     void parameterTest(TestInfo testInfo, TestReporter testReporter) {
-        LOG.info("DisplayName:\t" + testInfo.getDisplayName());
-        LOG.info("Tags:\t\t\t" + testInfo.getTags());
-        LOG.info("TestClass:\t\t" + testInfo.getTestClass());
-        LOG.info("TestMethod:\t\t" + testInfo.getTestMethod());
+        System.out.println("DisplayName:\t" + testInfo.getDisplayName());
+        System.out.println("Tags:\t\t\t" + testInfo.getTags());
+        System.out.println("TestClass:\t\t" + testInfo.getTestClass());
+        System.out.println("TestMethod:\t\t" + testInfo.getTestMethod());
 
         testReporter.publishEntry("parameterTestTime", String.valueOf(System.currentTimeMillis()));
     }

@@ -5,7 +5,6 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 
 import java.lang.reflect.AnnotatedElement;
 import java.util.Optional;
-import java.util.logging.Logger;
 
 /**
  * Prints some information about the Test annotated by @{@link UITest}.
@@ -15,8 +14,6 @@ import java.util.logging.Logger;
  */
 class PrintUITestData implements BeforeEachCallback {
 
-    private static final Logger LOG = Logger.getGlobal();
-
     @Override
     public void beforeEach(ExtensionContext context) throws Exception {
         Optional<AnnotatedElement> contextElement = context.getElement();
@@ -24,7 +21,7 @@ class PrintUITestData implements BeforeEachCallback {
 
         if (annotatedElement != null) {
             UITest uiTest = annotatedElement.getAnnotation(UITest.class);
-            LOG.info("Doing some setup for " + uiTest.value());
+            System.out.println("Doing some setup for " + uiTest.value());
         }
 
     }
