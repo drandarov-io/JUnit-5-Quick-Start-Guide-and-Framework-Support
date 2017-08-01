@@ -18,7 +18,7 @@ public class ParameterIndex_ParameterResolver implements ParameterResolver {
      * determine whether the Parameter is supported by this {@link ParameterResolver}.
      */
     @Override
-    public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+    public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
         return parameterContext.getParameter().getType().equals(Long.class);
     }
 
@@ -26,7 +26,7 @@ public class ParameterIndex_ParameterResolver implements ParameterResolver {
      * Simple example that simply resolves the Parameter by returning the parameterIndex based on the Parameter-Context.
      */
     @Override
-    public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+    public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
         return (long) parameterContext.getIndex();
     }
 

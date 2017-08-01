@@ -1,6 +1,5 @@
 package com.drandarov.junit5;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.Extension;
@@ -9,6 +8,7 @@ import org.junit.jupiter.api.function.Executable;
 
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
+import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,11 +20,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class JUnit5_01_NewFeaturesBasics {
 
-    /*
-    ##################################################################################################################
-                                                      Test-Methods
-    ##################################################################################################################
-    */
+    private static final Logger LOG = Logger.getGlobal();
+
+    /*##############################################
+    #           Test-Methods
+    ##############################################*/
 
     /**
      * Tests can now receive Display-Names via @{@link DisplayName}. These are e.g. used by the IDE, Console or the
@@ -46,11 +46,9 @@ class JUnit5_01_NewFeaturesBasics {
 
     }
 
-    /*
-    ##################################################################################################################
-                                             Assertions / Assumptions
-    ##################################################################################################################
-    */
+    /*##############################################
+    #           Assertions / Assumptions
+    ##############################################*/
 
     /**
      * JUnit 5 includes several new Functional-Interface. One of the most important one is called {@link Executable}.
@@ -59,7 +57,7 @@ class JUnit5_01_NewFeaturesBasics {
      */
     @Test
     void executablesTest() {
-        Executable ex = () -> assertTrue(() -> 5 <= 10);
+        Executable ex = () -> assertTrue(5 <= 10);
         Executable ex2 = () -> assertFalse(Boolean.FALSE);
         assertAll(ex, ex2);
     }
@@ -124,11 +122,9 @@ class JUnit5_01_NewFeaturesBasics {
         Assumptions.assumeTrue(() -> Boolean.parseBoolean("true"));
     }
 
-    /*
-    ##################################################################################################################
-                                                    Test-Parameters
-    ##################################################################################################################
-    */
+    /*##############################################
+    #           Test-Parameters
+    ##############################################*/
 
     /**
      * Tests can now be provided with parameters. Those are resolved by {@link ParameterResolver}-Implementations which
@@ -144,12 +140,12 @@ class JUnit5_01_NewFeaturesBasics {
      */
     @Test
     void parameterTest(TestInfo testInfo, TestReporter testReporter) {
-        System.out.println("DisplayName:\t" + testInfo.getDisplayName());
-        System.out.println("Tags:\t\t\t" + testInfo.getTags());
-        System.out.println("TestClass:\t\t" + testInfo.getTestClass());
-        System.out.println("TestMethod:\t\t" + testInfo.getTestMethod());
+        LOG.info("DisplayName:\t" + testInfo.getDisplayName());
+        LOG.info("Tags:\t\t\t" + testInfo.getTags());
+        LOG.info("TestClass:\t\t" + testInfo.getTestClass());
+        LOG.info("TestMethod:\t\t" + testInfo.getTestMethod());
 
-        testReporter.publishEntry("parameterTestTime", Long.toString(System.currentTimeMillis()));
+        testReporter.publishEntry("parameterTestTime", String.valueOf(System.currentTimeMillis()));
     }
 
 }

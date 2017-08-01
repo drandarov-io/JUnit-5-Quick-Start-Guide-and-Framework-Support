@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
@@ -23,11 +24,11 @@ import java.util.stream.LongStream;
  */
 class JUnit5_03_AdvancedTestSamples {
 
-    /*
-    ##################################################################################################################
-                                                 Advanced Test-Samples
-    ##################################################################################################################
-    */
+    private static final Logger LOG = Logger.getGlobal();
+
+    /*##############################################
+    #           Advanced Test-Samples
+    ##############################################*/
 
     /**
      * Here I go a step further and annotate my days dynamically, by specifying the days I don't want the test to run
@@ -50,8 +51,8 @@ class JUnit5_03_AdvancedTestSamples {
      */
     @UITest("../../sample.fxml")
     void userInterfaceTest(Pane root) {
-        System.out.println(root.getPrefWidth());    // 555.0 (defined in FXML-File)
-        System.out.println(root.getPrefHeight());   // 333.0 (defined in FXML-File)
+        LOG.info(String.valueOf(root.getPrefWidth()));    // 555.0 (defined in FXML-File)
+        LOG.info(String.valueOf(root.getPrefHeight()));   // 333.0 (defined in FXML-File)
     }
 
     /**
@@ -65,7 +66,7 @@ class JUnit5_03_AdvancedTestSamples {
     @Benchmarked
     void benchmarkedTest() {
         List<Integer> primes = new ArrayList<>();
-        System.out.println("Calculating some primes...");
+        LOG.info("Calculating some primes...");
         IntStream.iterate(2, i -> i + 1)
                 .filter(i -> LongStream.rangeClosed(2, (long)(Math.sqrt(i))).allMatch(n -> i % n != 0))
                 .limit(55555)

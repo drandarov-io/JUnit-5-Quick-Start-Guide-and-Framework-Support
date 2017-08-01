@@ -6,11 +6,12 @@ import java.sql.Date;
 import java.text.DateFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import static java.lang.System.currentTimeMillis;
 
 /**
- * Extension, that does the logging for the benchmarks.
+ * Extension, that does the logging for the benchmarks. (Implementation is not accurate!)
  *
  * @author dmitrij-drandarov
  * @since 29 Jul 2016
@@ -23,44 +24,45 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
     private static final Map<String, Long> startTime = new HashMap<>();
     private static final DateFormat dtForm = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM);
 
+    private static final Logger LOG = Logger.getGlobal();
 
     @Override
-    public void beforeAll(ContainerExtensionContext context) throws Exception {
+    public void beforeAll(ExtensionContext context) throws Exception {
         String disp = context.getDisplayName();
         long start = currentTimeMillis();
 
-        System.out.println("#### Summary           \t" + APD + disp + " ####");
-        System.out.println("#### Start of Benchmark\t" + APD + disp + APD + dtForm.format(new Date(start)) + " ####");
+        LOG.info("#### Summary           \t" + APD + disp + " ####");
+        LOG.info("#### Start of Benchmark\t" + APD + disp + APD + dtForm.format(new Date(start)) + " ####");
         startTime.put(disp, start);
     }
 
     @Override
-    public void beforeTestExecution(TestExtensionContext context) throws Exception {
+    public void beforeTestExecution(ExtensionContext context) throws Exception {
         String disp = context.getDisplayName();
         long start = currentTimeMillis();
 
-        System.out.println("#### Method-Benchm. ####" + APD + disp + APD + dtForm.format(new Date(start)));
+        LOG.info("#### Method-Benchm. ####" + APD + disp + APD + dtForm.format(new Date(start)));
         startTime.put(context.getDisplayName(), start);
     }
 
     @Override
-    public void afterTestExecution(TestExtensionContext context) throws Exception {
+    public void afterTestExecution(ExtensionContext context) throws Exception {
         String disp = context.getDisplayName();
         long end = currentTimeMillis();
 
-        System.out.println("#### Summary        ####" + APD + disp);
-        System.out.println("#### Start          ####" + APD + dtForm.format(new Date(startTime.get(disp))));
-        System.out.println("#### End            ####" + APD + dtForm.format(new Date(end)));
-        System.out.println("#### Duration       ####" + APD + (end - startTime.get(disp)) + " ms\n");
+        LOG.info("#### Summary        ####" + APD + disp);
+        LOG.info("#### Start          ####" + APD + dtForm.format(new Date(startTime.get(disp))));
+        LOG.info("#### End            ####" + APD + dtForm.format(new Date(end)));
+        LOG.info("#### Duration       ####" + APD + (end - startTime.get(disp)) + " ms\n");
     }
 
     @Override
-    public void afterAll(ContainerExtensionContext context) throws Exception {
+    public void afterAll(ExtensionContext context) throws Exception {
         String disp = context.getDisplayName();
         long end = currentTimeMillis();
 
-        System.out.println("#### End of Benchmark  \t" + APD + disp + APD + dtForm.format(new Date(end)) + " ####");
-        System.out.println("#### Duration for class\t" + APD + disp + APD + (end - startTime.get(disp)) + " ms ####");
+        LOG.info("#### End of Benchmark  \t" + APD + disp + APD + dtForm.format(new Date(end)) + " ####");
+        LOG.info("#### Duration for class\t" + APD + disp + APD + (end - startTime.get(disp)) + " ms ####");
     }
 
 }

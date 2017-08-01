@@ -19,8 +19,7 @@ public class DisabledOnMonday implements ExecutionCondition {
         boolean monday = Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY;
 
         return monday ?
-                ConditionEvaluationResult.disabled("I spare you on Mondays.")
-                :
+                ConditionEvaluationResult.disabled("I spare you on Mondays.") :
                 ConditionEvaluationResult.enabled("Don't spare you on other days though >:(");
     }
 

@@ -1,8 +1,8 @@
 package com.drandarov.junit5.utils.simpleextension;
 
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
-import org.junit.jupiter.api.extension.TestExecutionCondition;
-import org.junit.jupiter.api.extension.TestExtensionContext;
+import org.junit.jupiter.api.extension.ExecutionCondition;
+import org.junit.jupiter.api.extension.ExtensionContext;
 
 import java.lang.reflect.AnnotatedElement;
 import java.util.Calendar;
@@ -15,10 +15,10 @@ import java.util.stream.IntStream;
  * @author dmitrij-drandarov
  * @since 28 Jul 2016
  */
-public class DisabledOnWeekday implements TestExecutionCondition {
+public class DisabledOnWeekday implements ExecutionCondition {
 
     @Override
-    public ConditionEvaluationResult evaluate(TestExtensionContext context) {
+    public ConditionEvaluationResult evaluateExecutionCondition(ExtensionContext context) {
 
         // Search for the @DisabledWeekdays annotation from the TestExtensionContext
         Optional<AnnotatedElement> contextElement = context.getElement();

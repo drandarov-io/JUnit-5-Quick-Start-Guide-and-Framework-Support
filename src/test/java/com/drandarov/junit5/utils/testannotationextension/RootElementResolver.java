@@ -9,7 +9,6 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 
 import java.io.IOException;
 import java.lang.reflect.AnnotatedElement;
-import java.util.function.Supplier;
 
 /**
  * Resolves a Pane Parameter by loading it from the fxml-path in {@link UITest#value()}
@@ -29,14 +28,15 @@ class RootElementResolver implements ParameterResolver {
     public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
         AnnotatedElement annotatedElement = extensionContext.getElement().orElse(null);
 
-        Supplier<Pane> getPane = () -> {
-            UITest annotation = annotatedElement.getAnnotation(UITest.class);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(annotation.value()));
-            try { return loader.load(); }
-            catch (IOException e) { return null; }
-        };
+        UITest annotation = annotatedElement == null ? null : annotatedElement.getAnnotation(UITest.class);
 
-        return annotatedElement == null ? null : getPane;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(annotation.value()));
+        try {
+            return loader.load();
+        } catch (IOException e) {
+            return null;
+        }
     }
+
 }

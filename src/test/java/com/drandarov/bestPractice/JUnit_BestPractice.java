@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author dmitrij-drandarov
  * @since 10 Feb 2017
  */
-class JUnitX_XX_BestPractice {
+class JUnit_BestPractice {
 
     private Map<Integer, DummyFruit> dummyFruits;
 
@@ -34,11 +34,9 @@ class JUnitX_XX_BestPractice {
         dummyFruits.put(3, new DummyFruit("Grapefruit", "It's totally an orange, baka!", 8.5, TYPE.ORANGE));
     }
 
-    /*
-    ##################################################################################################################
-                                             Choosing the right assertion-type
-    ##################################################################################################################
-    */
+    /*##############################################
+    #           Choosing the right assertion-type
+    ##############################################*/
 
     /**
      * Don't check for nulls with {@link Assertions#assertTrue}. Error messages will be meaningless and therefore
@@ -94,14 +92,12 @@ class JUnitX_XX_BestPractice {
         */
     }
 
-    /*
-    ##################################################################################################################
-                                                    Working with delta
-    ##################################################################################################################
-    */
+    /*##############################################
+    #           Working with delta
+    ##############################################*/
 
     /**
-     * It may seem trivial, but I've seen all of these in actual commercial projects.
+     * It may seem trivial, but I've seen all of these in actual enterprise projects.
      */
     @Test
     void wrongDelta() {
@@ -124,7 +120,8 @@ class JUnitX_XX_BestPractice {
     }
 
     /**
-     * Starting with JUnit 5 you no longer need to declare the delta, since it will be
+     * Starting with JUnit 5 you no longer have to necessarily declare the delta, since it will be checked by the framework.
+     * For implementation details look in {@link org.junit.jupiter.api.AssertionUtils#doublesAreEqual(double, double)}.
      *
      * If you use the delta for rounding mistakes, really think about it: You 'actually' calculate rounded values, but
      * you 'expect' not rounded ones, so you just use a delta as a workaround? Really?! That's not how you check for
@@ -135,11 +132,9 @@ class JUnitX_XX_BestPractice {
         assertEquals(15.0, DummyUtil.calculateTimesThree(5.0));
     }
 
-    /*
-    ##################################################################################################################
-                                                 Correct parameter order
-    ##################################################################################################################
-    */
+    /*##############################################
+    #           Correct parameter order
+    ##############################################*/
 
     @Test
     @Disabled
@@ -153,7 +148,7 @@ class JUnitX_XX_BestPractice {
         Actual   :Baby Banana
         */
 
-        /* "So wait, the constant String I put in there is not an expected value? Tell me more about that...
+        /* "So wait, the constant String I put in there is not an expected value? Tell me more about that!
             Or don't... Just fix the order and everything is fine ;)" */
     }
 
