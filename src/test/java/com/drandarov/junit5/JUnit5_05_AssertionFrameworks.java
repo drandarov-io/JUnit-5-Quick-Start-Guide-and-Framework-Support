@@ -3,22 +3,20 @@ package com.drandarov.junit5;
 import org.junit.jupiter.api.Test;
 
 /**
- * TODO.
  *
  * @author dmitrij-drandarov
  * @since XX XXX 2017
  */
-class JUnit5_04_More_Advanced {
+class JUnit5_05_AssertionFrameworks {
 
     /*##############################################
     #           xxxxxxxxxxxxxxxxxxxxxx
     ##############################################*/
 
     /**
-     * TODO.
+     *
      */
     @Test
-    void x() {
-    }
+    void x() {}
 
 }

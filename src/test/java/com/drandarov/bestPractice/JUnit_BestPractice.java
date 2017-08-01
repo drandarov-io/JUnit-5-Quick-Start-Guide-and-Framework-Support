@@ -4,8 +4,8 @@ import com.drandarov.bestPractice.utils.DummyFruit;
 import com.drandarov.bestPractice.utils.DummyUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,9 +15,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * A demo-class with a collection of simple best-practices when writing JUnit-Tests.
- *
- * I {@link Disabled} the failing demo-tests, since I don't like failing tests in CI-Environments, however you can still
- * run them singularly in your IDE. ;)
  *
  * @author dmitrij-drandarov
  * @since 10 Feb 2017
@@ -39,57 +36,46 @@ class JUnit_BestPractice {
     ##############################################*/
 
     /**
-     * Don't check for nulls with {@link Assertions#assertTrue}. Error messages will be meaningless and therefore
-     * useless.
+     * Don't check for nulls with {@link Assertions#assertTrue}. Error messages will be meaningless and therefore useless.
      * Do use {@link Assertions#assertNotNull} or {@link Assertions#assertNull} instead.
      */
     @Test
-    @Disabled
     void assertTrueNotNullTest() {
         // Unclear, useless error-message when tests fail
-        assertTrue(dummyFruits.get(4) != null);
+        assertThrows(AssertionFailedError.class, () ->
+                assertTrue(dummyFruits.get(4) != null)).printStackTrace();
 
-        /*
-        org.opentest4j.AssertionFailedError: // It couldn't be more useless...
-        */
+        // org.opentest4j.AssertionFailedError // It couldn't be more useless...
     }
 
     @Test
-    @Disabled
     void assertNotNullTest() {
         // Better error-message you can actually use and understand
-        assertNotNull(dummyFruits.get(4));
+        assertThrows(AssertionFailedError.class, () ->
+                assertNotNull(dummyFruits.get(4))).printStackTrace();
 
-        /*
-        org.opentest4j.AssertionFailedError: expected: not <null>
-        */
+        // org.opentest4j.AssertionFailedError: expected: not <null>
     }
 
     /**
-     * The same applies for using {@link #equals}. Use {@link Assertions#assertEquals} instead.
+     * The same applies for using {@link Assertions#assertTrue} and {@link Object#equals}. Use {@link Assertions#assertEquals} instead.
      */
     @Test
-    @Disabled
     void assertTrueEqualsTest() {
         // Unclear, useless error-message when tests fail
-        assertTrue(TYPE.BANANA.equals(dummyFruits.get(2).getType()));
+        assertThrows(AssertionFailedError.class, () ->
+                assertTrue(TYPE.BANANA.equals(dummyFruits.get(2).getType()))).printStackTrace();
 
-        /*
-        org.opentest4j.AssertionFailedError: // It - again - couldn't be more useless...
-        */
+        // org.opentest4j.AssertionFailedError: // It - again - couldn't be more useless...
     }
 
     @Test
-    @Disabled
     void assertEqualsTest() {
         // Really useful error-message you can actually use and understand
-        assertEquals(TYPE.BANANA, dummyFruits.get(2).getType());
+        assertThrows(AssertionFailedError.class, () ->
+            assertEquals(TYPE.BANANA, dummyFruits.get(2).getType())).printStackTrace();
 
-        /*
-        org.opentest4j.AssertionFailedError: expected: <BANANA> but was: <APPLE>
-        Expected :BANANA
-        Actual   :APPLE
-        */
+        // org.opentest4j.AssertionFailedError: expected: <BANANA> but was: <APPLE>
     }
 
     /*##############################################
@@ -97,14 +83,15 @@ class JUnit_BestPractice {
     ##############################################*/
 
     /**
-     * It may seem trivial, but I've seen all of these in actual enterprise projects.
+     * It may seem trivial, but they happen more often than you would assume.
      */
     @Test
     void wrongDelta() {
         assertNotEquals(0.9, DummyUtil.calculateTimesThree(0.3)); // --> That's why the delta is important
 
-        /*Using a 0.0 delta doesn't make much sense and JUnit 5 actively prevents it (therefore the comment)
-        assertEquals(20.9, DummyUtil.calculateTimesThree(19), 0.0); */
+        // Using a 0.0 delta doesn't make much sense and JUnit 5 actively prevents it
+        assertThrows(AssertionFailedError.class, () ->
+                assertEquals(20.9, DummyUtil.calculateTimesThree(19), 0.0)).printStackTrace();
 
         // With such a delta the correctness of the calculation is no longer assured
         assertEquals(15.5, DummyUtil.calculateTimesThree(5.0), 0.5);
@@ -137,31 +124,26 @@ class JUnit_BestPractice {
     ##############################################*/
 
     @Test
-    @Disabled
     void wrongOrderTest() {
-        assertEquals(dummyFruits.get(2).getName(), "Grapefruit"); //Gives you unclear, actually wrong fail-reports!
-                    // ^expected                        // ^actual
+        //Gives you unclear, actually wrong fail-reports!
+        assertThrows(AssertionFailedError.class, () ->
+                assertEquals(dummyFruits.get(2).getName(), "Grapefruit")).printStackTrace();
+        // . . . . . . . . . . ^expected . . . . . . . . . . // ^actual
 
-        /*
-        org.opentest4j.AssertionFailedError: expected: <Granny Smith Apple> but was: <Baby Banana>
-        Expected :Granny Smith Apple
-        Actual   :Baby Banana
-        */
+        // org.opentest4j.AssertionFailedError: expected: <Granny Smith Apple> but was: <Grapefruit>
 
         /* "So wait, the constant String I put in there is not an expected value? Tell me more about that!
-            Or don't... Just fix the order and everything is fine ;)" */
+            Or don't... Just fix the order and everything will be fine ;)" */
     }
 
     @Test
-    @Disabled
     void correctOrderTest() {
-        assertEquals("Grapefruit", dummyFruits.get(2).getName()); // Clear and useful fail-report ;)
+        // Clear and useful fail-report ;)
+        assertThrows(AssertionFailedError.class, () ->
+                assertEquals("Grapefruit", dummyFruits.get(2).getName())).printStackTrace();
+        // . . . . . . . . . . ^expected . . . . . ^actual
 
-        /*
-        org.opentest4j.AssertionFailedError: expected: <Grapefruit> but was: <Granny Smith Apple>
-        Expected :Grapefruit
-        Actual   :Granny Smith Apple
-        */
+        // org.opentest4j.AssertionFailedError: expected: <Grapefruit> but was: <Granny Smith Apple>
 
         /* "Oh, my actual value is not what was expected? Well now I know what the problem is and I can fix it!" */
     }

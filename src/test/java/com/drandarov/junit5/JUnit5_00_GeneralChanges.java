@@ -1,6 +1,7 @@
 package com.drandarov.junit5;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExecutionCondition;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
@@ -18,7 +19,7 @@ class JUnit5_00_GeneralChanges {
     ##############################################*/
 
     /**
-     * Tests are now only not allowed to be static / private. Latter also goes for @Before.../@After...
+     * Tests now only must not be static or private. Latter also goes for @Before.../@After...
      * timeout = ? and expected = ? functionality has now moved elsewhere. See in {@link JUnit5_01_NewFeaturesBasics}
      */
     @Test
@@ -45,14 +46,14 @@ class JUnit5_00_GeneralChanges {
 
     /**
      * Annotation @Ignore was replaced by @{@link Disabled}. Sounds less negative.
-     * However a reason for the deactivation  will be printed.
+     * However a reason for the deactivation will be printed which can be more advanced with features like {@link ExecutionCondition}.
      */
-    @Disabled
+    //@Disabled
     @Test
     void disabledTest() {}
 
     /**
-     * JUnit 4's experimental @Category is now called {@link Tag}/{@link Tags}.
+     * JUnit 4s experimental @Category is now called {@link Tag}/{@link Tags}.
      */
     @Tag("abc")
     @Test

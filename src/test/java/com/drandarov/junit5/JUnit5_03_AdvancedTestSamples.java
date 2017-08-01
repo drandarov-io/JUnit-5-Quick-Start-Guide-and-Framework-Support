@@ -9,11 +9,11 @@ import javafx.scene.layout.Pane;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * A class containing advanced test samples and utils of features introduced and explained before.
@@ -48,8 +48,8 @@ class JUnit5_03_AdvancedTestSamples {
      */
     @UITest("../../sample.fxml")
     void userInterfaceTest(Pane root) {
-        System.out.println(String.valueOf(root.getPrefWidth()));    // 555.0 (defined in FXML-File)
-        System.out.println(String.valueOf(root.getPrefHeight()));   // 333.0 (defined in FXML-File)
+        System.out.println(root.getPrefWidth());    // 555.0 (defined in FXML-File)
+        System.out.println(root.getPrefHeight());   // 333.0 (defined in FXML-File)
     }
 
     /**
@@ -62,12 +62,12 @@ class JUnit5_03_AdvancedTestSamples {
     @Test
     @Benchmarked
     void benchmarkedTest() {
-        List<Integer> primes = new ArrayList<>();
         System.out.println("Calculating some primes...");
-        IntStream.iterate(2, i -> i + 1)
-                .filter(i -> LongStream.rangeClosed(2, (long)(Math.sqrt(i))).allMatch(n -> i % n != 0))
-                .limit(55555)
-                .forEach(primes::add);
+        int primeCount = 200000;
+
+        assertEquals(primeCount, IntStream.iterate(2, i -> i + 1)
+                .filter(i -> LongStream.rangeClosed(2, (long) (Math.sqrt(i))).allMatch(n -> i % n != 0))
+                .limit(primeCount).toArray().length);
     }
 
 }

@@ -96,8 +96,7 @@ class JUnit5_01_NewFeaturesBasics {
     }
 
     /**
-     * You can also use {@link Assertions#assertThrows(Class, Executable)} to get the {@link Exception}-Instance if you
-     * need it.
+     * You can also use {@link Assertions#assertThrows(Class, Executable)} to get the {@link Exception}-Instance if you need it.
      */
     @Test
     void expectThrowsTest() {

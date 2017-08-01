@@ -24,20 +24,18 @@ public class DisabledOnWeekday implements ExecutionCondition {
         Optional<AnnotatedElement> contextElement = context.getElement();
         AnnotatedElement annotatedElement = contextElement.orElse(null);
 
-        if (annotatedElement != null) {
-            DisabledWeekdays weekdayAnnotation = annotatedElement.getAnnotation(DisabledWeekdays.class);
+        if (annotatedElement == null) return null;
 
-            // Determine whether the test should be disabled
-            boolean weekdayToday = IntStream.of(weekdayAnnotation.value())
-                    .anyMatch(day -> day == Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
+        DisabledWeekdays weekdayAnnotation = annotatedElement.getAnnotation(DisabledWeekdays.class);
 
-            // Return a ConditionEvaluationResult based on the outcome of the boolean weekdayToday
-            return weekdayToday ?
-                    ConditionEvaluationResult.disabled("I spare you today.")
-                    :
-                    ConditionEvaluationResult.enabled("Don't spare you on other days though >:(");
-        }
-        return null;
+        // Determine whether the test should be disabled
+        boolean weekdayToday = IntStream.of(weekdayAnnotation.value())
+                .anyMatch(day -> day == Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
+
+        // Return a ConditionEvaluationResult based on the outcome of the boolean weekdayToday
+        return weekdayToday ?
+                ConditionEvaluationResult.disabled("I spare you today.") :
+                ConditionEvaluationResult.enabled("Don't spare you on other days though >:(");
     }
 
 }

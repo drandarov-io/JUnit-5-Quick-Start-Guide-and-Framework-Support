@@ -28,6 +28,7 @@ public class ClassName_ParameterResolver implements ParameterResolver {
     @Override
     public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
         Class<?> contextClass = extensionContext.getTestClass().orElse(null);
+
         return contextClass == null ? null : contextClass.getSimpleName();
     }
 

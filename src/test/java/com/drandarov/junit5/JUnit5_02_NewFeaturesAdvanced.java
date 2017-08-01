@@ -39,7 +39,7 @@ class JUnit5_02_NewFeaturesAdvanced {
     @ExtendWith({ClassName_ParameterResolver.class, ParameterIndex_ParameterResolver.class})
     void customParameterTest(String className, Long parameterIndex) {
         System.out.println(className);                    // Surrounding class name injected by ClassName_ParameterResolver
-        System.out.println(parameterIndex.toString());    // Parameter-Index injected by ParameterIndex_ParameterResolver
+        System.out.println(parameterIndex);    // Parameter-Index injected by ParameterIndex_ParameterResolver
     }
 
 

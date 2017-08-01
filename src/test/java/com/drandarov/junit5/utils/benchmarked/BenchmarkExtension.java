@@ -10,13 +10,12 @@ import java.util.Map;
 import static java.lang.System.currentTimeMillis;
 
 /**
- * Extension, that does the logging for the benchmarks. (Implementation is not accurate!)
+ * Extension, that does the logging for the benchmarks. (Implementation is not accurate or performant!)
  *
  * @author dmitrij-drandarov
  * @since 29 Jul 2016
  */
-public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutionCallback,
-        AfterTestExecutionCallback, AfterAllCallback {
+public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutionCallback, AfterTestExecutionCallback, AfterAllCallback {
 
     private static final String APD = "\t-\t";
 

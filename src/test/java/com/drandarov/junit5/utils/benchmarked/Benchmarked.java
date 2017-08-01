@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation, that will mark the test-method or -class for benchmarking.
+ * Annotation, that will mark the test method or class for benchmarking.
  *
  * @author dmitrij-drandarov
  * @since 29 Jul 2016
