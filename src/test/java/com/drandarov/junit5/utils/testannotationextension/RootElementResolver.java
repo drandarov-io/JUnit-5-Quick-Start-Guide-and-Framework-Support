@@ -20,13 +20,13 @@ import java.util.function.Supplier;
 class RootElementResolver implements ParameterResolver {
 
     @Override
-    public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+    public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
         return extensionContext.getTags().contains("userInterface")
                 & parameterContext.getParameter().getType().equals(Pane.class);
     }
 
     @Override
-    public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+    public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
         AnnotatedElement annotatedElement = extensionContext.getElement().orElse(null);
 
         Supplier<Pane> getPane = () -> {

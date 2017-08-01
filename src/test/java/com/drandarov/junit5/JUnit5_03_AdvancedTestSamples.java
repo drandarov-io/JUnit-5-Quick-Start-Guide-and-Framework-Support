@@ -45,7 +45,7 @@ class JUnit5_03_AdvancedTestSamples {
      * Here I use an annotation @{@link UITest} that is annotated by @{@link Test} itself, so it will be executed
      * properly. @{@link UITest} contains grouped information and annotations about this test like predefined
      * extensions. Further information in @{@link UITest}s JavaDoc.
-     *
+     *#
      * This of course could be also possible for the examples above.
      */
     @UITest("../../sample.fxml")
