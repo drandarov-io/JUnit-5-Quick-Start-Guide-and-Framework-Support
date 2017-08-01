@@ -1,4 +1,4 @@
-= JUnit 5 Quick Start Guide and Advanced
+= JUnit 5 QuickStart Guide and Advanced
 Dmitrij Drandarov <https://github.com/dmitrij-drandarov>
 :imagesdir: images
 :sectnums:
@@ -718,7 +718,7 @@ Of course I could have also included `@Benchmarked` in a separate `@BenchmarkedT
 == Closing words
 
 === Contribution
-Feel free to express critique and contribute to the https://github.com/msg-DAVID-GmbH/JUnit-5-Quick-Start-Guide-and-Advanced[repository] :)
+Feel free to express critique and contribute to the https://github.com/msg-DAVID-GmbH/JUnit-5-QuickStart-Guide-and-Advanced[repository] :)
 
 === Usage
 You can use this repository in any way you want.
