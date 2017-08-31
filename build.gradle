@@ -1,16 +1,6 @@
-repositories {
-    mavenCentral()
-}
+subprojects {
+    apply plugin: 'java'
 
-apply plugin: 'java'
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-dependencies {
-    // Main-dependency needed for JUnit 5
-    testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.0-RC2'
-
-    // Lagacy support for JUnit 4
-    // testCompile 'org.junit.vintage:junit-vintage-engine:4.12.0-RC2'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 }

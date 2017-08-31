@@ -1,0 +1,8 @@
+include 'common',
+        '00_junit_best_practice',
+        '01_junit_5',
+        '02_assertj',
+        '03_spring:03_01_spring_boot',
+        '03_spring:03_02_spring',
+        '04_testfx',
+        '05_mockito'

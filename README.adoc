@@ -289,10 +289,10 @@ A lot more on the Extension-Api is following further below.
  */
 @Test
 void parameterTest(TestInfo testInfo, TestReporter testReporter) {
-    System.out.println("DisplayName:\t" + testInfo.getDisplayName());
-    System.out.println("Tags:\t\t\t" + testInfo.getTags());
-    System.out.println("TestClass:\t\t" + testInfo.getTestClass());
-    System.out.println("TestMethod:\t\t" + testInfo.getTestMethod());
+    LOG.info("DisplayName:\t" + testInfo.getDisplayName());
+    LOG.info("Tags:\t\t\t" + testInfo.getTags());
+    LOG.info("TestClass:\t\t" + testInfo.getTestClass());
+    LOG.info("TestMethod:\t\t" + testInfo.getTestMethod());
 
     testReporter.publishEntry("parameterTestTime", String.valueOf(System.currentTimeMillis()));
 }
@@ -318,8 +318,8 @@ You can also see the first visual sign of the Extension-API in the form of the `
 @Test
 @ExtendWith({ClassName_ParameterResolver.class, ParameterIndex_ParameterResolver.class})
 void customParameterTest(String className, Long parameterIndex) {
-    System.out.println(className);                    // Surrounding class name injected by ClassName_ParameterResolver
-    System.out.println(parameterIndex);    // Parameter-Index injected by ParameterIndex_ParameterResolver
+    LOG.info(className);                    // Surrounding class name injected by ClassName_ParameterResolver
+    LOG.info(parameterIndex);    // Parameter-Index injected by ParameterIndex_ParameterResolver
 }
 ----
 
@@ -563,8 +563,8 @@ Let's make it all-in-one for this example:
  */
 @UITest("../../sample.fxml")
 void userInterfaceTest(Pane root) {
-    System.out.println(root.getPrefWidth());    // 555.0 (defined in FXML-File)
-    System.out.println(root.getPrefHeight());   // 333.0 (defined in FXML-File)
+    LOG.info(root.getPrefWidth());    // 555.0 (defined in FXML-File)
+    LOG.info(root.getPrefHeight());   // 333.0 (defined in FXML-File)
 }
 ----
 
@@ -635,7 +635,7 @@ The implementation is just for showcase. It is in no way accurate or performant.
 @Test
 @Benchmarked
 void benchmarkedTest() {
-    System.out.println("Calculating some primes...");
+    LOG.info("Calculating some primes...");
     int primeCount = 200000;
 
     assertEquals(primeCount, IntStream.iterate(2, i -> i + 1)
@@ -670,8 +670,8 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         String disp = context.getDisplayName();
         long start = currentTimeMillis();
 
-        System.out.println("#### Summary           \t" + APD + disp + " ####");
-        System.out.println("#### Start of Benchmark\t" + APD + disp + APD + dtForm.format(new Date(start)) + " ####");
+        LOG.info("#### Summary           \t" + APD + disp + " ####");
+        LOG.info("#### Start of Benchmark\t" + APD + disp + APD + dtForm.format(new Date(start)) + " ####");
         startTime.put(disp, start);
     }
 
@@ -680,7 +680,7 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         String disp = context.getDisplayName();
         long start = currentTimeMillis();
 
-        System.out.println("#### Method-Benchm. ####" + APD + disp + APD + dtForm.format(new Date(start)));
+        LOG.info("#### Method-Benchm. ####" + APD + disp + APD + dtForm.format(new Date(start)));
         startTime.put(context.getDisplayName(), start);
     }
 
@@ -689,10 +689,10 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         String disp = context.getDisplayName();
         long end = currentTimeMillis();
 
-        System.out.println("#### Summary        ####" + APD + disp);
-        System.out.println("#### Start          ####" + APD + dtForm.format(new Date(startTime.get(disp))));
-        System.out.println("#### End            ####" + APD + dtForm.format(new Date(end)));
-        System.out.println("#### Duration       ####" + APD + (end - startTime.get(disp)) + " ms\n");
+        LOG.info("#### Summary        ####" + APD + disp);
+        LOG.info("#### Start          ####" + APD + dtForm.format(new Date(startTime.get(disp))));
+        LOG.info("#### End            ####" + APD + dtForm.format(new Date(end)));
+        LOG.info("#### Duration       ####" + APD + (end - startTime.get(disp)) + " ms\n");
     }
 
     @Override
@@ -700,8 +700,8 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
         String disp = context.getDisplayName();
         long end = currentTimeMillis();
 
-        System.out.println("#### End of Benchmark  \t" + APD + disp + APD + dtForm.format(new Date(end)) + " ####");
-        System.out.println("#### Duration for class\t" + APD + disp + APD + (end - startTime.get(disp)) + " ms ####");
+        LOG.info("#### End of Benchmark  \t" + APD + disp + APD + dtForm.format(new Date(end)) + " ####");
+        LOG.info("#### Duration for class\t" + APD + disp + APD + (end - startTime.get(disp)) + " ms ####");
     }
 
 }
