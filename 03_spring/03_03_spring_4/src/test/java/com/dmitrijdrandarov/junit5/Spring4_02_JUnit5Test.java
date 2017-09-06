@@ -31,7 +31,8 @@ class Spring4_02_JUnit5Test {
         fruity = fruitRepository.findOneById(fruity.getId());
         Assertions.assertNotNull(fruity);
 
-        LOG.info(fruity.toString());
+//        LOG.info(fruity.toString());
+        System.out.println(fruity.toString());
     }
 
     @Test
@@ -39,6 +40,7 @@ class Spring4_02_JUnit5Test {
         List<DummyFruit> dummyFruits = fruitRepository.findAllBy();
         Assertions.assertEquals(3, dummyFruits.size());
 
-        dummyFruits.stream().map(DummyFruit::toString).forEach(LOG::info);
+//        dummyFruits.stream().map(DummyFruit::toString).forEach(LOG::info);
+        dummyFruits.stream().map(DummyFruit::toString).forEach(System.out::println);
     }
 }

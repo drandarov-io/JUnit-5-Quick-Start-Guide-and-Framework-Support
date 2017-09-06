@@ -21,7 +21,8 @@ dependencies {
 
 
     // Hibernate JPA
-    compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final"
+    compile "org.hibernate:hibernate-core:5.2.10.Final"
+//    compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final"
 
 
     // Commons
