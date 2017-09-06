@@ -4,14 +4,17 @@ repositories {
 
 dependencies {
     // Main-dependency needed for JUnit 5
-    testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.0-RC3'
+    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-${junit5RC}"
+
 
     // Lagacy support for JUnit 4
-    testCompile 'org.junit.vintage:junit-vintage-engine:4.12.0-RC3'
+    testCompile "org.junit.vintage:junit-vintage-engine:4.12.0-${junit5RC}"
 
-    // Logging
-    compile 'org.slf4j:slf4j-simple:1.7.25'
 
     // Commons
-    compile project(':common')
+    testCompile project(":common")
+
+
+    // Logging
+    testCompile "org.slf4j:slf4j-simple:${slf4jVersion}"
 }

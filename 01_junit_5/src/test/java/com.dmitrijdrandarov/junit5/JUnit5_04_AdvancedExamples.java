@@ -27,9 +27,10 @@ class JUnit5_04_AdvancedExamples {
 
     private static final Logger LOG = LoggerFactory.getLogger(JUnit5_04_AdvancedExamples.class);
 
-    /*##############################################
-    #           Advanced Examples
-    ##############################################*/
+
+    //------------------------------------------------------------------------------------------------------------------------
+    //    Advanced Examples
+    //------------------------------------------------------------------------------------------------------------------------
 
     /**
      * Here I go a step further and annotate my days dynamically, by specifying the days I don't want the test to run

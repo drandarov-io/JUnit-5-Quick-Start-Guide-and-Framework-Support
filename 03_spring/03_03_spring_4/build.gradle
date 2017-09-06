@@ -1,0 +1,34 @@
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    // Main-dependency needed for JUnit 5
+    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-${junit5RC}"
+    // Lagacy support for JUnit 4
+    testCompile "org.junit.vintage:junit-vintage-engine:4.12.0-${junit5RC}"
+
+
+    // Spring 4
+//    compile "org.springframework:spring-context:4.3.10.RELEASE"
+    compile "org.springframework.data:spring-data-jpa:1.11.6.RELEASE"
+//    testCompile "org.springframework:spring-test:4.3.10.RELEASE"
+    // JUnit 5 Extension for Spring 4 Tests
+    testCompile "com.github.sbrannen:spring-test-junit5:1.0.0.${spring5RC}"
+
+
+    // Hibernate JPA
+    compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final"
+
+
+    // Commons
+//    compile project(":common")
+
+
+    // Database Drivers
+    runtime "org.hsqldb:hsqldb:${hsqldbDriverVersion}"
+    runtime "org.postgresql:postgresql:${postgresqlDriverVersion}"
+}

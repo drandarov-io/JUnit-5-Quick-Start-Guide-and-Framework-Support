@@ -30,14 +30,15 @@ class JUnit_BestPractice {
     @BeforeEach
     void dummy() {
         dummyFruits = new HashMap<>();
-        dummyFruits.put(1, new DummyFruit(1L, "Baby Banana", "It's yellow!", 20.0, TYPE.BANANA));
-        dummyFruits.put(2, new DummyFruit(2L, "Granny Smith Apple", "Delicious!", 10.5, TYPE.APPLE));
-        dummyFruits.put(3, new DummyFruit(3L, "Grapefruit", "It's totally an orange, baka!", 8.5, TYPE.ORANGE));
+        dummyFruits.put(1, new DummyFruit(1L, TYPE.BANANA, "Baby Banana", "It's yellow!", 20.0));
+        dummyFruits.put(2, new DummyFruit(2L, TYPE.APPLE, "Granny Smith Apple", "Delicious!", 10.5));
+        dummyFruits.put(3, new DummyFruit(3L, TYPE.ORANGE, "Grapefruit", "It's totally an orange, baka!", 8.5));
     }
 
-    /*##############################################
-    #           Choosing the right assertion-type
-    ##############################################*/
+
+    //------------------------------------------------------------------------------------------------------------------------
+    //    Choosing the right assertion-type
+    //------------------------------------------------------------------------------------------------------------------------
 
     /**
      * Don't check for nulls with {@link Assertions#assertTrue}. Error messages will be meaningless and therefore useless.
@@ -46,8 +47,7 @@ class JUnit_BestPractice {
     @Test
     void assertTrueNotNullTest() {
         // Unclear, useless error-message when tests fail
-        AssertionFailedError ex = assertThrows(
-                AssertionFailedError.class,
+        AssertionFailedError ex = assertThrows(AssertionFailedError.class,
                 () -> assertTrue(dummyFruits.get(4) != null));
 
         LOG.info(ex.toString());
@@ -57,8 +57,7 @@ class JUnit_BestPractice {
     @Test
     void assertNotNullTest() {
         // Better error-message you can actually use and understand
-        AssertionFailedError ex = assertThrows(
-                AssertionFailedError.class,
+        AssertionFailedError ex = assertThrows(AssertionFailedError.class,
                 () -> assertNotNull(dummyFruits.get(4)));
 
         LOG.info(ex.toString());
@@ -71,8 +70,7 @@ class JUnit_BestPractice {
     @Test
     void assertTrueEqualsTest() {
         // Unclear, useless error-message when tests fail
-        AssertionFailedError ex = assertThrows(
-                AssertionFailedError.class,
+        AssertionFailedError ex = assertThrows(AssertionFailedError.class,
                 () -> assertTrue(TYPE.BANANA.equals(dummyFruits.get(2).getType())));
 
         LOG.info(ex.toString());
@@ -82,17 +80,18 @@ class JUnit_BestPractice {
     @Test
     void assertEqualsTest() {
         // Really useful error-message you can actually use and understand
-        AssertionFailedError ex = assertThrows(
-                AssertionFailedError.class, () ->
+        AssertionFailedError ex = assertThrows(AssertionFailedError.class,
+                () ->
                 assertEquals(TYPE.BANANA, dummyFruits.get(2).getType()));
 
         LOG.info(ex.toString());
         // org.opentest4j.AssertionFailedError: expected: <BANANA> but was: <APPLE>
     }
 
-    /*##############################################
-    #           Working with delta
-    ##############################################*/
+
+    //------------------------------------------------------------------------------------------------------------------------
+    //    Working with delta
+    //------------------------------------------------------------------------------------------------------------------------
 
     /**
      * It may seem trivial, but they happen more often than you would assume.
@@ -102,8 +101,7 @@ class JUnit_BestPractice {
         assertNotEquals(0.9, DummyUtil.calculateTimesThree(0.3)); // --> That's why the delta is important
 
         // Using a 0.0 delta doesn't make much sense and JUnit 5 actively prevents it
-        AssertionFailedError ex = assertThrows(
-                AssertionFailedError.class,
+        AssertionFailedError ex = assertThrows(AssertionFailedError.class,
                 () -> assertEquals(20.9, DummyUtil.calculateTimesThree(19), 0.0));
 
         LOG.info(ex.toString());
@@ -134,15 +132,15 @@ class JUnit_BestPractice {
         assertEquals(15.0, DummyUtil.calculateTimesThree(5.0));
     }
 
-    /*##############################################
-    #           Correct parameter order
-    ##############################################*/
+
+    //------------------------------------------------------------------------------------------------------------------------
+    //    Correct parameter order
+    //------------------------------------------------------------------------------------------------------------------------
 
     @Test
     void wrongParameterOrder() {
         //Gives you unclear, actually wrong fail-reports!
-        AssertionFailedError ex = assertThrows(
-                AssertionFailedError.class,
+        AssertionFailedError ex = assertThrows(AssertionFailedError.class,
                 () -> assertEquals(dummyFruits.get(2).getName(), "Grapefruit"));
         // . . . . . . . . . . . . . . ^expected . . . . . . . . . . . ^actual
 
@@ -156,15 +154,14 @@ class JUnit_BestPractice {
     @Test
     void correctParameterOrder() {
         // Clear and useful fail-report ;)
-        AssertionFailedError ex = assertThrows(
-                AssertionFailedError.class,
+        AssertionFailedError ex = assertThrows(AssertionFailedError.class,
                 () -> assertEquals("Grapefruit", dummyFruits.get(2).getName()));
         // . . . . . . . . . . . . . . ^expected . . . . . . ^actual
 
         LOG.info(ex.toString());
         // org.opentest4j.AssertionFailedError: expected: <Grapefruit> but was: <Granny Smith Apple>
 
-        /* "Oh, my actual value is not what was expected? Well now I know what the problem is and I can fix it!" */
+        // "Oh... my actual value is not what was expected? Well now I know what the problem is and I can fix it!"
     }
 
 }
