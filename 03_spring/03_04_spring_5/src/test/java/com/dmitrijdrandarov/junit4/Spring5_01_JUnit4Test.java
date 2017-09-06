@@ -1,6 +1,6 @@
 package com.dmitrijdrandarov.junit4;
 
-import com.dmitrijdrandarov.Spring4Config;
+import com.dmitrijdrandarov.Spring5Config;
 import com.dmitrijdrandarov.entities.DummyFruit;
 import com.dmitrijdrandarov.repositories.DummyFruitRepository;
 import org.junit.Assert;
@@ -15,12 +15,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@ContextConfiguration(classes = {Spring4Config.class})
+@ContextConfiguration(classes = {Spring5Config.class})
 @RunWith(SpringRunner.class)
 @Transactional
-public class Spring4_01_JUnit4Test {
+public class Spring5_01_JUnit4Test {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Spring4_01_JUnit4Test.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Spring5_01_JUnit4Test.class);
 
     @Autowired
     private DummyFruitRepository fruitRepository;

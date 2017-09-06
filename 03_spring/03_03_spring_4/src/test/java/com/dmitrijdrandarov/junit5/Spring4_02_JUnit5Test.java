@@ -15,8 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {Spring4Config.class})
+@ExtendWith(SpringExtension.class)
 @Transactional
 class Spring4_02_JUnit5Test {
 
