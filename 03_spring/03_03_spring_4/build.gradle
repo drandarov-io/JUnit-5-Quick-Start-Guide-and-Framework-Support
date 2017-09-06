@@ -23,7 +23,7 @@ dependencies {
 
 
     // Commons
-//    compile project(":common")
+    compile project(":common")
 
 
     // Database Drivers

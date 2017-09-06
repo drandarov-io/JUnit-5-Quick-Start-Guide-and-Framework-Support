@@ -17,7 +17,6 @@ import javax.sql.DataSource;
 
 
 @Configuration
-//@ComponentScan(basePackages = {"com.dmitrijdrandarov.repositories"})
 @EnableJpaRepositories(basePackages={"com.dmitrijdrandarov.repositories"})
 public class Spring5Config {
 

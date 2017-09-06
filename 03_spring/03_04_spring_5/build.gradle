@@ -14,9 +14,7 @@ dependencies {
 
     // Spring 5
     compile "org.springframework.data:spring-data-jpa:2.0.0.${spring5RC}"
-    compile "org.springframework:spring-test:5.0.0.${spring5RC}"
-    // JUnit 5 Extension for Spring 4 Tests
-//    testCompile "com.github.sbrannen:spring-test-junit5:1.0.0.${spring5RC}"
+    testCompile "org.springframework:spring-test:5.0.0.${spring5RC}"
 
 
     // Hibernate JPA
@@ -24,7 +22,7 @@ dependencies {
 
 
     // Commons
-//    compile project(":common")
+    compile project(":common")
 
 
     // Database Drivers
