@@ -6,8 +6,10 @@ dependencies {
     // Main-dependency needed for JUnit 5
     testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-${junit5RC}"
 
+
     // Mockito
     testCompile "org.mockito:mockito-core:${mockitoVersion}"
+
 
     // Commons
     testCompile project(":common")

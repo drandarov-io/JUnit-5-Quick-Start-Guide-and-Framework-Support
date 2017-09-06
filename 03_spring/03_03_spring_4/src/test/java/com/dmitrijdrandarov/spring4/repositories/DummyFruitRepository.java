@@ -1,4 +1,4 @@
-package com.dmitrijdrandarov.repositories;
+package com.dmitrijdrandarov.spring4.repositories;
 
 import com.dmitrijdrandarov.entities.DummyFruit;
 import org.springframework.data.repository.CrudRepository;

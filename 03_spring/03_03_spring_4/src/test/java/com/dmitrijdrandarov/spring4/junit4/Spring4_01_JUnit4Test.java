@@ -1,44 +1,44 @@
-package com.dmitrijdrandarov.junit5;
+package com.dmitrijdrandarov.spring4.junit4;
 
-import com.dmitrijdrandarov.Spring5Config;
+import com.dmitrijdrandarov.spring4.Spring4Config;
 import com.dmitrijdrandarov.entities.DummyFruit;
-import com.dmitrijdrandarov.repositories.DummyFruitRepository;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import com.dmitrijdrandarov.spring4.repositories.DummyFruitRepository;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@ContextConfiguration(classes = {Spring5Config.class})
-@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = {Spring4Config.class})
+@RunWith(SpringRunner.class)
 @Transactional
-class Spring5_02_JUnit5Test {
+public class Spring4_01_JUnit4Test {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Spring5_02_JUnit5Test.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Spring4_01_JUnit4Test.class);
 
     @Autowired
     private DummyFruitRepository fruitRepository;
 
     @Test
-    void saveTest() {
+    public void saveTest() {
         DummyFruit fruity = fruitRepository.save(new DummyFruit(null, DummyFruit.TYPE.APPLE, "Fruity", "Description", 10D));
         fruity = fruitRepository.findOneById(fruity.getId());
-        Assertions.assertNotNull(fruity);
+        Assert.assertNotNull(fruity);
 
 //        LOG.info(fruity.toString());
         System.out.println(fruity.toString());
     }
 
     @Test
-    void dataSQLTest() {
+    public void dataSQLTest() {
         List<DummyFruit> dummyFruits = fruitRepository.findAllBy();
-        Assertions.assertEquals(3, dummyFruits.size());
+        Assert.assertEquals(3, dummyFruits.size());
 
 //        dummyFruits.stream().map(DummyFruit::toString).forEach(LOG::info);
         dummyFruits.stream().map(DummyFruit::toString).forEach(System.out::println);

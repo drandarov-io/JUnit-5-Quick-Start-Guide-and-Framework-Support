@@ -7,8 +7,6 @@ dependencies {
     testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-${junit5RC}"
 
 
-
-
     // Commons
     testCompile project(":common")
 

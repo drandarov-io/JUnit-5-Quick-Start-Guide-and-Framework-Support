@@ -13,13 +13,13 @@ dependencies {
 
 
     // Spring 4
-    compile "org.springframework.data:spring-data-jpa:1.11.6.RELEASE"
+    compile "org.springframework.data:spring-data-jpa:${spring4Version}"
     // JUnit 5 Extension for Spring 4 Tests
     testCompile "com.github.sbrannen:spring-test-junit5:1.0.0.${spring5RC}"
 
 
     // Hibernate JPA
-    compile "org.hibernate:hibernate-core:5.2.10.Final"
+    compile "org.hibernate:hibernate-core:${hibernateCoreVersion}"
 
 
     // Commons

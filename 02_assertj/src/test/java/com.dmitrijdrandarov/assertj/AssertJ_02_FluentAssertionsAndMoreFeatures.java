@@ -1,4 +1,4 @@
-package com.dmitrijdrandarov;
+package com.dmitrijdrandarov.assertj;
 
 import com.dmitrijdrandarov.entities.DummyFruit;
 import com.dmitrijdrandarov.entities.DummyObject;

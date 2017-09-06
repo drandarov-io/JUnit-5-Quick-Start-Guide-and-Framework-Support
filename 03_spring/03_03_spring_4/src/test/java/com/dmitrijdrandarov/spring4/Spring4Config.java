@@ -1,4 +1,4 @@
-package com.dmitrijdrandarov;
+package com.dmitrijdrandarov.spring4;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 
 @Configuration
-@EnableJpaRepositories(basePackages={"com.dmitrijdrandarov.repositories"})
+@EnableJpaRepositories(basePackages={"com.dmitrijdrandarov.spring4.repositories"})
 public class Spring4Config {
 
     @Bean

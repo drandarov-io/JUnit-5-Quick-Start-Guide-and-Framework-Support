@@ -18,7 +18,7 @@ dependencies {
 
 
     // Hibernate JPA
-    compile "org.hibernate:hibernate-core:5.2.10.Final"
+    compile "org.hibernate:hibernate-core:${hibernateCoreVersion}"
 
 
     // Commons

@@ -1,20 +1,35 @@
-= JUnit 5 QuickStart Guide and Advanced
+= Modern Testing with JUnit 5, AssertJ, Spring, TestFX and Mockito
 Dmitrij Drandarov <https://github.com/dmitrij-drandarov>
 :imagesdir: images
-:sectlinks:
-:sectnums:
 :toc:
 
-== Introduction
+== Authors
 
-=== Information
+* Dmitrij Drandarov | link:https://github.com/dmitrij-drandarov[GitHub]
+
+== Repository Introduction
+
+This repository contains several modules focused on showing different frameworks and tools in conjunction with JUnit 5.
+These are however only presented as code since the main focus of this repository is the introduction to JUnit 5.
+
+.**More practices, frameworks and tools in conjunction with JUnit 5**
+* link:00_junit_best_practice/src/test/java/com/dmitrijdrandarov/bestpractice[**Best practices**]
+* link:02_assertj/src/test/java/com/dmitrijdrandarov/assertj[**AssertJ**]
+* link:03_spring[**Spring**]
+* link:04_testfx/src/test/java/com/dmitrijdrandarov/testfx[**TestFX**]
+* link:05_mockito/src/test/java/com/dmitrijdrandarov/mockito[**Mockito**]
+
+= JUnit 5 Quick-Start-Guide
+
+:sectnums:
+:sectlinks:
 
 Testing is important.
 We should all know that.
 They can help reproduce and fix problems in our code.
 They can also remind you that you shouldn't have done something long after you forgot that you shouldn't do that thing and a lot more.
 
-The problem is that often developers or managers see testing as some overhead for development that should be done after the code is finished.
+The problem is that often developers or managers see testing as some overhead for development that should be done after the code is finished if at all.
 That's wrong: Testing should be a vital part of development!
 That problem is something JUnit 5 can help you with.
 It introduced a lot of interesting, fast ways to create tests.
@@ -22,15 +37,11 @@ Be it Test-Factories, Test-Extensions (that only have to be implemented once), L
 It pushes the D.R.Y. principle a lot!
 
 To follow this guide you should know the basics of testing and JUnit (4), but otherwise you wouldn't be here I guess.
-You can also check out the best-practice-part included in this repository.
-It was created by request of a colleague:
-
-link:src/test/java/com/drandarov/bestPractice/JUnit_BestPractice.java[**JUnit best-practices included in this repository**]
 
 Some headers related to code will have a code-link behind their name directing to the corresponding class in the GitHub-Repository.
 
-=== Setup
-For an IDE, **IntelliJ IDEA 2016.2 and above** is recommended right now since it brings native support for JUnit 5.
+== Setup
+For an IDE, **IntelliJ IDEA 2017 and above** is recommended right now since it brings native support for JUnit 5.
 As for dependencies:
 
 .**Maven**
@@ -65,7 +76,7 @@ If you need lagacy support for JUnit 4 or even JUnit 3 to run in parallel to JUn
 ----
 
 
-== General changes link:src/test/java/com/drandarov/junit5/JUnit5_00_GeneralChanges.java[(code)]
+== General changes link:01_junit_5/src/test/java/com/dmitrijdrandarov/junit5/JUnit5_00_GeneralChanges.java[(code)]
 
 
 === Syntax
@@ -148,7 +159,7 @@ void assumptionsTest() {
 ----
 
 
-== New features: Basics link:src/test/java/com/drandarov/junit5/JUnit5_01_NewFeaturesBasics.java[(code)]
+== New features: Basics link:01_junit_5/src/test/java/com/dmitrijdrandarov/junit5/JUnit5_01_NewFeaturesBasics.java[(code)]
 
 === General
 Here I want to introduce some basics for the new features available in JUnit 5.
@@ -299,7 +310,7 @@ void parameterTest(TestInfo testInfo, TestReporter testReporter) {
 ----
 
 
-== New features: Advanced link:src/test/java/com/drandarov/junit5/JUnit5_02_NewFeaturesAdvanced.java[(code)]
+== New features: Advanced link:01_junit_5/src/test/java/com/dmitrijdrandarov/junit5/JUnit5_02_NewFeaturesAdvanced.java[(code)]
 
 === Test-Parameters
 Building upon the `ParameterResolver` paragraph of the last chapter let's look at implementing your own `ParameterResolver`.
@@ -471,7 +482,7 @@ void disabledOnMondayTest() {}
 Again: This could without problem be placed on class-level.
 
 
-== Advanced Test-Samples link:src/test/java/com/drandarov/junit5/JUnit5_03_AdvancedTestSamples.java[(code)]
+== Advanced Test-Samples link:01_junit_5/src/test/java/com/dmitrijdrandarov/junit5/JUnit5_03_AdvancedTestSamples.java[(code)]
 
 === Extended disabled weekdays
 Let's extend that `@DisabledOnMonday` annotation a bit.
@@ -620,7 +631,7 @@ The final benchmarked test-method will should something like this:
 
 [NOTE]
 ====
-The implementation is just for showcase. It is in no way accurate or performant.
+The implementation is just for showcase. It isn't very accurate or performant.
 ====
 
 [source,java]
@@ -709,20 +720,6 @@ public class BenchmarkExtension implements BeforeAllCallback, BeforeTestExecutio
 
 Of course I could have also included `@Benchmarked` in a separate `@BenchmarkedTest` annotation that would have extended `@Test` as well saving that one line.
 
-== Changes from M4-RC2 link:src/test/java/com/drandarov/junit5/xxxxxxxxxxx.java[(code)]
-
-=== TODO
-x
-
-== Assertion-Frameworks link:src/test/java/com/drandarov/junit5/xxxxxxxxxxx.java[(code)]
-
-=== TODO
-x
-
-== Testing with Spring 5 link:src/test/java/com/drandarov/junit5/xxxxxxxxxxx.java[(code)]
-
-=== TODO
-x
 
 == Closing words
 
@@ -733,9 +730,6 @@ Feel free to express critique and contribute to the https://github.com/msg-DAVID
 You can use this repository in any way you want.
 May it be for workshops or presentations. Just give credits. ;)
 
-=== Schedule
-* [ ] 5.0 GA (General Availability Release) Update - Due by August 24, 2017
-
 === Further Reference
 [%hardbreaks]
 * http://junit.org/junit5/docs/current/user-guide[Official JUnit 5 User Guide]
@@ -744,7 +738,8 @@ May it be for workshops or presentations. Just give credits. ;)
 
 == Repository Timeline
 
-* [ ] Update for M4-RC2                                 -   XX Aug 2017
+* Everything else is now tracked as issues
+* [x] Update for M4-RC2                                 -   07 Sep 2017
 * [x] Fix userInterfaceTest                             -   01 Aug 2017
 * [x] Create wiki article with githup-pages-content     -   04 Mar 2017
 * [x] Convert code fragments from images to text        -   04 Mar 2017

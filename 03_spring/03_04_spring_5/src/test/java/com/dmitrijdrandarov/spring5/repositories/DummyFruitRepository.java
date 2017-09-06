@@ -1,9 +1,7 @@
-package com.dmitrijdrandarov.repositories;
+package com.dmitrijdrandarov.spring5.repositories;
 
 import com.dmitrijdrandarov.entities.DummyFruit;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
