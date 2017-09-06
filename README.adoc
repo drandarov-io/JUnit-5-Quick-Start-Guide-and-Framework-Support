@@ -5,7 +5,7 @@ Dmitrij Drandarov <https://github.com/dmitrij-drandarov>
 
 == Authors
 
-* Dmitrij Drandarov | link:https://github.com/dmitrij-drandarov[GitHub]
+* Dmitrij Drandarov | link:https://github.com/dmitrij-drandarov[GitHub] | link:https://www.xing.com/profile/Dmitrij_Drandarov[Xing]
 
 == Repository Introduction
 
@@ -13,11 +13,11 @@ This repository contains several modules focused on showing different frameworks
 These are however only presented as code since the main focus of this repository is the introduction to JUnit 5.
 
 .**More practices, frameworks and tools in conjunction with JUnit 5**
-* link:00_junit_best_practice/src/test/java/com/dmitrijdrandarov/bestpractice[**Best practices**]
-* link:02_assertj/src/test/java/com/dmitrijdrandarov/assertj[**AssertJ**]
+* link:00_junit_best_practice/src/test/java/com.dmitrijdrandarov/bestpractice[**Best practices**]
+* link:02_assertj/src/test/java/com.dmitrijdrandarov/assertj[**AssertJ**]
 * link:03_spring[**Spring**]
-* link:04_testfx/src/test/java/com/dmitrijdrandarov/testfx[**TestFX**]
-* link:05_mockito/src/test/java/com/dmitrijdrandarov/mockito[**Mockito**]
+* link:04_testfx/src/test/java/com.dmitrijdrandarov/testfx[**TestFX**]
+* link:05_mockito/src/test/java/com.dmitrijdrandarov/mockito[**Mockito**]
 
 = JUnit 5 Quick-Start-Guide
 
@@ -76,7 +76,7 @@ If you need lagacy support for JUnit 4 or even JUnit 3 to run in parallel to JUn
 ----
 
 
-== General changes link:01_junit_5/src/test/java/com/dmitrijdrandarov/junit5/JUnit5_00_GeneralChanges.java[(code)]
+== General changes link:01_junit_5/src/test/java/com.dmitrijdrandarov/junit5/JUnit5_01_GeneralChanges.java[(code)]
 
 
 === Syntax
@@ -159,7 +159,7 @@ void assumptionsTest() {
 ----
 
 
-== New features: Basics link:01_junit_5/src/test/java/com/dmitrijdrandarov/junit5/JUnit5_01_NewFeaturesBasics.java[(code)]
+== New features: Basics link:01_junit_5/src/test/java/com.dmitrijdrandarov/junit5/JUnit5_02_NewFeaturesBasics.java[(code)]
 
 === General
 Here I want to introduce some basics for the new features available in JUnit 5.
@@ -310,7 +310,7 @@ void parameterTest(TestInfo testInfo, TestReporter testReporter) {
 ----
 
 
-== New features: Advanced link:01_junit_5/src/test/java/com/dmitrijdrandarov/junit5/JUnit5_02_NewFeaturesAdvanced.java[(code)]
+== New features: Advanced link:01_junit_5/src/test/java/com.dmitrijdrandarov/junit5/JUnit5_03_NewFeaturesAdvanced.java[(code)]
 
 === Test-Parameters
 Building upon the `ParameterResolver` paragraph of the last chapter let's look at implementing your own `ParameterResolver`.
@@ -482,7 +482,7 @@ void disabledOnMondayTest() {}
 Again: This could without problem be placed on class-level.
 
 
-== Advanced Test-Samples link:01_junit_5/src/test/java/com/dmitrijdrandarov/junit5/JUnit5_03_AdvancedTestSamples.java[(code)]
+== Advanced Examples link:01_junit_5/src/test/java/com.dmitrijdrandarov/junit5/JUnit5_04_AdvancedExamples.java[(code)]
 
 === Extended disabled weekdays
 Let's extend that `@DisabledOnMonday` annotation a bit.
