@@ -41,8 +41,6 @@ To follow this guide you should know the basics of testing and JUnit (4), but ot
 Some headers related to code will have a code-link behind their name directing to the corresponding class in the GitHub-Repository.
 
 == Setup
-For an IDE, **IntelliJ IDEA 2017 and above** is recommended right now since it brings native support for JUnit 5.
-As for dependencies:
 
 .**Maven**
 [source,xml]
@@ -54,7 +52,7 @@ As for dependencies:
         <scope>test</scope>
   </dependency>
 ----
-If you need lagacy support for JUnit 4 or even JUnit 3 to run in parallel to JUnit 5, you can add the following dependency to your project
+If you need lagacy support for JUnit 4 or even JUnit 3 to run in parallel to JUnit 5, you can add the following dependency with the right version to your project
 [source,xml]
 ----
   <dependency>
