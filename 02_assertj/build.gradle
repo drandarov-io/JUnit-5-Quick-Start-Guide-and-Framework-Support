@@ -1,18 +1,14 @@
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     // Main-dependency needed for JUnit 5
-    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-${spring5RC}"
+    testCompile "org.junit.jupiter:junit-jupiter-api:${junit5_version}"
 
 
     // AssertJ
-    testCompile "org.assertj:assertj-core:${assertJVersion}"
+    testCompile "org.assertj:assertj-core:${assertj_version}"
 
 
     // Hamcrest for comparison
-    testCompile "org.hamcrest:hamcrest-all:${hamcrestVersion}"
+    testCompile "org.hamcrest:hamcrest-all:${hamcrest_version}"
 
 
     // Commons
@@ -20,5 +16,5 @@ dependencies {
 
 
     // Logging
-    testCompile "org.slf4j:slf4j-simple:${slf4jVersion}"
+    testCompile "org.slf4j:slf4j-simple:${slf4j_version}"
 }

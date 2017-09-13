@@ -1,28 +1,21 @@
-repositories {
-    mavenCentral()
-    maven { url 'https://repo.spring.io/snapshot' }
-    maven { url 'https://repo.spring.io/milestone' }
-    maven { url 'https://jitpack.io' }
-}
-
 dependencies {
     // Main-dependency needed for JUnit 5
-    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-${junit5RC}"
+    testCompile "org.junit.jupiter:junit-jupiter-api:${junit5_version}"
 
     // Lagacy support for JUnit 4
-    testCompile "org.junit.vintage:junit-vintage-engine:4.12.0-${junit5RC}"
+    testCompile "org.junit.vintage:junit-vintage-engine:${junit5_vintage4_version}"
 
     // Spring Boot 4
-    compile "org.springframework.boot:spring-boot-starter-data-jpa:${springBoot4Version}"
-    testCompile "org.springframework.boot:spring-boot-starter-test:${springBoot4Version}"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:${spring4_boot_version}"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${spring4_boot_version}"
     // JUnit 5 Extension for Spring 4 Tests
-    testCompile "com.github.sbrannen:spring-test-junit5:1.0.0.${spring5RC}"
+    testCompile "com.github.sbrannen:spring-test-junit5:${junit5_spring4_test_version}"
 
 
     // Commons
     testCompile project(":common")
 
     // Database Drivers
-    runtime "org.hsqldb:hsqldb:${hsqldbDriverVersion}"
-    runtime "org.postgresql:postgresql:${postgresqlDriverVersion}"
+    runtime "org.hsqldb:hsqldb:${hsqldb_driver_version}"
+    runtime "org.postgresql:postgresql:${postgresql_driver_version}"
 }

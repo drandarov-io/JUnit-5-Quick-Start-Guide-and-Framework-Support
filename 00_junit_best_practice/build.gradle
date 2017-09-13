@@ -1,10 +1,6 @@
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     // Main-dependency needed for JUnit 5
-    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0-${junit5RC}"
+    testCompile "org.junit.jupiter:junit-jupiter-api:${junit5_version}"
 
 
     // Commons
@@ -12,5 +8,5 @@ dependencies {
 
 
     // Logging
-    testCompile "org.slf4j:slf4j-simple:${slf4jVersion}"
+    testCompile "org.slf4j:slf4j-simple:${slf4j_version}"
 }
