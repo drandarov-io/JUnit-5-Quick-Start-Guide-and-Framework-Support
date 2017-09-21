@@ -1,10 +1,10 @@
 dependencies {
     // Main-dependency needed for JUnit 5
-    testCompile "org.junit.jupiter:junit-jupiter-api:${junit5_version}"
+    testCompile "org.junit.jupiter:junit-jupiter-api:$junit5_version"
 
 
     // Lagacy support for JUnit 4
-    testCompile "org.junit.vintage:junit-vintage-engine:${junit5_vintage4_version}"
+    testCompile "org.junit.vintage:junit-vintage-engine:$junit5_vintage4_version"
 
 
     // Commons
@@ -12,5 +12,5 @@ dependencies {
 
 
     // Logging
-    testCompile "org.slf4j:slf4j-simple:${slf4j_version}"
+    testCompile "org.slf4j:slf4j-simple:$slf4j_version"
 }

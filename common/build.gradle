@@ -1,4 +1,4 @@
 dependencies {
     // Hibernate JPA
-    compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:${hibernate_jpa_version}"
+    compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$hibernate_jpa_version"
 }

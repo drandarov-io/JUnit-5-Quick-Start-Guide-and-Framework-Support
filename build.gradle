@@ -55,6 +55,7 @@ allprojects {
     }
 }
 
+
 configure(subprojects - project(":03_spring")) {
 
     apply plugin: 'java'
@@ -65,7 +66,6 @@ configure(subprojects - project(":03_spring")) {
 
     // Gradle-Configuration for JUnit 5 Platform
     junitPlatform {
-        // platformVersion '1.0.0'
         filters {
             engines {
                 // include 'junit-jupiter', 'junit-vintage'
@@ -79,7 +79,7 @@ configure(subprojects - project(":03_spring")) {
         }
     }
     dependencies {
-        testRuntime "org.junit.jupiter:junit-jupiter-engine:${junit5_version}"
-        testRuntime "org.junit.vintage:junit-vintage-engine:${junit5_vintage4_version}"
+        testRuntime "org.junit.jupiter:junit-jupiter-engine:$junit5_version"
+        testRuntime "org.junit.vintage:junit-vintage-engine:$junit5_vintage4_version"
     }
 }

@@ -1,13 +1,13 @@
 dependencies {
     // Main-dependency needed for JUnit 5
-    testCompile "org.junit.jupiter:junit-jupiter-api:${junit5_version}"
+    testCompile "org.junit.jupiter:junit-jupiter-api:$junit5_version"
     // Lagacy support for JUnit 4
-    testCompile "org.junit.vintage:junit-vintage-engine:${junit5_vintage4_version}"
+    testCompile "org.junit.vintage:junit-vintage-engine:$junit5_vintage4_version"
 
 
     // Spring Boot 5
-    compile "org.springframework.boot:spring-boot-starter-data-jpa:${spring5_boot_version}"
-    testCompile "org.springframework.boot:spring-boot-starter-test:${spring5_boot_version}"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$spring5_boot_version"
+    testCompile "org.springframework.boot:spring-boot-starter-test:$spring5_boot_version"
 
 
     // Commons
@@ -15,6 +15,6 @@ dependencies {
 
 
     // Database Drivers
-    runtime "org.hsqldb:hsqldb:${hsqldb_driver_version}"
-    runtime "org.postgresql:postgresql:${postgresql_driver_version}"
+    runtime "org.hsqldb:hsqldb:$hsqldb_driver_version"
+    runtime "org.postgresql:postgresql:$postgresql_driver_version"
 }

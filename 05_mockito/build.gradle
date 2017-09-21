@@ -1,10 +1,10 @@
 dependencies {
     // Main-dependency needed for JUnit 5
-    testCompile "org.junit.jupiter:junit-jupiter-api:${junit5_version}"
+    testCompile "org.junit.jupiter:junit-jupiter-api:$junit5_version"
 
 
     // Mockito
-    testCompile "org.mockito:mockito-core:${mockito_version}"
+    testCompile "org.mockito:mockito-core:$mockito_version"
 
 
     // Commons
@@ -12,6 +12,6 @@ dependencies {
 
 
     // Logging
-    testCompile "org.slf4j:slf4j-simple:${slf4j_version}"
+    testCompile "org.slf4j:slf4j-simple:$slf4j_version"
 
 }
