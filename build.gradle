@@ -59,7 +59,7 @@ allprojects {
 }
 
 
-configure(subprojects - project(":03_spring")) {
+configure(subprojects - project(":03-spring")) {
 
     apply plugin: 'java'
     apply plugin: 'org.junit.platform.gradle.plugin'
