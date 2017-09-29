@@ -1,6 +1,7 @@
 group   'com.dmitrij-drandarov'
 version '3.1'
 
+
 ext {
     // JUnit 5
     junit5_version              = '5.0.0'
@@ -8,10 +9,10 @@ ext {
     junit5_spring4_test_version = '1.0.0'
 
     // Spring 5
-    spring5_version             = '5.0.0.RC4'
+    spring5_version             = '5.0.0.RELEASE'
     spring5_data_jpa_version    = '2.0.0.RC2'
     // Spring 5 Boot
-    spring5_boot_version        = '2.0.0.M3'
+    spring5_boot_version        = '2.0.0.M4'
 
     // Spring 4
     spring4_version             = '1.11.7.RELEASE'
@@ -38,6 +39,7 @@ ext {
 }
 
 
+
 buildscript {
     repositories {
         mavenCentral()
@@ -49,6 +51,11 @@ buildscript {
 }
 
 
+
+//------------------------------------------------------------------------------------------------------------------------
+//    Configure - All Projects
+//------------------------------------------------------------------------------------------------------------------------
+
 allprojects {
     repositories {
         mavenCentral()
@@ -58,14 +65,13 @@ allprojects {
     }
 }
 
+//------------------------------------------------------------------------------------------------------------------------
+//    Configure - Subprojects
+//------------------------------------------------------------------------------------------------------------------------
 
 configure(subprojects - project(":03-spring")) {
-
     apply plugin: 'java'
     apply plugin: 'org.junit.platform.gradle.plugin'
-
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
 
     // Gradle-Configuration for JUnit 5 Platform
     junitPlatform {
@@ -78,11 +84,29 @@ configure(subprojects - project(":03-spring")) {
                 // include 'incTag'
                 // exclude 'excTag'
             }
-            // includeClassNamePattern '.*Test'
+            includeClassNamePattern '.*'
         }
+        enableStandardTestTask true
     }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
     dependencies {
         testRuntime "org.junit.jupiter:junit-jupiter-engine:$junit5_version"
         testRuntime "org.junit.vintage:junit-vintage-engine:$junit5_vintage4_version"
     }
+}
+
+
+
+//------------------------------------------------------------------------------------------------------------------------
+//    Tasks - Init project
+//------------------------------------------------------------------------------------------------------------------------
+
+import org.gradle.api.tasks.wrapper.Wrapper.DistributionType
+task wrapper(type: Wrapper) {
+    group 'init'
+    gradleVersion '4.2'
+    distributionType DistributionType.ALL
 }
