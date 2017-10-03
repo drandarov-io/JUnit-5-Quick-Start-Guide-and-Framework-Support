@@ -48,7 +48,7 @@ Some headers related to code will have a code-link behind their name directing t
   <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>5.0.0/version>
+        <version>5.0.0</version>
         <scope>test</scope>
   </dependency>
 ----
