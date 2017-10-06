@@ -1,10 +1,9 @@
 group   'com.dmitrij-drandarov'
 version '3.1'
 
-
 ext {
     // JUnit 5
-    junit5_version              = '5.0.0'
+    junit5_version              = '5.0.1'
     junit5_vintage4_version     = '4.12.0'
     junit5_spring4_test_version = '1.0.0'
 
@@ -45,8 +44,13 @@ buildscript {
         mavenCentral()
     }
 
+    ext {
+        // JUnit 5
+        junit5_platform_version = '1.0.1'
+    }
+
     dependencies {
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0'
+        classpath "org.junit.platform:junit-platform-gradle-plugin:$junit5_platform_version"
     }
 }
 
@@ -107,6 +111,6 @@ configure(subprojects - project(":03-spring")) {
 import org.gradle.api.tasks.wrapper.Wrapper.DistributionType
 task wrapper(type: Wrapper) {
     group 'init'
-    gradleVersion '4.2'
+    gradleVersion '4.2.1'
     distributionType DistributionType.ALL
 }

@@ -48,7 +48,7 @@ Some headers related to code will have a code-link behind their name directing t
   <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>5.0.0</version>
+        <version>5.0.1</version>
         <scope>test</scope>
   </dependency>
 ----
@@ -66,7 +66,7 @@ If you need lagacy support for JUnit 4 or even JUnit 3 to run in parallel to JUn
 .**Equivalents for Gradle**
 [source,gradle]
 ----
-  testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.0'
+  testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.1'
 ----
 [source,gradle]
 ----

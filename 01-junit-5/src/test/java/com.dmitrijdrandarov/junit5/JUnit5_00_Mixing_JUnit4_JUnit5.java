@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Assertions;
  * This all happens within the JUnit 5 environment! Therefore you can make the class package-private.
  *
  * JUnit 5 is managed by:
- * org.junit.jupiter:junit-jupiter-api:5.0.0
+ * org.junit.jupiter:junit-jupiter-api:5.*.*
  *
  * JUnit 4 lagacy support is managed by:
  * org.junit.vintage:junit-vintage-engine:4.12.0
