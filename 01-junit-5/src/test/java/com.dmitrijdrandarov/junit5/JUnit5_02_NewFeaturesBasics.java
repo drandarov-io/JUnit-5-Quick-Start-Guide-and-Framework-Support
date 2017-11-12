@@ -66,7 +66,7 @@ class JUnit5_02_NewFeaturesBasics {
 
     /**
      * The new assertion-methods now support supplier-interfaces, meaning you can now enter lambda expressions on the fly to a lot of the assert-methods.
-     * E.g. by giving a {@link BooleanSupplier} for the assertion and a ({@link Supplier<String>} for the result-message
+     * E.g. by giving a {@link BooleanSupplier} for the assertion and a {@link Supplier<String>} for the result-message
      * to the {@link Assertions#assertTrue(BooleanSupplier, Supplier)} method.
      */
     @Test
