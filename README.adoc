@@ -733,6 +733,7 @@ May it be for workshops or presentations. Just give credits. ;)
 * http://junit.org/junit5/docs/current/user-guide[Official JUnit 5 User Guide]
 * https://github.com/junit-team/junit5[JUnit 5 GitHub]
 * https://github.com/junit-team/junit5/milestones/[JUnit 5 Milestone plan]
+* http://files.zeroturnaround.com/pdf/zt_junit_cheat_sheet.pdf[Cheat Sheet from ZERO TURNAROUND]
 
 == Repository Timeline
 
