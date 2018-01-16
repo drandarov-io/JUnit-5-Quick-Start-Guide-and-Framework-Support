@@ -16,8 +16,8 @@ These are however only presented as code since the main focus of this repository
 * link:00-junit-best-practice/src/test/java/com.dmitrijdrandarov/bestpractice[**Best practices**]
 * link:02-assertj/src/test/java/com.dmitrijdrandarov/assertj[**AssertJ**]
 * link:03-spring[**Spring**]
-* link:04-testfx/src/test/java/com.dmitrijdrandarov/testfx[**TestFX**]
-* link:05-mockito/src/test/java/com.dmitrijdrandarov/mockito[**Mockito**]
+* link:04-testfx/src/test/java/com.dmitrijdrandarov/testfx[**TestFX (ToDo)**]
+* link:05-mockito/src/test/java/com.dmitrijdrandarov/mockito[**Mockito (WIP)**]
 
 = JUnit 5 Quick-Start-Guide
 
