@@ -13,4 +13,12 @@ dependencies {
 
     // Logging
     testCompile "org.slf4j:slf4j-simple:$slf4j_version"
+
+
+    // JavaFX (pretty broken right now with JDK 11)
+    compile "org.openjfx:javafx.base:$openjfx_version"
+    compile "org.openjfx:javafx.graphics:$openjfx_version"
+    compile "org.openjfx:javafx.controls:$openjfx_version"
+    compile "org.openjfx:javafx.fxml:$openjfx_version:mac"
+
 }

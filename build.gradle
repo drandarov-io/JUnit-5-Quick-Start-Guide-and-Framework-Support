@@ -1,5 +1,5 @@
 group   'com.dmitrij-drandarov'
-version '3.1'
+version '5.0'
 
 ext {
     // JUnit 5
@@ -17,6 +17,9 @@ ext {
     spring4_version             = '1.11.7.RELEASE'
     // Spring 4 Boot
     spring4_boot_version        = '1.5.7.RELEASE'
+
+    // OpenJFX
+    openjfx_version             = "11.0.0-ea1"
 
     // Hibernate
     hibernate_core_version      = '5.2.10.Final'
@@ -66,6 +69,8 @@ allprojects {
         maven { url 'https://repo.spring.io/snapshot' }
         maven { url 'https://repo.spring.io/milestone' }
         maven { url 'https://jitpack.io' }
+        maven { url "http://nexus.gluonhq.com/nexus/content/repositories/releases/" }
+
     }
 }
 
@@ -93,8 +98,8 @@ configure(subprojects - project(":03-spring")) {
         enableStandardTestTask true
     }
 
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
     dependencies {
         testRuntime "org.junit.jupiter:junit-jupiter-engine:$junit5_version"
