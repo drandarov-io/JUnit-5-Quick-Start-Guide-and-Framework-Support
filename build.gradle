@@ -3,15 +3,15 @@ version '3.1'
 
 ext {
     // JUnit 5
-    junit5_version              = '5.0.1'
+    junit5_version              = '5.3.1'
     junit5_vintage4_version     = '4.12.0'
     junit5_spring4_test_version = '1.0.0'
 
     // Spring 5
-    spring5_version             = '5.0.0.RELEASE'
-    spring5_data_jpa_version    = '2.0.0.RC2'
+    spring5_version             = '5.1.1.RELEASE'
+    spring5_data_jpa_version    = '2.1.1.RELEASE'
     // Spring 5 Boot
-    spring5_boot_version        = '2.0.0.M4'
+    spring5_boot_version        = '2.0.6.RELEASE'
 
     // Spring 4
     spring4_version             = '1.11.7.RELEASE'
@@ -108,9 +108,7 @@ configure(subprojects - project(":03-spring")) {
 //    Tasks - Init project
 //------------------------------------------------------------------------------------------------------------------------
 
-import org.gradle.api.tasks.wrapper.Wrapper.DistributionType
 task wrapper(type: Wrapper) {
-    group 'init'
-    gradleVersion '4.2.1'
-    distributionType DistributionType.ALL
+    gradleVersion '4.10.2'
+    setDistributionType(Wrapper.DistributionType.ALL)
 }
