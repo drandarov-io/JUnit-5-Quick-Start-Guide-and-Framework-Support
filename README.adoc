@@ -19,6 +19,13 @@ These are however only presented as code since the main focus of this repository
 * link:04-testfx/src/test/java/com.dmitrijdrandarov/testfx[**TestFX (ToDo)**]
 * link:05-mockito/src/test/java/com.dmitrijdrandarov/mockito[**Mockito (WIP)**]
 
+== Slides from Talk
+
+image::05_jug_final_small.png[]
+
+* Light: link:++JUG - Modern Testing mit JUnit 5 - Light.pptx++[]
+* Dark: link:++JUG - Modern Testing mit JUnit 5.pptx++[]
+
 = JUnit 5 Quick-Start-Guide
 
 :sectnums:
