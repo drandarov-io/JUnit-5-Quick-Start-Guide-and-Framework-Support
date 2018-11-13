@@ -1,5 +1,3 @@
-rootProject.name = 'junit-5-quick-start-guide-with-assertj-spring-testfx-mockito'
-
 include 'common',
         '00-junit-best-practice',
         '01-junit-5',
