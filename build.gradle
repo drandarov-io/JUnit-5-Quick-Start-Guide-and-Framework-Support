@@ -113,7 +113,7 @@ configure(subprojects - project(":03-spring")) {
 //    Tasks - Init project
 //------------------------------------------------------------------------------------------------------------------------
 
-task wrapper(type: Wrapper) {
-    gradleVersion '4.10.2'
-    setDistributionType(Wrapper.DistributionType.ALL)
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+    gradleVersion "5.0"
 }
