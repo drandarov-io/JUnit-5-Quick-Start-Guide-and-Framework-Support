@@ -6,7 +6,7 @@ Dmitrij Drandarov <https://github.com/dmitrij-drandarov>
 
 == Authors
 
-* Dmitrij Drandarov | link:https://github.com/dmitrij-drandarov[image:github.png[4%, 4%]] | link:https://twitter.com/drandarov_io[image:twitter.png[4%, 4%]] | link:https://www.xing.com/profile/Dmitrij_Drandarov[image:xing.png[4%, 4%]] | link:https://www.linkedin.com/in/dmitrij-drandarov/[image:linkedin.png[4%, 4%]]
+* Dmitrij Drandarov | link:https://github.com/dmitrij-drandarov[image:github.png[20px, 20px]] | link:https://twitter.com/drandarov_io[image:twitter.png[20px, 20px]] | link:https://www.xing.com/profile/Dmitrij_Drandarov[image:xing.png[20px, 20px]] | link:https://www.linkedin.com/in/dmitrij-drandarov/[image:linkedin.png[20px, 20px]]
 
 == Repository Introduction
 
