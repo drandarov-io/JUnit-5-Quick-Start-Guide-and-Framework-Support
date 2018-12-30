@@ -1,11 +1,12 @@
 = Modern Testing with JUnit 5, AssertJ, Spring, TestFX and Mockito
 Dmitrij Drandarov <https://github.com/dmitrij-drandarov>
-:imagesdir: images
+:imagesdir: img
+:icons: font
 :toc:
 
 == Authors
 
-* Dmitrij Drandarov | link:https://github.com/dmitrij-drandarov[GitHub] | link:https://www.xing.com/profile/Dmitrij_Drandarov[Xing]
+* Dmitrij Drandarov | link:https://github.com/dmitrij-drandarov[image:github.png[4%, 4%]] | link:https://twitter.com/drandarov_io[image:twitter.png[4%, 4%]] | link:https://www.xing.com/profile/Dmitrij_Drandarov[image:xing.png[4%, 4%]] | link:https://www.linkedin.com/in/dmitrij-drandarov/[image:linkedin.png[4%, 4%]]
 
 == Repository Introduction
 
