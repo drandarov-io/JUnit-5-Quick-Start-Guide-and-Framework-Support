@@ -3,8 +3,8 @@ version '5.0'
 
 ext {
     // JUnit 5
-    junit5_version              = '5.3.1'
-    junit5_vintage4_version     = '4.12.0'
+    junit5_version              = '5.4.0'
+    junit5_vintage4_version     = '5.4.0'
     junit5_spring4_test_version = '1.0.0'
 
     // Spring 5
@@ -46,15 +46,6 @@ buildscript {
     repositories {
         mavenCentral()
     }
-
-    ext {
-        // JUnit 5
-        junit5_platform_version = '1.0.1'
-    }
-
-    dependencies {
-        classpath "org.junit.platform:junit-platform-gradle-plugin:$junit5_platform_version"
-    }
 }
 
 
@@ -80,22 +71,10 @@ allprojects {
 
 configure(subprojects - project(":03-spring")) {
     apply plugin: 'java'
-    apply plugin: 'org.junit.platform.gradle.plugin'
 
     // Gradle-Configuration for JUnit 5 Platform
-    junitPlatform {
-        filters {
-            engines {
-                // include 'junit-jupiter', 'junit-vintage'
-                // exclude 'custom-engine'
-            }
-            tags {
-                // include 'incTag'
-                // exclude 'excTag'
-            }
-            includeClassNamePattern '.*'
-        }
-        enableStandardTestTask true
+    test {
+        useJUnitPlatform()
     }
 
     sourceCompatibility = JavaVersion.VERSION_11
@@ -115,5 +94,5 @@ configure(subprojects - project(":03-spring")) {
 
 wrapper {
     distributionType = Wrapper.DistributionType.ALL
-    gradleVersion "5.0"
+    gradleVersion "5.2.1"
 }

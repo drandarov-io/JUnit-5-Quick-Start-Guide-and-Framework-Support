@@ -1,6 +1,7 @@
 dependencies {
     // Main-dependency needed for JUnit 5
     testCompile "org.junit.jupiter:junit-jupiter-api:$junit5_version"
+    testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.4.0'
 
 
     // Commons
@@ -9,4 +10,18 @@ dependencies {
 
     // Logging
     testCompile "org.slf4j:slf4j-simple:$slf4j_version"
+}
+
+// Execute Tests from Jar with
+// java -jar junit-platform-console-standalone-1.4.0.jar -cp (abolute)\buidl\libs\00-junit-best-practice-tests.jar --scan-classpath --include-classname="^(.)*$"
+task testJar(type: Jar) {
+    getArchiveClassifier().set("tests")
+
+    from {
+        configurations.testCompile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    from {
+        sourceSets.test.output
+    }
 }
