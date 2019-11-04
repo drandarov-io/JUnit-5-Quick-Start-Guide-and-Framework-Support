@@ -3,6 +3,7 @@ package com.dmitrijdrandarov.junit5;
 import com.dmitrijdrandarov.entities.DummyFruit;
 import com.dmitrijdrandarov.repositories.DummyFruitRepository;
 import org.junit.Assert;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import java.util.List;
 @ExtendWith(SpringExtension.class)
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.HSQL)
 @Transactional
+@Disabled("Incompatible with JDK 12")
 class SpringBoot4_02_JUnit5Test {
 
     private static final Logger LOG = LoggerFactory.getLogger(SpringBoot4_02_JUnit5Test.class);

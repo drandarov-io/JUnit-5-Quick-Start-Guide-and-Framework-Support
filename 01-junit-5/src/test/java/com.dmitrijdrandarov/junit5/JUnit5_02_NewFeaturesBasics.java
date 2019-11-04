@@ -108,7 +108,7 @@ class JUnit5_02_NewFeaturesBasics {
                 ArrayIndexOutOfBoundsException.class,
                 () -> (new String[1])[2] = "I will throw an Exception :)");
 
-        assertEquals(exc.getMessage(), "2");
+        assertEquals(exc.getMessage(), "Index 2 out of bounds for length 1");
     }
 
     private int i = 10;

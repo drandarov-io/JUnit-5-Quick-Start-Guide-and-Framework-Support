@@ -6,6 +6,7 @@ import com.dmitrijdrandarov.junit5.utils.simpleextension.DisabledOnWeekday;
 import com.dmitrijdrandarov.junit5.utils.simpleextension.DisabledWeekdays;
 import com.dmitrijdrandarov.junit5.utils.testannotationextension.UITest;
 import javafx.scene.layout.Pane;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
@@ -51,6 +52,7 @@ class JUnit5_04_AdvancedExamples {
      *#
      * This of course could be also possible for the examples above.
      */
+    @Disabled("Incompatible with JDK 12")
     @UITest("/fxml/sample.fxml")
     void userInterfaceTest(Pane root) {
         LOG.info(String.valueOf(root.getPrefWidth()));     // 555.0 (defined in FXML-File)

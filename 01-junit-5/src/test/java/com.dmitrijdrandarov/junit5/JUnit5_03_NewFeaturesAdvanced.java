@@ -1,20 +1,19 @@
 package com.dmitrijdrandarov.junit5;
 
+import com.dmitrijdrandarov.entities.DummyFruit;
+import com.dmitrijdrandarov.entities.DummyFruit.TYPE;
 import com.dmitrijdrandarov.junit5.utils.parameterresolver.ClassName_ParameterResolver;
 import com.dmitrijdrandarov.junit5.utils.parameterresolver.ParameterIndex_ParameterResolver;
 import com.dmitrijdrandarov.junit5.utils.simpleextension.DisabledOnMonday;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestFactory;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.*;
 import org.junit.jupiter.api.function.ThrowingConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -24,6 +23,16 @@ import java.util.stream.Stream;
  * @since 22 Jul 2016
  */
 class JUnit5_03_NewFeaturesAdvanced {
+
+    private Map<Integer, DummyFruit> dummyFruits;
+
+    @BeforeEach
+    void dummy() {
+        dummyFruits = new HashMap<>();
+        dummyFruits.put(1, new DummyFruit(1L, TYPE.BANANA, "Baby Banana", "It's yellow!", 20.0));
+        dummyFruits.put(2, new DummyFruit(2L, TYPE.APPLE, "Granny Smith Apple", "Delicious!", 10.5));
+        dummyFruits.put(3, new DummyFruit(3L, TYPE.ORANGE, "Grapefruit", "It's totally an orange, baka!", 8.5));
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(JUnit5_03_NewFeaturesAdvanced.class);
 
@@ -67,6 +76,24 @@ class JUnit5_03_NewFeaturesAdvanced {
                 testData,                      // Input-Data for the Factory
                 s -> "Displayname: S" + s,     // Creating DisplayNames for the test
                 Assertions::assertNotNull);    // Providing an Executable on which the test is based
+    }
+
+    /**
+     * You can also pass table data
+     *
+     * @return A stream of dynamic tests with table data
+     */
+    @TestFactory
+    Stream<DynamicTest> testStreamFactoryTableDataTest() {
+        List<String[]> testData = Arrays.stream(new Object[][]{
+                {"Col 1, Row 1", "Col 2, Row 1", dummyFruits.get(1).getType().toString()},
+                {"Col 1, Row 2", "Col 2, Row 2", dummyFruits.get(2).getType().toString()}
+        })
+                .map(objects -> Arrays.stream(objects).map(Object::toString).toArray(String[]::new))
+                .collect(Collectors.toList());
+
+        return testData.stream()
+                .map(strings -> DynamicTest.dynamicTest(testData.toString(), () -> Assertions.assertNotNull(testData)));
     }
 
 

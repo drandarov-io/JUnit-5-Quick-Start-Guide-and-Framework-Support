@@ -4,6 +4,7 @@ dependencies {
 
     // Lagacy support for JUnit 4
     testCompile "org.junit.vintage:junit-vintage-engine:$junit5_vintage4_version"
+    testCompile "junit:junit:$junit4_version"
 
     // Spring Boot 4
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$spring4_boot_version"

@@ -3,6 +3,7 @@ package com.dmitrijdrandarov.junit4;
 import com.dmitrijdrandarov.entities.DummyFruit;
 import com.dmitrijdrandarov.repositories.DummyFruitRepository;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.HSQL)
 @Transactional
+@Ignore("Incompatible with JDK 12")
 public class SpringBoot4_01_JUnit4Test {
 
     private static final Logger LOG = LoggerFactory.getLogger(SpringBoot4_01_JUnit4Test.class);
